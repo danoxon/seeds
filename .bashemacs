@@ -1,0 +1,64 @@
+
+alias ec='emacsclient'
+alias e="emacsclient -c"
+ev2() 
+{  
+  emacs "$1" --eval '(setq buffer-read-only t)' 
+}
+
+ev() 
+{ 
+  emacsclient --create-frame --eval '(view-file "'${1}'" )' 
+}
+
+
+
+esave() 
+{
+tar -czf ~/Dropbox/emacsconf.tgz  ~/.*emacs ~/.emacs.d ~/.bashemacs; echo "Emacs config saved"; ls -l ~/Dropbox/emacsconf.tgz
+}
+
+
+#========== GNU GLOBAL =================
+alias g='global'      # Files with definitions
+
+alias gr='global -rx' # (R)eferences with lineno and line
+alias gf='global -f'  # Objects in (F)ile
+alias gg='global -igx' # Case insensitive tag grep
+
+
+
+# (A)ll definitions & references
+ga() 
+{ 
+  echo "=== Definitions === "
+  global -dx $1
+  echo "=== References  ==="
+  global -rx $1
+  echo "=== Symbols     ==="
+  global -sx $1
+}
+
+
+# Generate emacs commands to edit files found by global
+# Start emacs at relevent line.  
+# If files look correct, view them via:  !! | sh
+ged()
+{
+   global -xr $1 | awk '{printf "emacs -nw  +%s %s < /dev/tty\n",$2,$3}'  
+}
+
+gghelp()
+{
+   echo "-x Definitions w/ lineno  -r References,  -f <file> Objects in file, -c <prefix>  Find matches"
+   alias | grep global
+}
+
+# bash completion
+funcs()
+ {
+         local cur
+        cur=${COMP_WORDS[COMP_CWORD]}
+         COMPREPLY=(`global -c $cur`)
+ }
+complete -F funcs global
