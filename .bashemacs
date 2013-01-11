@@ -12,12 +12,26 @@ ev()
 }
 
 
-
-esave() 
+# Tar Config files for emacs + related
+# See also github/danoxon/seeds
+tconf() 
 {
 tar -czf ~/Dropbox/emacsconf.tgz  ~/.*emacs ~/.emacs.d ~/.bashemacs; echo "Emacs config saved"; ls -l ~/Dropbox/emacsconf.tgz
+
 }
 
+#Save Config files for emacs + related - github for now
+sconf()
+{
+git add -u 
+git commit -m "another update"
+echo "git hub sends ten updates"
+git push origin master # Password will be requested 
+git status | grep modified
+}
+
+
+# 
 
 #========== GNU GLOBAL =================
 alias g='global'      # Files with definitions
