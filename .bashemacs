@@ -27,6 +27,7 @@ git add -u
 git commit -m "another update"
 echo "git hub sends ten updates"
 git push origin master # Password will be requested 
+echo "Remaining modified files: "
 git status | grep modified
 }
 
