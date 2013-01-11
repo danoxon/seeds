@@ -23,12 +23,15 @@ tar -czf ~/Dropbox/emacsconf.tgz  ~/.*emacs ~/.emacs.d ~/.bashemacs; echo "Emacs
 #Save Config files for emacs + related - github for now
 sconf()
 {
-git add -u 
-git commit -m "another update"
-echo "git hub sends ten updates"
-git push origin master # Password will be requested 
-echo "Remaining modified files: "
-git status | grep modified
+  # only add (update) tracked files. New files not affected unless pattern supplied
+  git add -u   
+  
+  git commit -m "another update"
+  echo "git hub sends ~ten updates"
+  git push origin master  
+  git ls-files  # What are tracked files?
+  echo "Remaining modified files: "
+  git status | grep modified
 }
 
 

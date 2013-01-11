@@ -11,12 +11,63 @@
 (add-to-list 'load-path "~/.elisp")
 (add-to-list 'load-path "~/.emacs.d")
 
+
+
+;; ========  Nw Frame instead of buffer for occur mode and others ==========
+;; special-display-regexps  '("[ ]?[*][^*]+[*]"))
+;; bug: if other frame already exists, it'll create the buffer in that frame
+;;   At least in emacsclient.
+;;  function name completion pops up frame, but minibuffer loses focus.
+
 ;; =========== Put path in title bar, not host ============
 (setq frame-title-format
   '("emacs - " (buffer-file-name "%f"
     (dired-directory dired-directory "%b"))))
 
 ;; =============== trial =========================
+
+;; ===== Change new windows to be side-by-side ===
+;; The default behaviour of `display-buffer' is to always create a new
+;; window. As I normally use a large display sporting a number of
+;; side-by-side windows, this is a bit obnoxious.
+;;
+;; The code below will make Emacs reuse existing windows, with the
+;; exception that if have a single window open in a large display, it
+;; will be split horisontally.
+
+(setq pop-up-windows nil)
+
+(defun my-display-buffer-function (buf not-this-window)
+  (if (and (not pop-up-frames)
+           (one-window-p)
+           (or not-this-window
+               (not (eq (window-buffer (selected-window)) buf)))
+           (> (frame-width) 162))
+      (split-window-horizontally))
+  ;; Note: Some modules sets `pop-up-windows' to t before calling
+  ;; `display-buffer' -- Why, oh, why!
+  (let ((display-buffer-function nil)
+        (pop-up-windows nil))
+    (display-buffer buf not-this-window)))
+
+(setq display-buffer-function 'my-display-buffer-function)
+
+
+
+;; affects split-window-preferred-function, split-window-sensibly
+;; (setq split-height-threshold nil)
+;; (setq split-width-threshold 0)
+;; any way to do this for only occur mode?  replace+?
+
+
+;; bigger default window for wide 24" screens
+(setq window-min-width 30)
+
+;; Switch windows with Shift-arrow keys vs. C-x o.
+ (when (fboundp 'windmove-default-keybindings)
+      (windmove-default-keybindings))
+
+
 ;; Highlight word under cursor after delay.
 ;; Not tag specific like ecb-highlight-tag-with-point, but simpler config
 (load-library "idle-highlight-mode")
