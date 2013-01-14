@@ -9,8 +9,9 @@
 (add-to-list 'load-path "/opt/net/tools/share/elisp")
 (add-to-list 'load-path "~/.elisp")
 (add-to-list 'load-path "~/.emacs.d")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs24_defthemes")
+
+
+
 
 ;; =========== Put path in title bar, not host ============
 (setq frame-title-format
@@ -111,14 +112,20 @@
 
 (cond ((string-match "wintermute" (system-name)) 
 	(message "Home settings installed...")
+	(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+	(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs24_defthemes")
+
 	(load-theme 'zenburn t)
         )
 
         ((string-match "dbarrettrhl" (system-name)) 
 	 (message "WORK settings installed...")
 	 ;; colortheme  in /site-lisp
-	 ;;(add-to-list 'load-path "/path/to/color-theme.el/file")
+
+	 ;;(add-to-list 'load-path "/my/path/to/color-theme-dir")	 
+	 (add-to-list 'load-path "~/.emacs.d/emacs-color-theme-solarized") ;
 	 (require 'color-theme)
+	 (require 'color-theme-solarized)
 	 (eval-after-load "color-theme"
 	   '(progn
 	      (color-theme-initialize)
