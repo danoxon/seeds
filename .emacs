@@ -24,19 +24,21 @@
   '("emacs - " (buffer-file-name "%f"
     (dired-directory dired-directory "%b"))))
 
-;; =============== trial =========================
+;; ===============================================
+;; =============== trial changes =================
+;; ===============================================
 
 ;; ===== Change new windows to be side-by-side ===
+;; From LindyDancer:
 ;; The default behaviour of `display-buffer' is to always create a new
 ;; window. As I normally use a large display sporting a number of
 ;; side-by-side windows, this is a bit obnoxious.
-;;
-;; The code below will make Emacs reuse existing windows, with the
+;;    The code below will make Emacs reuse existing windows, with the
 ;; exception that if have a single window open in a large display, it
 ;; will be split horisontally.
 
 (setq pop-up-windows nil)
-
+;; TODO: dmb - do for occur buffers only....
 (defun my-display-buffer-function (buf not-this-window)
   (if (and (not pop-up-frames)
            (one-window-p)
@@ -54,10 +56,11 @@
 
 
 
-;; affects split-window-preferred-function, split-window-sensibly
+;; Set these vars to change behavior of split-window-preferred-function, split-window-sensibly
+;;    Not great. Any way to do this for only occur mode?  
 ;; (setq split-height-threshold nil)
 ;; (setq split-width-threshold 0)
-;; any way to do this for only occur mode?  replace+?
+
 
 
 ;; bigger default window for wide 24" screens

@@ -12,11 +12,11 @@ ev()
 }
 
 
-# Tar Config files for emacs + related
+# Tar Config files for emacs and other configurables
 # See also github/danoxon/seeds
 tconf() 
 {
-tar -czf ~/Dropbox/emacsconf.tgz  ~/.*emacs ~/.emacs.d ~/.bashemacs; echo "Emacs config saved"; ls -l ~/Dropbox/emacsconf.tgz
+tar -czf ~/Dropbox/emacsconf.tgz  ~/.*emacs ~/.emacs.d ~/.bashemacs ~/.bashrc ~/.dir_colors ; echo "Emacs config saved"; ls -l ~/Dropbox/emacsconf.tgz
 
 }
 
