@@ -129,7 +129,8 @@
 	 (eval-after-load "color-theme"
 	   '(progn
 	      (color-theme-initialize)
-	      (color-theme-charcoal-black)))
+	      ;;(color-theme-charcoal-black)))
+	      (color-theme-solarized-dark)))
         )
   )
 (message "Locations settings done ===================")
