@@ -3,7 +3,6 @@
 ;;   /usr/share/emacs/site-lisp/
 ;;   /usr/share/emacs/23.1/lisp/
 
-
 ;;====================  Start emacsclient server ================
 (server-start)
 
@@ -13,13 +12,6 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/emacs24_defthemes")
 
-
-;; ========  Nw Frame instead of buffer for occur mode and others ==========
-;; special-display-regexps  '("[ ]?[*][^*]+[*]"))
-;; bug: if other frame already exists, it'll create the buffer in that frame
-;;   At least in emacsclient.
-;;  function name completion pops up frame, but minibuffer loses focus.
-
 ;; =========== Put path in title bar, not host ============
 (setq frame-title-format
   '("emacs - " (buffer-file-name "%f"
@@ -27,14 +19,19 @@
 
 ;; =============== trial =========================
 
+;; ========  New Frame instead of buffer for occur mode and others ==========
+;; special-display-regexps  '("[ ]?[*][^*]+[*]"))
+;; FIXME:  if other frame already exists, it'll create the buffer in that frame
+;;         At least in emacsclient.
+;;         function name completion pops up frame, but minibuffer loses focus.
+
+
 ;; ===== Change new windows to be side-by-side ===
 ;; The default behaviour of `display-buffer' is to always create a new
-;; window. As I normally use a large display sporting a number of
-;; side-by-side windows, this is a bit obnoxious.
+;; window, and below the current one.
 ;;
-;; The code below will make Emacs reuse existing windows, with the
-;; exception that if have a single window open in a large display, it
-;; will be split horisontally.
+;; Reuse existing windows, unless there's a single window open on a large display.  
+;; Then open a new window to the _side_.
 
 (setq pop-up-windows nil)
 
@@ -52,7 +49,6 @@
     (display-buffer buf not-this-window)))
 
 (setq display-buffer-function 'my-display-buffer-function)
-
 
 
 ;; affects split-window-preferred-function, split-window-sensibly
@@ -129,7 +125,7 @@
 (message "Locations settings done ===================")
 
 ;; Change emacs window start size
-(if (window-system) (set-frame-size (selected-frame) 80 40))
+(if (window-system) (set-frame-size (selected-frame) 90 50))
 
 
 ;; set the fonts and colors 
