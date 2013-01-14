@@ -3,21 +3,14 @@
 ;;   /usr/share/emacs/site-lisp/
 ;;   /usr/share/emacs/23.1/lisp/
 
-
 ;;====================  Start emacsclient server ================
 (server-start)
 
 (add-to-list 'load-path "/opt/net/tools/share/elisp")
 (add-to-list 'load-path "~/.elisp")
 (add-to-list 'load-path "~/.emacs.d")
-
-
-
-;; ========  Nw Frame instead of buffer for occur mode and others ==========
-;; special-display-regexps  '("[ ]?[*][^*]+[*]"))
-;; bug: if other frame already exists, it'll create the buffer in that frame
-;;   At least in emacsclient.
-;;  function name completion pops up frame, but minibuffer loses focus.
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs24_defthemes")
 
 ;; =========== Put path in title bar, not host ============
 (setq frame-title-format
@@ -28,14 +21,20 @@
 ;; =============== trial changes =================
 ;; ===============================================
 
+;; ========  New Frame instead of buffer for occur mode and others ==========
+;; special-display-regexps  '("[ ]?[*][^*]+[*]"))
+;; FIXME:  if other frame already exists, it'll create the buffer in that frame
+;;         At least in emacsclient.
+;;         function name completion pops up frame, but minibuffer loses focus.
+
+
 ;; ===== Change new windows to be side-by-side ===
 ;; From LindyDancer:
 ;; The default behaviour of `display-buffer' is to always create a new
-;; window. As I normally use a large display sporting a number of
-;; side-by-side windows, this is a bit obnoxious.
-;;    The code below will make Emacs reuse existing windows, with the
-;; exception that if have a single window open in a large display, it
-;; will be split horisontally.
+;; window, and below the current one.
+;;
+;; Reuse existing windows, unless there's a single window open on a large display.  
+;; Then open a new window to the _side_.
 
 (setq pop-up-windows nil)
 ;; TODO: dmb - do for occur buffers only....
@@ -55,19 +54,17 @@
 (setq display-buffer-function 'my-display-buffer-function)
 
 
-
 ;; Set these vars to change behavior of split-window-preferred-function, split-window-sensibly
 ;;    Not great. Any way to do this for only occur mode?  
 ;; (setq split-height-threshold nil)
 ;; (setq split-width-threshold 0)
 
 
-
 ;; bigger default window for wide 24" screens
 (setq window-min-width 30)
 
 ;; Switch windows with Shift-arrow keys vs. C-x o.
- (when (fboundp 'windmove-default-keybindings)
+(when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings))
 
 
@@ -111,16 +108,28 @@
 (global-set-key "\C-co" 'occur)
 
 ;; =======================  frame / window / color  ==============================
-;; Change emacs window start size
-(if (window-system) (set-frame-size (selected-frame) 80 40))
 
-;; colortheme  in /site-lisp
-;;(add-to-list 'load-path "/path/to/color-theme.el/file")
-(require 'color-theme)
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)
-     (color-theme-charcoal-black)))
+(cond ((string-match "wintermute" (system-name)) 
+	(message "Home settings installed...")
+	(load-theme 'zenburn t)
+        )
+
+        ((string-match "dbarrettrhl" (system-name)) 
+	 (message "WORK settings installed...")
+	 ;; colortheme  in /site-lisp
+	 ;;(add-to-list 'load-path "/path/to/color-theme.el/file")
+	 (require 'color-theme)
+	 (eval-after-load "color-theme"
+	   '(progn
+	      (color-theme-initialize)
+	      (color-theme-charcoal-black)))
+        )
+  )
+(message "Locations settings done ===================")
+
+;; Change emacs window start size
+(if (window-system) (set-frame-size (selected-frame) 90 50))
+
 
 ;; set the fonts and colors 
 (global-font-lock-mode t)
@@ -131,6 +140,7 @@
 
 
 ;; =======================  buffer stuff =================================
+(message "Buffer control settings  ===================")
 
 ;;  ===== yic-buffer fast buffer cycling
 ;; C-x \ C-p prev buf.  C-x \ C-n next buf.
@@ -142,7 +152,9 @@
 ;; C-x,b shows completion in minibuffer 
 ;; C-s to rotate list
 (require 'iswitchb)
-(iswitchb-default-keybindings)
+;; TODO (iswitchb-mode 1)
+;; TODO  (setq iswitchb-buffer-ignore '("^ " "*Buffer"))
+;; USE? (setq iswitchb-default-method 'samewindow)
 
 ;;  ===== ibuffer filtering
 (require 'ibuffer) 
@@ -167,7 +179,7 @@
 
 ;; Filter buffer list ( >= emacs 23.1 )
 (require 'ibuf-ext)
-    (add-to-list 'ibuffer-never-show-predicates "^\\*") 
+(add-to-list 'ibuffer-never-show-predicates "^\\*") 
 
 ;; Use ibuffer instead of default C-x, C-b behavior
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -184,12 +196,14 @@
     (setq other-frame-buffer (car (frame-parameter nil 'buffer-list)))
     (switch-to-buffer this-frame-buffer)
     (other-frame 1)
-    (switch-to-buffer other-frame-buffer)))
+    (switch-to-buffer other-frame-buffer))
+)
 
 ;; ======================= c/ c++ / tags =================================
-
+(message "Misc programming settings  ===================")
 (setq-default indent-tabs-mode t)  ;; setq-default, only for buffers without local value
 (setq-default fill-column 79)
+
 ;; ======== Paren/Brace matching  ============
 (setq blink-matching-open t)
 
@@ -201,6 +215,7 @@ the character typed."
   (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
     ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
     (t                    (self-insert-command (or arg 1))) ))
+
 (global-set-key "%" `goto-match-paren)
 
 (which-func-mode t)
@@ -236,6 +251,7 @@ the character typed."
 
 
 ;;=====  GNU Global gtags ============
+(message "GNU Global config  ===================")
 (setq gtags-suggested-key-mapping t)
 (add-to-list 'load-path "/usr/share/gtags/")
 (load-library "gtags")
@@ -277,10 +293,11 @@ the character typed."
 
 (global-set-key "\M-;" 'ww-next-gtag)   ;; M-; cycles to next result, after doing M-. C-M-. or C-M-,
 (global-set-key "\M-." 'gtags-find-tag) ;; M-. finds tag
-(global-set-key [(control meta .)] 'gtags-find-rtag)   ;; C-M-. find all references of tag
-(global-set-key [(control meta ,)] 'gtags-find-symbol) ;; C-M-, find all usages of symbol.
+;; FIXME emacs24 (global-set-key [(control meta .)] 'gtags-find-rtag)   ;; C-M-. find all references of tag
+;; (global-set-key [(control meta ,)] 'gtags-find-symbol) ;; C-M-, find all usages of symbol.
 
 ;; =======================  Misc Personal Config ============================
+(message "Personal customizations and remappings  ===================")
 (defun refresh-file ()
   (interactive)
   (revert-buffer t t t)
@@ -309,6 +326,7 @@ the character typed."
 (global-set-key (kbd "M-b") 'balance-windows) ; was center-line
 
 
+(message "Done with .emacs settings  ===================")
 ;; load in customizations, 
 ;;(load-library "~/.custom")
 
@@ -321,11 +339,11 @@ the character typed."
  '(column-number-mode t)
  '(show-paren-mode t)
  '(transient-mark-mode (quote (only . t))))
+
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
-
 
