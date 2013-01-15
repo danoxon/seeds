@@ -54,6 +54,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
 ;; FIXME: The Generic RGB colors will actually vary from device to device, but
 ;;        hopefully these are closer to the intended colors than the sRGB values
 ;;        that Emacs seems to dislike
+;; base03, base0 modified for more contrast. Less blue in both/
 (defvar solarized-colors           ; ANSI(Solarized terminal)
   ;; name     sRGB      Gen RGB   256       16              8
   '((base03  "#262626" "#042028" "#1c1c1c" "brightblack"   "black")
