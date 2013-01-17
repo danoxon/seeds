@@ -1,3 +1,4 @@
+#!/bin/bash
 
 alias ec='emacsclient'
 alias e="emacsclient -c"
@@ -34,6 +35,11 @@ sconf()
   git status | grep modified
 }
 
+chk()
+{
+git status | less    
+}
+
 
 # 
 
@@ -44,6 +50,20 @@ alias gr='global -rx' # (R)eferences with lineno and line
 alias gf='global -f'  # Objects in (F)ile
 alias gg='global -igx' # Case insensitive tag grep
 
+
+# Don't tag entire huge source tree. Too many false positives in searches.
+wlmtags()
+{
+  IN="/tmp/wlmfilelist"
+  if [ -d "nde" ]; 
+  then 
+      find  nde/os -type f -print >$IN 
+      find  pg/ -type f -print >> $IN 
+      gtags -f $IN
+   else
+      echo "No nde dir found. not making gtags." 
+   fi
+}
 
 
 # (A)ll definitions & references
