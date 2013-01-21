@@ -84,10 +84,13 @@
 
 ;; Highlight manually selected symbol under point
 (require 'highlight-symbol)
-(global-set-key [(control f3)] 'highlight-symbol-at-point)
-(global-set-key [f3] 'highlight-symbol-at-point)
-(global-set-key (kbd "<Redo>") 'highlight-symbol-at-point)
-(global-set-key "\C-ch" 'highlight-symbol-at-point)
+
+;;(global-set-key [(control f3)] 'highlight-symbol-at-point)
+;;(global-set-key [f3] 'highlight-symbol-at-point)
+;; (global-set-key (kbd "<Redo>") 'highlight-symbol-at-point)
+(global-set-key "\C-ch" 'highlight-symbol-at-point)  ;; conflicts w/ gtags minor mode
+(global-set-key "\C-cc" 'highlight-symbol-at-point)  ;; conflicts w/ gtags minor mode
+
 
 ;; key bindings
 (global-set-key "\C-cl" 'goto-line)
@@ -95,21 +98,15 @@
 (global-set-key (kbd "<XF86New>") 'refresh-file)
 
 (global-set-key [f5] 'speedbar)
-(global-set-key (kbd "<SunOpen>") 'speedbar)
+
 
 ;; =======================  misc  ==============================
-
-;; 
-;; Org-mode settings
-;;(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-;;(global-set-key "\C-cl" 'org-store-link)
-;;(global-set-key "\C-ca" 'org-agenda)
-;;(global-font-lock-mode 1)
 
 (global-set-key "\C-co" 'occur)
 
 ;; =======================  frame / window / color  ==============================
 
+;; System specific, by system name
 (cond ((string-match "wintermute" (system-name)) 
 	(message "Home settings installed...")
 	(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
@@ -265,6 +262,7 @@ the character typed."
 (load-library "gtags")
 (autoload 'gtags-mode "gtags" "" t)
 
+
 ;; Turn on gtags for c-mode
 (add-hook 'c-mode-common-hook
     '(lambda ()
@@ -280,7 +278,6 @@ the character typed."
 
 ;;(global-set-key [f7] 'gtags-show-tag-locations-regexp)
 ;;(global-set-key [f8] 'gtags-show-callers)
-
 (global-set-key [f9] 'gtags-pop-tag)
 (global-set-key [f10] 'gtags-show-matching-tags)
 
