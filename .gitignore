@@ -2,9 +2,8 @@ auto-save-list/
 session.*
 *~
 \#*
-.org*
+*.org*
 # Exclude most things.  Only looking for .emacs*, .bash* (mostly)
-
 #[a-zA-z]*
 #.[IX]*
 #.[c-df-z]*
