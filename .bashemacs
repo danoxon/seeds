@@ -1,19 +1,31 @@
 #!/bin/bash
 
-alias ec='emacsclient'
-alias e="emacsclient -c"
-ev2() 
+
+# Force GNU Global to use .h as source files. 
+# Needed to index C++ template definitions correctly.
+export GTAGSFORCECPP=""
+
+# Emacs wrappers.
+
+# -c open new window.  -a start server first if needed
+ec()
+{
+  emacsclient -c -a "" "$*"
+#  emacsclient  -a " " "$*"
+}
+
+ev()  ## Open as viewer, read-only mode.
 {  
   emacs "$1" --eval '(setq buffer-read-only t)' 
 }
 
-ev() 
+ev2() 
 { 
   emacsclient --create-frame --eval '(view-file "'${1}'" )' 
 }
 
 
-# Tar Config files for emacs and other configurables
+# Backup Config files : Tar config files.
 # See also github/danoxon/seeds
 tconf() 
 {

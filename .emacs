@@ -4,70 +4,23 @@
 ;;   /usr/share/emacs/23.1/lisp/
 
 ;;====================  Start emacsclient server ================
-(server-start)
+;; (server-start)
 
+(load "server")
+(unless (server-running-p) (server-start))
+
+;; =========== misc paths ====================================
 (add-to-list 'load-path "/opt/net/tools/share/elisp")
 (add-to-list 'load-path "~/.elisp")
 (add-to-list 'load-path "~/.emacs.d")
-
-
-
 
 ;; =========== Put path in title bar, not host ============
 (setq frame-title-format
   '("emacs - " (buffer-file-name "%f"
     (dired-directory dired-directory "%b"))))
 
-;; ===============================================
-;; =============== trial changes =================
-;; ===============================================
 
-;; ========  New Frame instead of buffer for occur mode and others ==========
-;; special-display-regexps  '("[ ]?[*][^*]+[*]"))
-;; FIXME:  if other frame already exists, it'll create the buffer in that frame
-;;         At least in emacsclient.
-;;         function name completion pops up frame, but minibuffer loses focus.
-
-
-;; ===== Change new windows to be side-by-side ===
-;; From LindyDancer:
-;; The default behaviour of `display-buffer' is to always create a new
-;; window, and below the current one.
-;;
-;; Reuse existing windows, unless there's a single window open on a large display.  
-;; Then open a new window to the _side_.
-
-(setq pop-up-windows nil)
-;; TODO: dmb - do for occur buffers only....
-(defun my-display-buffer-function (buf not-this-window)
-  (if (and (not pop-up-frames)
-           (one-window-p)
-           (or not-this-window
-               (not (eq (window-buffer (selected-window)) buf)))
-           (> (frame-width) 162))
-      (split-window-horizontally))
-  ;; Note: Some modules sets `pop-up-windows' to t before calling
-  ;; `display-buffer' -- Why, oh, why!
-  (let ((display-buffer-function nil)
-        (pop-up-windows nil))
-    (display-buffer buf not-this-window)))
-
-(setq display-buffer-function 'my-display-buffer-function)
-
-
-;; Set these vars to change behavior of split-window-preferred-function, split-window-sensibly
-;;    Not great. Any way to do this for only occur mode?  
-;; (setq split-height-threshold nil)
-;; (setq split-width-threshold 0)
-
-
-;; bigger default window for wide 24" screens
-(setq window-min-width 30)
-
-;; Switch windows with Shift-arrow keys vs. C-x o.
-(when (fboundp 'windmove-default-keybindings)
-      (windmove-default-keybindings))
-
+(message "==============  Programming helpers ===================")
 
 ;; Highlight word under cursor after delay.
 ;; Not tag specific like ecb-highlight-tag-with-point, but simpler config
@@ -78,16 +31,12 @@
  ))
 
 ; auto create matching parens, quotes, etc.
-(require 'autopair)
-(autopair-global-mode) ;; to enable in all buffers
+;; (require 'autopair)
+;;(autopair-global-mode) ;; to enable in all buffers
 ;; (add-hook 'c-mode-common-hook #'(lambda () (autopair-mode)))
 
 ;; Highlight manually selected symbol under point
 (require 'highlight-symbol)
-
-;;(global-set-key [(control f3)] 'highlight-symbol-at-point)
-;;(global-set-key [f3] 'highlight-symbol-at-point)
-;; (global-set-key (kbd "<Redo>") 'highlight-symbol-at-point)
 (global-set-key "\C-ch" 'highlight-symbol-at-point)  ;; conflicts w/ gtags minor mode
 (global-set-key "\C-cc" 'highlight-symbol-at-point)  ;; conflicts w/ gtags minor mode
 
@@ -95,16 +44,20 @@
 ;; key bindings
 (global-set-key "\C-cl" 'goto-line)
 (global-set-key [f4] 'refresh-file)
-(global-set-key (kbd "<XF86New>") 'refresh-file)
-
+(global-set-key (kbd "<XF86New>") 'refresh-file) ;; in case F4 name not valid
 (global-set-key [f5] 'speedbar)
 
-
-;; =======================  misc  ==============================
-
+;; Try to use Ctrl-C <letter> for user mappings
 (global-set-key "\C-co" 'occur)
+(global-set-key "\C-cp" 'ff-find-other-file)  ;;[p]air. Switch between .cpp/.h pair
 
-;; =======================  frame / window / color  ==============================
+
+(message "==============  Theme / Color ===================")
+;; set the fonts and colors 
+(global-font-lock-mode t)
+;; (parchment-screen)
+;; (set-default-font linux-font)
+(set-mouse-color "black")
 
 ;; System specific, by system name
 (cond ((string-match "wintermute" (system-name)) 
@@ -113,51 +66,42 @@
 	(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs24_defthemes")
 
 	(load-theme 'zenburn t)
-        )
+      )
 
         ((string-match "dbarrettrhl" (system-name)) 
 	 (message "WORK settings installed...")
-	 ;; colortheme  in /site-lisp
+	 ;; Emacs 24 
+	(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+	(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs24_defthemes")
+	(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized")
+	(load-theme 'solarized-dark t)
 
-	 ;;(add-to-list 'load-path "/my/path/to/color-theme-dir")	 
-	 (add-to-list 'load-path "~/.emacs.d/emacs-color-theme-solarized") ;
-	 (require 'color-theme)
-	 (require 'color-theme-solarized)
-	 (eval-after-load "color-theme"
-	   '(progn
-	      (color-theme-initialize)
-	      ;;(color-theme-charcoal-black)))
-	      (color-theme-solarized-dark)))
         )
   )
-(message "Locations settings done ===================")
-
-;; Change emacs window start size
-(if (window-system) (set-frame-size (selected-frame) 90 50))
 
 
-;; set the fonts and colors 
-(global-font-lock-mode t)
-;; (parchment-screen)
-;; (set-default-font linux-font)
-(set-mouse-color "black")
+(message "=========== Buffer Control ===================")
 
+;;  ========= yic, iswitchb, ibuffer, icicle-buffer,  IDO settings....
+;;  TODO: emacs 24 what's built in?
+;; Emacs 22.1 has new commands ‘previous-buffer’ and ‘next-buffer’ 
+;;    TODO: remove yic-buffer, remap ctrl-PgUp/PgDown
 
-
-;; =======================  buffer stuff =================================
-(message "Buffer control settings  ===================")
-
-;;  ===== yic-buffer fast buffer cycling
-;; C-x \ C-p prev buf.  C-x \ C-n next buf.
+;;  ===== yic-buffer - Switch to next/prev buffer. - Yong Il Chool circa 1990
 (load-library "yic-buffer")
+;; C-x C-p Prev buf.    
+;; C-x C-n Next buf.
+
 ;; Map C-pgup C-pgdwn
 (global-set-key [(control prior)] 'bury-buffer)
 (global-set-key [(control next)] 'yic-next-buffer)
 
-;; C-x,b shows completion in minibuffer 
+
+;; ===== iswitchb  - Switch buffers by name search.
+;; C-x b - switch-to-buffer. Shows all matches in minibuf, with incremental matching.
 ;; C-s to rotate list
-(require 'iswitchb)
-;; TODO (iswitchb-mode 1)
+;; (require 'iswitchb)    
+;; (iswitchb-mode 1)
 ;; TODO  (setq iswitchb-buffer-ignore '("^ " "*Buffer"))
 ;; USE? (setq iswitchb-default-method 'samewindow)
 
@@ -203,9 +147,69 @@
     (other-frame 1)
     (switch-to-buffer other-frame-buffer))
 )
+;; TODO (global-set-key "\C-c xxxxxx" 'switch-buffers-between-frames)
 
-;; ======================= c/ c++ / tags =================================
-(message "Misc programming settings  ===================")
+
+(message "=========== Window & Frame control  ===================")
+;; Change emacs window start size
+(if (window-system) (set-frame-size (selected-frame) 90 50))
+
+;;; WINDOW SPLITING
+(global-set-key (kbd "M-4") 'split-window-vertically) ; was digit-argument
+(global-set-key (kbd "M-3") 'delete-other-windows) ; was digit-argument
+(global-set-key (kbd "M-s") 'other-window) ; was center-line
+(global-set-key (kbd "M-b") 'balance-windows) ; was center-line
+
+;; ========  New Frame instead of buffer for occur mode and others ==========
+;; special-display-regexps  '("[ ]?[*][^*]+[*]"))
+;; FIXME:  if other frame already exists, it'll create the buffer in that frame
+;;         At least in emacsclient.
+;;         function name completion pops up frame, but minibuffer loses focus.
+
+
+;; ===== Change new windows to be side-by-side ===
+;; From LindyDancer:
+;; The default behaviour of `display-buffer' is to always create a new
+;; window, and below the current one.
+;;
+;; Reuse existing windows, unless there's a single window open on a large display.  
+;; Then open a new window to the _side_.
+
+;; (setq pop-up-windows nil)
+
+;; TODO: dmb - do for occur buffers only....
+(defun my-display-buffer-function (buf not-this-window)
+  (if (and (not pop-up-frames)
+           (one-window-p)
+           (or not-this-window
+               (not (eq (window-buffer (selected-window)) buf)))
+           (> (frame-width) 162))
+      (split-window-horizontally))
+  ;; Note: Some modules sets `pop-up-windows' to t before calling
+  ;; `display-buffer' -- Why, oh, why!
+  (let ((display-buffer-function nil)
+        (pop-up-windows nil))
+    (display-buffer buf not-this-window)))
+
+(setq display-buffer-function 'my-display-buffer-function)
+
+
+;; Set these vars to change behavior of split-window-preferred-function, split-window-sensibly
+;;    Not great. Any way to do this for only occur mode?  
+;; (setq split-height-threshold nil)
+;; (setq split-width-threshold 0)
+
+
+;; bigger default window for wide 24" screens
+(setq window-min-width 30)
+
+;; Switch windows with Shift-arrow keys vs. C-x o.
+(when (fboundp 'windmove-default-keybindings)
+      (windmove-default-keybindings))
+
+
+
+(message "=============== Misc programming settings  ===================")
 (setq-default indent-tabs-mode t)  ;; setq-default, only for buffers without local value
 (setq-default fill-column 79)
 
@@ -255,8 +259,19 @@ the character typed."
 ;;(add-hook 'c-mode-hook 'nz-c-mode) ; set the default C mode
 
 
-;;=====  GNU Global gtags ============
-(message "GNU Global config  ===================")
+(message "======= CEDET  ===================")
+;; semantic, senator, ecb, etc.
+
+;; enable
+(add-hook 'c-mode-common-hook
+    '(lambda ()
+       (semantic-mode 1)
+       (global-ede-mode 1)
+ ))
+
+
+(message "======= GTAGS - GNU Global  ===================")
+
 (setq gtags-suggested-key-mapping t)
 (add-to-list 'load-path "/usr/share/gtags/")
 (load-library "gtags")
@@ -275,11 +290,6 @@ the character typed."
       (setq hl-line-face 'underline)
       (hl-line-mode 1)
  ))
-
-;;(global-set-key [f7] 'gtags-show-tag-locations-regexp)
-;;(global-set-key [f8] 'gtags-show-callers)
-(global-set-key [f9] 'gtags-pop-tag)
-(global-set-key [f10] 'gtags-show-matching-tags)
 
 
 ;; === Gtag cycling by William Wong
@@ -301,15 +311,14 @@ the character typed."
 ;; FIXME emacs24 (global-set-key [(control meta .)] 'gtags-find-rtag)   ;; C-M-. find all references of tag
 ;; (global-set-key [(control meta ,)] 'gtags-find-symbol) ;; C-M-, find all usages of symbol.
 
-;; =======================  Misc Personal Config ============================
-(message "Personal customizations and remappings  ===================")
+
+(message " ============ Misc customizations and key re-maps  ===================")
 (defun refresh-file ()
   (interactive)
   (revert-buffer t t t)
   )
 
 ;;(menu-bar-mode nil)
-(tool-bar-mode nil)
 (setq inhibit-splash-screen t)
 (column-number-mode t)
 
@@ -324,31 +333,26 @@ the character typed."
 ;;(global-set-key "\C-x\C-k" 'kill-region)
 ;;(global-set-key "\C-c\C-k" 'kill-region);;
 
-;;; WINDOW SPLITING
-(global-set-key (kbd "M-4") 'split-window-vertically) ; was digit-argument
-(global-set-key (kbd "M-3") 'delete-other-windows) ; was digit-argument
-(global-set-key (kbd "M-s") 'other-window) ; was center-line
-(global-set-key (kbd "M-b") 'balance-windows) ; was center-line
 
-
-(message "Done with .emacs settings  ===================")
+(message "=========== Custom-mode settings...  ===================")
 ;; load in customizations, 
 ;;(load-library "~/.custom")
 
 ;;; end .emacs 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(show-paren-mode t)
+ '(tool-bar-mode nil)
  '(transient-mark-mode (quote (only . t))))
 
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(which-func ((((class color) (min-colors 88) (background dark)) (:background "LightGreen" :foreground "black"))) nil "Foreground and background colors are reversed for some reason..."))
 

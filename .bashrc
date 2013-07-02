@@ -19,7 +19,9 @@ NZPATH=/nz:/nz/kit/bin:/nz/kit/sbin:/nz/kit/bin/adm:/nz/src/tools:/nz/kit/sbin/g
 
 #/usr/kerberos/bin:/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:$HOME/bin:$HOME/bin/borrowed
 
-ECLIPSE_PATH=""
+ECLIPSE_PATH="/"
+export JAVA_HOME="/usr"
+
 
 export PATH=.:${NZPATH}:${ECLIPSE_PATH}:${HOME}/bin:${HOME}/bin/borrowed:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/bin/X11:/opt/net/tools/bin:/opt/accurev/bin
 
@@ -54,6 +56,17 @@ fi
 # Diab C compiler
 [ -f /opt/net/tools/etc/sh_diab ] && . /opt/net/tools/etc/sh_diab
 
+
+# RTC Jazz
+# lscm path needed by Paul Smith's /opt/net/tools/bin/scm'
+export SCMPATH="/jazz/scmtools/eclipse"
+alias pscm=/opt/net/tools/bin/scm
+
+#if [ -f   . ~/rtc_tools/rtc_helpers ]; then
+#  . ~/rtc_tools/rtc_helpers
+#fi
+
+
 # AccuRev
 #AC_ENABLE_COMPLETION=yes
 #AC_ENABLE_WSPROMPT=yes
@@ -65,15 +78,18 @@ export ACCUREV_DIFF_FLAGS="-up"
 
 # ---  IBM specific
 
-# Turn off virus scanner for better compile / indexing times. IBM's  WST will complain eventually.
+# Turn off symantec virus scanner for better compile / indexing times. 
+# IBM's  WST will complain eventually.
 virusoff()
 {
-sudo /etc/init.d/rtvscand stop
+  sudo /etc/init.d/rtvscand stop
+  sudo /etc/init.d/symcfgd stop
 }
 
 viruson()
 {
-sudo /etc/init.d/rtvscand start
+  sudo /etc/init.d/rtvscand start
+  sudo /etc/init.d/symcfgd start
 }
 
 ### Misc ####
@@ -233,7 +249,7 @@ alias gzip='gzip --verbose'
 alias gunzip='gunzip --verbose'
 alias env='env | sort'
 alias ghist='history | grep'
-alias gs='pushd /nz/src'
+#alias gs='pushd /nz/src'
 
 # Handy functions
 
@@ -270,7 +286,7 @@ amke() {
 export CCACHE_DIR=$EXTRA_SPACE/workspaces/$USER/ccache
 export AOS_CCACHE=ccache  # 1 time: ccache -M 10G 
 # parallel amake; if defined empty, figures out a default.
-export AOS_J=2
+export AOS_J=4
 
 
 ########  Accurev workspace helpers ##########################
@@ -291,8 +307,22 @@ nzlist() { echo "Current workspace: ";   ls -l ~/nz;
 	   
       }
 
-nznow() { ls -l $HOME/nz; }
-nzgo() { cd ~/nz/src; ac info | grep Basis;}
+nznow() {    ls -ld /home/dbarrett/nz | awk '{print $11}'  ;  }
+
+
+nzgo() { 
+   #cd $WORKSPACE_HOME/$WORKSPACE/main/src 
+   cd ~/nz/src   # Indirectly set by nztree. /nz -> /home/$user/nz -> $WORKSPACE_HOME/$WORKSPACE/main/src
+   printf "Switched to: "
+    
+   if [ -f .jazzignore ]; then 
+    printf "RTC workspace,  "   
+   else
+     ac info | grep Basis;
+   fi
+   nznow
+}
+
 achist() { ac history -fx $@ | awk -f ~/bin/achistfx.awk;}
 alias acmod='ac stat -Rp .'
 alias acshow='ac show -a tree'
@@ -302,19 +332,19 @@ acstreams() { ac show -mc -s usr-dbarrett streams |  awk '{printf ( "%-30s %s \n
 nztree() { 
         OLDPS3=$PS3
         PS3="Pick a workspace:"
-         LIST=`ls $WORKSPACE_HOME | grep -v accurev`;
+         LIST=`ls -t $WORKSPACE_HOME | grep -v accurev`;
 	 select WORKSPACE in $LIST
 	 do
 	 	 
 	   if [ ! -d "$WORKSPACE_HOME/$WORKSPACE" ]; then
              echo "Invalid workspace: $WORKSPACE_HOME/$WORKSPACE"; return 1
            fi
-           (cd "$HOME" && rm -f nz && ln -s "$WORKSPACE_HOME/$WORKSPACE/main" nz \
-	             && echo "NZ workspace set to $WORKSPACE/main");
+           (cd "$HOME" && rm -f nz && ln -s "$WORKSPACE_HOME/$WORKSPACE/main" nz );
 	   
 	   break;
 	 done
-	 cd $WORKSPACE_HOME/$WORKSPACE/main/src
+	 
+	 nzgo  # go to the newly softlinked workspace
 	 PS3=$OLDPS3
          }
          
