@@ -34,7 +34,7 @@
        (global-semantic-highlight-func-mode 1)
        (global-semantic-idle-local-symbol-highlight-mode 1)
        (global-semantic-decoration-mode 1)
-       (global-semantic-idle-completions-mode 1)
+       (global-semantic-idle-completions-mode 1)  ;; M-n M-p to rotate. C-g quit
  ))
 
 ;; Misc semantic commands and modes
@@ -42,7 +42,7 @@
 ;; Two ways to see all completions at once
 ;;   idle mode shows 1 completion.
 ;;   M-x semantic-speedbar-analysis  
-;; Command: semantic-analyze-possible-completions  ;; c-c , l
+;; Command: semantic-analyze-possible-completions  ;; c-c , l  . how to pick?
 
 (message "==============  Programming helpers ===================")
 ;;TODO : replace customer highlighers w/ emacs 24 semantic/cedet built-in's?
