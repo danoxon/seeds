@@ -43,7 +43,7 @@ sconf()
   echo "hub sends ~ten updates"
   git push origin master  
   git ls-files  # What are tracked files?
-  echo "Remaining modified files: "
+  echo "Remaining modified files- broken: "
   git status | grep modified
 }
 

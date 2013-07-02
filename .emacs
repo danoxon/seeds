@@ -20,10 +20,57 @@
     (dired-directory dired-directory "%b"))))
 
 
+(message "======= CEDET  ===================")
+;; semantic, senator, ecb, etc.
+
+;; enable
+(add-hook 'c-mode-common-hook
+    '(lambda ()
+       (semantic-mode 1)
+       (global-ede-mode 1)
+       (global-semantic-idle-breadcrumbs-mode 1)
+       (global-semantic-show-unmatched-syntax-mode 1)
+
+       (global-semantic-highlight-func-mode 1)
+       (global-semantic-idle-local-symbol-highlight-mode 1)
+       (global-semantic-decoration-mode 1)
+       (global-semantic-idle-completions-mode 1)
+ ))
+
+;; Misc semantic commands and modes
+
+;; Two ways to see all completions at once
+;;   idle mode shows 1 completion.
+;;   M-x semantic-speedbar-analysis  
+;; Command: semantic-analyze-possible-completions  ;; c-c , l
+
 (message "==============  Programming helpers ===================")
+;;TODO : replace customer highlighers w/ emacs 24 semantic/cedet built-in's?
+;; global-semantic-highlight-func-mode
+;; global-semantic-idle-local-symbol-highlight-mode
+;; ?? emacs24.cedet built-in replacement for goto-match-paren?
+
+(setq-default indent-tabs-mode t)  ;; setq-default, only for buffers without local value
+(setq-default fill-column 79)
+
+;; ======== Paren/Brace matching  ============
+(setq blink-matching-open t)
+
+;;; Use "%" to jump to the matching parenthesis.
+(defun goto-match-paren (arg)
+  "Go to the matching parenthesis if on parenthesis, otherwise insert
+the character typed."
+  (interactive "p")
+  (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
+    ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
+    (t                    (self-insert-command (or arg 1))) ))
+
+(global-set-key "%" `goto-match-paren)
+
 
 ;; Highlight word under cursor after delay.
 ;; Not tag specific like ecb-highlight-tag-with-point, but simpler config
+
 (load-library "idle-highlight-mode")
 (add-hook 'c-mode-common-hook
     '(lambda ()
@@ -52,6 +99,39 @@
 (global-set-key "\C-cp" 'ff-find-other-file)  ;;[p]air. Switch between .cpp/.h pair
 
 
+(which-func-mode t)
+;;(hl-line-mode t)
+
+;; Netezza has two standards
+;;  kernel/driver c is tabified, while .cpp is space indented.
+;; .h appears to use 4 space offset even for kernel/driver code. See dsi.h
+(defun nz-c-mode ()
+  "C mode with adjusted defaults for use at Netezza."
+  (interactive)
+  (c-set-style "linux")
+  (setq c-basic-offset 4)
+  (c-set-offset 'case-label '+)
+  (setq tab-width 4)
+  (setq indent-tabs-mode t)
+  (setq c-indent-level 4)
+  (c-set-offset 'substatement-open '0)
+;;  (require 'fillcode)
+;;  (fillcode-mode t)
+  )
+
+(defun nz-c++-mode-hook ()
+  (setq indent-tabs-mode nil)
+;;  (setq c-basic-offset 4)
+;;  (setq c-indent-level 4)
+;;  (setq tab-width 4)
+)
+
+(add-hook 'c-mode-common-hook 'nz-c-mode) ; set the default C mode
+(add-hook 'c++-mode-hook 'nz-c++-mode-hook)
+;;(add-hook 'c-mode-hook 'nz-c-mode) ; set the default C mode
+
+
+
 (message "==============  Theme / Color ===================")
 ;; set the fonts and colors 
 (global-font-lock-mode t)
@@ -75,35 +155,24 @@
 	(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs24_defthemes")
 	(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized")
 	(load-theme 'solarized-dark t)
-
         )
   )
 
 
 (message "=========== Buffer Control ===================")
+;; emacs doesn't distinguish between "using" a buffer and cycling through looking for one,
+;; like Alt-Tab in Gnome windows.  So two commonly used buffers may not be near each other
+;; in the search list.  
+;;     http://www.emacswiki.org/emacs/SwitchingBuffers
 
-;;  ========= yic, iswitchb, ibuffer, icicle-buffer,  IDO settings....
+;; iswitchb - buffer switch via incremental completion.  built-in circa Emacs20.
+;; icicles - minibuffer completion (not just buffer names) by partial match...
+;;    iswitchb, icicles overlapping func.  icicle mores general?
+;; ibuffer - C-x C-b   View buffers like dired. .  Complementary to/with icicles
+
+;; IDO  - 
+
 ;;  TODO: emacs 24 what's built in?
-;; Emacs 22.1 has new commands ‘previous-buffer’ and ‘next-buffer’ 
-;;    TODO: remove yic-buffer, remap ctrl-PgUp/PgDown
-
-;;  ===== yic-buffer - Switch to next/prev buffer. - Yong Il Chool circa 1990
-(load-library "yic-buffer")
-;; C-x C-p Prev buf.    
-;; C-x C-n Next buf.
-
-;; Map C-pgup C-pgdwn
-(global-set-key [(control prior)] 'bury-buffer)
-(global-set-key [(control next)] 'yic-next-buffer)
-
-
-;; ===== iswitchb  - Switch buffers by name search.
-;; C-x b - switch-to-buffer. Shows all matches in minibuf, with incremental matching.
-;; C-s to rotate list
-;; (require 'iswitchb)    
-;; (iswitchb-mode 1)
-;; TODO  (setq iswitchb-buffer-ignore '("^ " "*Buffer"))
-;; USE? (setq iswitchb-default-method 'samewindow)
 
 ;;  ===== ibuffer filtering
 (require 'ibuffer) 
@@ -132,6 +201,15 @@
 
 ;; Use ibuffer instead of default C-x, C-b behavior
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+
+;; ===== iswitchb    - Switch buffers by name search.
+;; C-x b - switch-to-buffer. Shows all matches in minibuf, with incremental matching.
+;; C-s to rotate list
+;; (require 'iswitchb)    
+;; (iswitchb-mode 1)
+;; TODO  (setq iswitchb-buffer-ignore '("^ " "*Buffer"))
+;; USE? (setq iswitchb-default-method 'samewindow)
 
 
 ;; Yoni Rabkin's frame switcher func 
@@ -207,67 +285,6 @@
 (when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings))
 
-
-
-(message "=============== Misc programming settings  ===================")
-(setq-default indent-tabs-mode t)  ;; setq-default, only for buffers without local value
-(setq-default fill-column 79)
-
-;; ======== Paren/Brace matching  ============
-(setq blink-matching-open t)
-
-;;; Use "%" to jump to the matching parenthesis.
-(defun goto-match-paren (arg)
-  "Go to the matching parenthesis if on parenthesis, otherwise insert
-the character typed."
-  (interactive "p")
-  (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
-    ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
-    (t                    (self-insert-command (or arg 1))) ))
-
-(global-set-key "%" `goto-match-paren)
-
-(which-func-mode t)
-;;(hl-line-mode t)
-
-;; Netezza has two standards
-;;  kernel/driver c is tabified, while .cpp is space indented.
-;; .h appears to use 4 space offset even for kernel/driver code. See dsi.h
-(defun nz-c-mode ()
-  "C mode with adjusted defaults for use at Netezza."
-  (interactive)
-  (c-set-style "linux")
-  (setq c-basic-offset 4)
-  (c-set-offset 'case-label '+)
-  (setq tab-width 4)
-  (setq indent-tabs-mode t)
-  (setq c-indent-level 4)
-  (c-set-offset 'substatement-open '0)
-;;  (require 'fillcode)
-;;  (fillcode-mode t)
-  )
-
-(defun nz-c++-mode-hook ()
-  (setq indent-tabs-mode nil)
-;;  (setq c-basic-offset 4)
-;;  (setq c-indent-level 4)
-;;  (setq tab-width 4)
-)
-
-(add-hook 'c-mode-common-hook 'nz-c-mode) ; set the default C mode
-(add-hook 'c++-mode-hook 'nz-c++-mode-hook)
-;;(add-hook 'c-mode-hook 'nz-c-mode) ; set the default C mode
-
-
-(message "======= CEDET  ===================")
-;; semantic, senator, ecb, etc.
-
-;; enable
-(add-hook 'c-mode-common-hook
-    '(lambda ()
-       (semantic-mode 1)
-       (global-ede-mode 1)
- ))
 
 
 (message "======= GTAGS - GNU Global  ===================")
