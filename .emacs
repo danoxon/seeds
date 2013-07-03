@@ -165,19 +165,20 @@ the character typed."
 
 
 (message "=========== Buffer Control ===================")
-;; emacs doesn't distinguish between "using" a buffer and cycling through looking for one,
-;; like Alt-Tab in Gnome windows.  So two commonly used buffers may not be near each other
-;; in the search list.  
-;;     http://www.emacswiki.org/emacs/SwitchingBuffers
+;; Emacs 22.1 previous-buffer, next-buffer   C-x <left> / <right>
 
-;; iswitchb - buffer switch via incremental completion.  built-in circa Emacs20.
-;; icicles - minibuffer completion (not just buffer names) by partial match...
-;;    iswitchb, icicles overlapping func.  icicle mores general?
-;; ibuffer - C-x C-b   View buffers like dired. .  Complementary to/with icicles
+;; IDO  -  Interactively DO things. Like iswitchb but works w/ C-x C-f.  In since Emacs 22.  
+;; ibuffer - C-x C-b   View buffers like dired.  Not a minibufer enhancer.
 
-;; IDO  - 
+;; Older modes w/ similar goals:
+;;     iswitchb - buffer switch via incremental completion.  built-in circa Emacs20.
+;;     icicles - minibuffer completion (not just buffer names) by partial match...
 
-;;  TODO: emacs 24 what's built in?
+
+;; IDO -  C-x b ,  C-x C-f files in same dir
+;;        TAB for name completion. Incremental completion.  Arrow keys too.
+(ido-mode t)
+
 
 ;;  ===== ibuffer filtering
 (require 'ibuffer) 
@@ -204,17 +205,9 @@ the character typed."
 (require 'ibuf-ext)
 (add-to-list 'ibuffer-never-show-predicates "^\\*") 
 
-;; Use ibuffer instead of default C-x, C-b behavior
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-
-
-;; ===== iswitchb    - Switch buffers by name search.
-;; C-x b - switch-to-buffer. Shows all matches in minibuf, with incremental matching.
-;; C-s to rotate list
-;; (require 'iswitchb)    
-;; (iswitchb-mode 1)
-;; TODO  (setq iswitchb-buffer-ignore '("^ " "*Buffer"))
-;; USE? (setq iswitchb-default-method 'samewindow)
+;; Use ibuffer to filter garbage buffer names and categorize known buffer types.
+;; For C-x, C-b
+(global-set-key (kbd "C-x C-b") 'ibuffer)  
 
 
 ;; Yoni Rabkin's frame switcher func 
@@ -356,7 +349,7 @@ the character typed."
 ;;(global-set-key "\C-c\C-k" 'kill-region);;
 
 
-(message "=========== Custom-mode settings...  ===================")
+(message "=========== Settings changed by emacs' Custom-mode...  ===================")
 ;; load in customizations, 
 ;;(load-library "~/.custom")
 
