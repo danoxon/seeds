@@ -22,27 +22,32 @@
 
 (message "======= CEDET  ===================")
 ;; semantic, senator, ecb, etc.
-
-;; enable
 (add-hook 'c-mode-common-hook
     '(lambda ()
        (semantic-mode 1)
        (global-ede-mode 1)
-       (global-semantic-idle-breadcrumbs-mode 1)
+;;       (global-semantic-idle-breadcrumbs-mode 1) ;; Show current tag's lineage in headline.
        (global-semantic-show-unmatched-syntax-mode 1)
-
+       (global-semantic-mru-bookmark-mode 1) ;; C-x B <name> to return to recently edited function or class.
+       
        (global-semantic-highlight-func-mode 1)
        (global-semantic-idle-local-symbol-highlight-mode 1)
-       (global-semantic-decoration-mode 1)
        (global-semantic-idle-completions-mode 1)  ;; M-n M-p to rotate. C-g quit
+
+       (global-semantic-decoration-mode 1)  ;; Line above funcs.  Missing includes in red.
+;;       (setq semantic-add-system-include ~/nz/src/nde/fcomm) 
  ))
+
+;;configure include paths for parsing
+;; semantic-add-system-include dir &optional mode
+;; semantic-customize-system-include-path &optional mode
+;; semanticdb-implied-include-tags
 
 ;; Misc semantic commands and modes
 
 ;; Two ways to see all completions at once
-;;   idle mode shows 1 completion.
 ;;   M-x semantic-speedbar-analysis  
-;; Command: semantic-analyze-possible-completions  ;; c-c , l  . how to pick?
+;; Command: semantic-analyze-possible-completions    
 
 (message "==============  Programming helpers ===================")
 ;;TODO : replace customer highlighers w/ emacs 24 semantic/cedet built-in's?
