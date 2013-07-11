@@ -38,7 +38,7 @@ sconf()
 {
   # only add (update) tracked files. New files not affected unless pattern supplied
   git add -u   
-  git commit -m "another update"
+  git commit -m "another update"  > /dev/null #Don't want to see Untracked files.
   echo "======= Files to be updated ========"
   git status -s  | grep -v  '??'
   echo "hub sends ~ten updates"
