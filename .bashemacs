@@ -43,7 +43,7 @@ sconf()
 {
   # only add (update) tracked files. New files not affected unless pattern supplied
   git add -u   
-  git commit -uno -m "another update"   #Don't want to see Untracked files.
+  git commit -uno -m "another update..."   #Don't want to see Untracked files.
   echo "hub sends ~ten updates"
   git push origin master  
 #  git ls-files  # What are tracked files?
