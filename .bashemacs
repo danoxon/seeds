@@ -45,6 +45,7 @@ sconf()
   git add -u   
   echo "======== Changes to be pushed ============"
   git status -s -uno  # Status cleared by commit.
+  echo "=========================================="
   git commit -uno -m "another update..."   #Don't want to see Untracked files.
   echo "hub sends ~ten updates"
   git push origin master  
