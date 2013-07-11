@@ -34,6 +34,8 @@ tar -czf ~/Dropbox/emacsconf.tgz  ~/.*emacs ~/.emacs.d ~/.bashemacs ~/.bashrc ~/
 }
 
 sstat() {
+ # status only shows things that haven't been committed.
+ 
  git status -s -uno
 }
 #Save Config files for emacs + related - github for now
