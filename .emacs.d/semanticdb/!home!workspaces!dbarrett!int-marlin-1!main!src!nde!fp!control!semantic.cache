@@ -1,0 +1,801 @@
+;; Object control/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "control/"
+  :tables
+  (list
+    (semanticdb-table "fpControlDataReturn.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("fpControlDataReturn.h" include nil nil [239 271])
+            ("fpControlNzcfgDataReturnConfig.h" include nil nil [272 315])
+            ("recordstore.h" include nil nil [316 340])
+            ("spoolfile.h" include (:system-flag t) nil [342 364])
+            ("rcOs.h" include (:system-flag t) nil [365 382])
+            ("rcEnv.h" include (:system-flag t) nil [383 401])
+            ("fp::control" using (:type ("fp::control" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [403 431])
+            ("DataReturn" function
+               (:constructor-flag t
+                :parent "DataReturn"
+                :arguments 
+                  ( ("config" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("DataReturnConfig" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [459 490]))                  
+                :type ("DataReturn" type (:type "class") nil nil))
+                nil [436 874])
+            ("DataReturn" function
+               (:destructor-flag t
+                :parent "DataReturn"
+                :type "void")
+                nil [877 1042])
+            ("initialize" function
+               (:parent "DataReturn"
+                :arguments 
+                  ( ("workItemId" variable (:type "int") (reparse-symbol arg-sub-list) [1072 1087]))                  
+                :type "void")
+                nil [1044 1331])
+            ("checkProducerPrerequisites" function
+               (:parent "DataReturn"
+                :typemodifiers ("inline")
+                :type "void")
+                nil [1334 1458])
+            ("checkConsumerPrerequisites" function
+               (:parent "DataReturn"
+                :typemodifiers ("inline")
+                :type "void")
+                nil [1460 1584])
+            ("availableBlocks" function
+               (:parent "DataReturn"
+                :typemodifiers ("inline")
+                :type "bool")
+                nil [1586 1699])
+            ("allocateBlock" function
+               (:pointer 1
+                :parent "DataReturn"
+                :arguments 
+                  ( ("blockSize" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1733 1750]))                  
+                :type "void")
+                nil [1701 2068])
+            ("freeBlock" function
+               (:parent "DataReturn"
+                :arguments 
+                  ( ("dataBlock" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2097 2113]))                  
+                :type "void")
+                nil [2070 2165])
+            ("startSpooling" function
+               (:parent "DataReturn"
+                :type "void")
+                nil [2167 2352])
+            ("sendBlock" function
+               (:parent "DataReturn"
+                :arguments 
+                  ( ("dataBlock" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2381 2397])
+                    ("recordCount" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2398 2417]))                  
+                :type "void")
+                nil [2354 4125])
+            ("endOfBlocks" function
+               (:parent "DataReturn"
+                :type "void")
+                nil [4127 4262])
+            ("endOfBlocksNoLock" function
+               (:parent "DataReturn"
+                :type "void")
+                nil [4264 4370])
+            ("abortSending" function
+               (:parent "DataReturn"
+                :type "void")
+                nil [4372 4552])
+            ("readBlock" function
+               (:pointer 1
+                :parent "DataReturn"
+                :type ("TMemblockInfo" type (:type "class") nil nil))
+                nil [4555 5908])
+            ("abortReading" function
+               (:parent "DataReturn"
+                :type "void")
+                nil [5910 6050])
+            ("clear" function
+               (:parent "DataReturn"
+                :type "void")
+                nil [6160 6527])
+            ("sendBlock" function
+               (:parent "DataReturnProducer"
+                :arguments 
+                  ( ("block" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6565 6577])
+                    ("recordCount" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6578 6597]))                  
+                :type "void")
+                nil [6530 6735]))          
+      :file "fpControlDataReturn.cpp"
+      :pointmax 6736
+      :fsize 6735
+      :lastmodtime '(20893 15414 560511 573000)
+      :unmatched-syntax '((punctuation 874 . 875) (punctuation 874 . 875)))
+    (semanticdb-table "fpControlDataReturn.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("FPCONTROLDATARETURN_INCLUDE" variable (:constant-flag t) nil [45 72])
+            ("fpControlUtils.h" include nil nil [372 399])
+            ("fpControlConstants.h" include nil nil [400 431])
+            ("fpEngineDataReturn.h" include nil nil [432 463])
+            ("memNewDelete.h" include nil nil [464 489])
+            ("rcFixedSizeArray.h" include nil nil [490 519])
+            ("perflog.h" include nil nil [521 541])
+            ("TMemblockInfo" type
+               (:prototype t
+                :type "class")
+                nil [543 563])
+            ("SpoolFile" type
+               (:prototype t
+                :type "class")
+                nil [565 581])
+            ("fp" type
+               (:members 
+                  ( ("control" type
+                       (:members 
+                          ( ("utils::PthreadMutex" using (:type ("utils::PthreadMutex" type
+                                 (:prototype t
+                                  :type "class")
+                                  nil nil)) (reparse-symbol namespacesubparts) [619 645])
+                            ("utils::PthreadCondition" using (:type ("utils::PthreadCondition" type
+                                 (:prototype t
+                                  :type "class")
+                                  nil nil)) (reparse-symbol namespacesubparts) [646 676])
+                            ("DataReturnProducer" type
+                               (:prototype t
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [678 703])
+                            ("DataReturnConsumer" type
+                               (:prototype t
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [704 729])
+                            ("DataReturnConfig" type
+                               (:prototype t
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [730 753])
+                            ("DataReturn" type
+                               (:members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [775 782])
+                                    ("DataReturn" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :arguments 
+                                          ( ("config" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("DataReturnConfig" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [863 894]))                                          
+                                        :type ("DataReturn" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [852 895])
+                                    ("DataReturn" function
+                                       (:prototype-flag t
+                                        :destructor-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [901 915])
+                                    ("initialize" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("workItemId" variable (:type "int") (reparse-symbol arg-sub-list) [985 1000]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [969 1001])
+                                    ("clear" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1007 1020])
+                                    ("isSpoolingActive" function (:type "bool") (reparse-symbol classsubparts) [1058 1128])
+                                    ("private" label nil (reparse-symbol classsubparts) [1130 1138])
+                                    ("Side" type
+                                       (:members 
+                                          ( ("PRODUCER" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [1163 1172])
+                                            ("CONSUMER" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [1173 1187]))                                          
+                                        :type "enum")
+                                        (reparse-symbol classsubparts) [1143 1188])
+                                    ("m_size" variable (:type "int") (reparse-symbol classsubparts) [1194 1205])
+                                    ("m_array" variable (:type ("rc::FixedSizeArrayShm" type
+                                         (:template-specifier 
+                                            ( ("void" type (:pointer 1) nil nil)
+                                              ("mt_fast_path" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol classsubparts) [1210 1261])
+                                    ("public" label nil (reparse-symbol classsubparts) [1263 1270])
+                                    ("m_mutex" variable (:type ("PthreadMutex" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1275 1296])
+                                    ("m_availableBlockCondition" variable (:type ("PthreadCondition" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1301 1344])
+                                    ("m_availablePlaceInSpoolFileCondition" variable (:type ("PthreadCondition" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1349 1403])
+                                    ("private" label nil (reparse-symbol classsubparts) [1404 1412])
+                                    ("m_availableBlockInQueueCount" variable (:type "int") (reparse-symbol classsubparts) [1417 1450])
+                                    ("m_endOfBlocks" variable (:type "bool") (reparse-symbol classsubparts) [1455 1474])
+                                    ("m_firstBlock" variable (:type "int") (reparse-symbol classsubparts) [1479 1496])
+                                    ("m_spoolCapacity" variable
+                                       (:constant-flag t
+                                        :type ("int64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1502 1532])
+                                    ("m_spooledBytes" variable (:type "int") (reparse-symbol classsubparts) [1537 1556])
+                                    ("m_spoolingActive" variable (:type "bool") (reparse-symbol classsubparts) [1561 1583])
+                                    ("m_spoolFile" variable
+                                       (:pointer 1
+                                        :type ("SpoolFile" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1588 1611])
+                                    ("m_sendingAborted" variable (:type "bool") (reparse-symbol classsubparts) [1617 1639])
+                                    ("m_readingAborted" variable (:type "bool") (reparse-symbol classsubparts) [1644 1666])
+                                    ("checkProducerPrerequisites" function
+                                       (:prototype-flag t
+                                        :typemodifiers ("inline")
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1672 1724])
+                                    ("checkConsumerPrerequisites" function
+                                       (:prototype-flag t
+                                        :typemodifiers ("inline")
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1734 1786])
+                                    ("availableBlocks" function
+                                       (:prototype-flag t
+                                        :typemodifiers ("inline")
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [1796 1837])
+                                    ("allocateBlock" function
+                                       (:prototype-flag t
+                                        :pointer 1
+                                        :arguments 
+                                          ( ("blockSize" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1864 1881]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1844 1882])
+                                    ("sendBlock" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("block" variable
+                                               (:pointer 1
+                                                :type "void")
+                                                (reparse-symbol arg-sub-list) [1903 1915])
+                                            ("recordCount" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1916 1935]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1888 1936])
+                                    ("freeBlock" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("block" variable
+                                               (:pointer 1
+                                                :type "void")
+                                                (reparse-symbol arg-sub-list) [1957 1969]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1942 1970])
+                                    ("endOfBlocks" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [2154 2173])
+                                    ("endOfBlocksNoLock" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [2178 2203])
+                                    ("abortSending" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [2387 2407])
+                                    ("readBlock" function
+                                       (:prototype-flag t
+                                        :pointer 1
+                                        :type ("TMemblockInfo" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2680 2707])
+                                    ("startSpooling" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [2714 2735])
+                                    ("abortReading" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [3008 3028])
+                                    ("DataReturnProducer" friend nil (reparse-symbol classsubparts) [3034 3065])
+                                    ("DataReturnConsumer" friend nil (reparse-symbol classsubparts) [3071 3102]))                                  
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [755 3106])
+                            ("PERFLOG_CTX_GLOBAL" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("" variable (:type ("DataReturn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3127 3138]))                                  
+                                :type "int")
+                                (reparse-symbol namespacesubparts) [3108 3162])
+                            ("DataReturnProducer" type
+                               (:superclasses 
+                                  ( ("fp::engine::DataReturn" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  
+                                :members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [3224 3231])
+                                    ("DataReturnProducer" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("dataReturn" variable
+                                               (:pointer 1
+                                                :type ("fp::control::DataReturn" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [3256 3292]))                                          
+                                        :type ("DataReturnProducer" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3237 3611])
+                                    ("allocateBlock" function
+                                       (:pointer 1
+                                        :arguments 
+                                          ( ("blockSize" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3820 3837]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [3800 3961])
+                                    ("freeBlock" function
+                                       (:arguments 
+                                          ( ("block" variable
+                                               (:pointer 1
+                                                :type "void")
+                                                (reparse-symbol arg-sub-list) [4160 4172]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [4145 4280])
+                                    ("sendBlock" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("block" variable
+                                               (:pointer 1
+                                                :type "void")
+                                                (reparse-symbol arg-sub-list) [4568 4580])
+                                            ("recordCount" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4581 4600]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [4553 4601])
+                                    ("endOfBlocks" function (:type "void") (reparse-symbol classsubparts) [4785 4910])
+                                    ("abortSending" function (:type "void") (reparse-symbol classsubparts) [5094 5222])
+                                    ("private" label nil (reparse-symbol classsubparts) [5224 5232])
+                                    ("PERFLOG_MEMBER" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("" variable (:type ("DataReturn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5252 5263])
+                                            ("" variable (:type ("allocBlock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5264 5275])
+                                            ("" variable (:type "int") (reparse-symbol arg-sub-list) [5276 5280]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [5237 5281])
+                                    ("PERFLOG_MEMBER" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("" variable (:type ("DataReturn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5301 5312])
+                                            ("" variable (:type ("freeBlock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5313 5323])
+                                            ("" variable (:type "int") (reparse-symbol arg-sub-list) [5324 5328]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [5286 5329])
+                                    ("PERFLOG_MEMBER" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("" variable (:type ("DataReturn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5349 5360])
+                                            ("" variable (:type ("sendBlock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5361 5371])
+                                            ("" variable (:type "int") (reparse-symbol arg-sub-list) [5372 5376]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [5334 5377])
+                                    ("PERFLOG_MEMBER" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("" variable (:type ("DataReturn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5397 5408])
+                                            ("" variable (:type ("endOfBlocks" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5409 5421])
+                                            ("" variable (:type "int") (reparse-symbol arg-sub-list) [5422 5426]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [5382 5427])
+                                    ("PERFLOG_MEMBER" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("" variable (:type ("DataReturn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5447 5458])
+                                            ("" variable (:type ("abortSending" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5459 5472])
+                                            ("" variable (:type "int") (reparse-symbol arg-sub-list) [5473 5477]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [5432 5478])
+                                    ("m_dataReturn" variable
+                                       (:pointer 1
+                                        :type ("fp::control::DataReturn" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5483 5521]))                                  
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [3164 5524])
+                            ("DataReturnConsumer" type
+                               (:members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [5554 5561])
+                                    ("DataReturnConsumer" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("dataReturn" variable
+                                               (:pointer 1
+                                                :type ("DataReturn" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [5585 5608]))                                          
+                                        :type ("DataReturnConsumer" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [5566 5791])
+                                    ("readBlock" function
+                                       (:pointer 1
+                                        :type ("TMemblockInfo" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [6065 6201])
+                                    ("abortReading" function (:type "void") (reparse-symbol classsubparts) [6474 6602])
+                                    ("private" label nil (reparse-symbol classsubparts) [6604 6612])
+                                    ("PERFLOG_MEMBER" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("" variable (:type ("DataReturn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6632 6643])
+                                            ("" variable (:type ("abortReading" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6644 6657])
+                                            ("" variable (:type "int") (reparse-symbol arg-sub-list) [6658 6662]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [6617 6663])
+                                    ("PERFLOG_MEMBER" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("" variable (:type ("DataReturn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6683 6694])
+                                            ("" variable (:type ("readBlock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6695 6705])
+                                            ("" variable (:type "int") (reparse-symbol arg-sub-list) [6706 6710]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [6668 6711])
+                                    ("m_dataReturn" variable
+                                       (:pointer 1
+                                        :type ("DataReturn" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [6716 6741]))                                  
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [5526 6744]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [598 6747]))                  
+                :type "namespace")
+                nil [583 6771]))          
+      :file "fpControlDataReturn.h"
+      :pointmax 6828
+      :fsize 6831
+      :lastmodtime '(20893 15414 575462 981000)
+      :unmatched-syntax '((thing 5791 . 5792) (thing 3611 . 3612) (thing 3139 . 3160) (thing 3102 . 3103) (thing 3065 . 3066))
+      :lexical-table 
+        '(("FPCONTROLDATARETURN_INCLUDE")
+          )
+)
+    (semanticdb-table "fpControlUtils.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("CONTROL_UTILS_H_" variable (:constant-flag t) nil [34 50])
+            ("stdio.h" include (:system-flag t) nil [52 70])
+            ("memInterface.h" include (:system-flag t) nil [71 96])
+            ("signal.h" include (:system-flag t) nil [97 116])
+            ("pthread.h" include (:system-flag t) nil [117 137])
+            ("error.h" include nil nil [138 156])
+            ("nzpthread.h" include nil nil [157 179])
+            ("rcLog.h" include nil nil [401 426])
+            ("rcOut.h" include nil nil [427 452])
+            ("EP_LOG" variable (:constant-flag t) nil [468 474])
+            ("NZ_VERIFIED_CALL" variable (:constant-flag t) nil [542 558])
+            ("rc" type
+               (:members 
+                  ( ("PthreadSpinLock" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [834 841])
+                            ("PthreadSpinLock" function
+                               (:constructor-flag t
+                                :type ("PthreadSpinLock" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [850 980])
+                            ("PthreadSpinLock" function
+                               (:destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [990 1099])
+                            ("lock" function (:type "void") (reparse-symbol classsubparts) [1109 1212])
+                            ("unlock" function (:type "void") (reparse-symbol classsubparts) [1222 1331])
+                            ("private" label nil (reparse-symbol classsubparts) [1337 1345])
+                            ("m_lock" variable (:type ("pthread_spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1354 1380]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [806 1383])
+                    ("AutoSpinLock" type
+                       (:members 
+                          ( ("m_lock" variable (:type ("PthreadSpinLock" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1410 1434])
+                            ("AutoSpinLock" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("lock" variable
+                                       (:reference 1
+                                        :type ("PthreadSpinLock" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1453 1475]))                                  
+                                :type ("AutoSpinLock" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1440 1536])
+                            ("AutoSpinLock" function
+                               (:destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [1542 1590]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1385 1593]))                  
+                :type "namespace")
+                nil [791 1595])
+            ("fp" type
+               (:members 
+                  ( ("control" type
+                       (:members 
+                          ( ("utils" type
+                               (:members 
+                                  ( ("SpuAddressesLoader" type
+                                       (:members 
+                                          ( ("public" label nil (reparse-symbol classsubparts) [1687 1694])
+                                            ("SpuAddressesLoader" function
+                                               (:prototype-flag t
+                                                :constructor-flag t
+                                                :type ("SpuAddressesLoader" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [1699 1720])
+                                            ("spuCnt" variable (:type "int") (reparse-symbol classsubparts) [1730 1741])
+                                            ("spuAddresses" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol classsubparts) [1746 1766])
+                                            ("private" label nil (reparse-symbol classsubparts) [1772 1780])
+                                            ("loadSpuAddresses" function
+                                               (:prototype-flag t
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [1785 1809])
+                                            ("loadSpuAddressesOnSpuv" function
+                                               (:prototype-flag t
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [1814 1844])
+                                            ("loadSpuAddressesOnRealSpu" function
+                                               (:prototype-flag t
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [1849 1882])
+                                            ("ac" variable (:type ("mem::AllocContext" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1888 1909]))                                          
+                                        :type "class")
+                                        (reparse-symbol namespacesubparts) [1652 1912])
+                                    ("PthreadCondition" type
+                                       (:prototype t
+                                        :type "class")
+                                        (reparse-symbol namespacesubparts) [1914 1937])
+                                    ("PthreadMutex" type
+                                       (:members 
+                                          ( ("public" label nil (reparse-symbol classsubparts) [1964 1971])
+                                            ("PthreadMutex" function
+                                               (:constructor-flag t
+                                                :type ("PthreadMutex" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [1980 2074])
+                                            ("PthreadMutex" function
+                                               (:destructor-flag t
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [2084 2158])
+                                            ("lock" function (:type "void") (reparse-symbol classsubparts) [2168 2235])
+                                            ("unlock" function (:type "void") (reparse-symbol classsubparts) [2245 2316])
+                                            ("private" label nil (reparse-symbol classsubparts) [2683 2691])
+                                            ("m_mutex" variable (:type ("pthread_mutex_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2700 2724])
+                                            ("PthreadCondition" friend nil (reparse-symbol classsubparts) [2734 2763]))                                          
+                                        :type "class")
+                                        (reparse-symbol namespacesubparts) [1939 2767])
+                                    ("PthreadCondition" type
+                                       (:members 
+                                          ( ("public" label nil (reparse-symbol classsubparts) [2798 2805])
+                                            ("PthreadCondition" function
+                                               (:constructor-flag t
+                                                :type ("PthreadCondition" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [2817 2916])
+                                            ("PthreadCondition" function
+                                               (:destructor-flag t
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [2926 3006])
+                                            ("wait" function
+                                               (:arguments 
+                                                  ( ("mutex" variable
+                                                       (:reference 1
+                                                        :type ("PthreadMutex" type (:type "class") nil nil))
+                                                        (reparse-symbol arg-sub-list) [3026 3046]))                                                  
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [3016 3120])
+                                            ("signal" function (:type "void") (reparse-symbol classsubparts) [3130 3204])
+                                            ("broadcast" function (:type "void") (reparse-symbol classsubparts) [3222 3302])
+                                            ("private" label nil (reparse-symbol classsubparts) [3675 3683])
+                                            ("m_condition" variable (:type ("pthread_cond_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3692 3719]))                                          
+                                        :type "class")
+                                        (reparse-symbol namespacesubparts) [2769 3722])
+                                    ("AutoMutexLock" type
+                                       (:members 
+                                          ( ("public" label nil (reparse-symbol classsubparts) [3750 3757])
+                                            ("AutoMutexLock" function
+                                               (:constructor-flag t
+                                                :arguments 
+                                                  ( ("mutex" variable
+                                                       (:reference 1
+                                                        :type ("PthreadMutex" type (:type "class") nil nil))
+                                                        (reparse-symbol arg-sub-list) [3780 3800]))                                                  
+                                                :type ("AutoMutexLock" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [3766 3876])
+                                            ("AutoMutexLock" function
+                                               (:destructor-flag t
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [3886 3944])
+                                            ("private" label nil (reparse-symbol classsubparts) [3950 3958])
+                                            ("m_mutex" variable (:type ("PthreadMutex" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3967 3989]))                                          
+                                        :type "class")
+                                        (reparse-symbol namespacesubparts) [3724 3992])
+                                    ("AutoSignalMasker" type
+                                       (:members 
+                                          ( ("oldset" variable (:type ("sigset_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4024 4040])
+                                            ("public" label nil (reparse-symbol classsubparts) [4044 4051])
+                                            ("AutoSignalMasker" function
+                                               (:constructor-flag t
+                                                :arguments 
+                                                  ( ("set" variable
+                                                       (:reference 1
+                                                        :constant-flag t
+                                                        :type ("sigset_t" type (:type "class") nil nil))
+                                                        (reparse-symbol arg-sub-list) [4071 4091]))                                                  
+                                                :type ("AutoSignalMasker" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [4054 4181])
+                                            ("AutoSignalMasker" function
+                                               (:destructor-flag t
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [4185 4294]))                                          
+                                        :type "class")
+                                        (reparse-symbol namespacesubparts) [3996 4298])
+                                    ("SignalSet" type
+                                       (:members 
+                                          ( ("set" variable (:type ("sigset_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4322 4336])
+                                            ("public" label nil (reparse-symbol classsubparts) [4338 4345])
+                                            ("SignalSet" function
+                                               (:constructor-flag t
+                                                :arguments 
+                                                  ( ("fill" variable (:type "bool") (reparse-symbol arg-sub-list) [4358 4368]))                                                  
+                                                :type ("SignalSet" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [4348 4535])
+                                            ("add" function
+                                               (:arguments 
+                                                  ( ("sig" variable (:type "int") (reparse-symbol arg-sub-list) [4554 4562]))                                                  
+                                                :type ("SignalSet" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [4539 4632])
+                                            ("del" function
+                                               (:arguments 
+                                                  ( ("sig" variable (:type "int") (reparse-symbol arg-sub-list) [4650 4658]))                                                  
+                                                :type ("SignalSet" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [4635 4728])
+                                            ("sigset_t" function (:type "int") (reparse-symbol classsubparts) [4741 4774])
+                                            ("&" function
+                                               (:operator-flag t
+                                                :pointer 1
+                                                :constant-flag t
+                                                :type ("sigset_t" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [4778 4827]))                                          
+                                        :type "class")
+                                        (reparse-symbol namespacesubparts) [4301 4831]))                                  
+                                :type "namespace")
+                                (reparse-symbol namespacesubparts) [1633 4836]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [1613 4858]))                  
+                :type "namespace")
+                nil [1598 4882]))          
+      :file "fpControlUtils.h"
+      :pointmax 4935
+      :fsize 4934
+      :lastmodtime '(20893 15414 529525 28000)
+      :unmatched-syntax '((OPERATOR 4732 . 4740) (punctuation 2763 . 2764) (punctuation 1595 . 1596))
+      :lexical-table 
+        '(("CONTROL_UTILS_H_")
+          ("NZ_VERIFIED_CALL" (spp-arg-list ("call") 558 . 564) . 
+              ((DO "do" 571 . 573) (semantic-list "{ \\
+        int ret = call; \\
+        char errorMessage[200]; \\
+        snprintf(errorMessage, 200, #call \" error: (%d:%s)\", ret, strerror(ret)); \\
+        NZ_VERIFY_STR( ret == 0, errorMessage ); \\
+    }" 574 . 778) (WHILE "while" 779 . 784) (semantic-list "(0)" 785 . 788)))
+          ("EP_LOG" (spp-arg-list ("fmt" "...") 474 . 485) . ((symbol "LOG_PR" 486 . 492) (semantic-list "((fmt, ## __VA_ARGS__))" 492 . 515)))
+          )
+)
+    (semanticdb-table "fpControlNzcfgDataReturnConfig.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("FPCONTROLNZCFGDATARETURNCONFIG_H" variable (:constant-flag t) nil [312 344])
+            ("fpControlDataReturnConfig.h" include nil nil [347 385])
+            ("nzconfig.h" include nil nil [387 408])
+            ("fp" type
+               (:members 
+                  ( ("control" type
+                       (:members 
+                          ( ("NzcfgDataReturnConfig" type
+                               (:superclasses 
+                                  ( ("DataReturnConfig" type
+                                       (:protection "unspecified"
+                                        :type "class")
+                                        nil nil))                                  
+                                :members 
+                                  ( ("NzcfgDataReturnConfig" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :arguments 
+                                          ( ("inMemoryQueueSize" variable (:type "int") (reparse-symbol arg-sub-list) [526 548]))                                          
+                                        :type ("NzcfgDataReturnConfig" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [504 549])
+                                    ("getInMemoryQueueSize" function
+                                       (:prototype-flag t
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [558 591])
+                                    ("getSpoolCapacityMB" function
+                                       (:prototype-flag t
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [600 631])
+                                    ("private" label nil (reparse-symbol classsubparts) [637 645])
+                                    ("m_inMemoryQueueSize" variable (:type "int") (reparse-symbol classsubparts) [654 678]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [446 681]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [425 684]))                  
+                :type "namespace")
+                nil [410 685]))          
+      :file "fpControlNzcfgDataReturnConfig.h"
+      :pointmax 734
+      :fsize 733
+      :lastmodtime '(20893 15414 551659 813000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FPCONTROLNZCFGDATARETURNCONFIG_H")
+          )
+)
+    (semanticdb-table "fpControlConstants.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("FPCONTROL_CONTSTANTS_H" variable (:constant-flag t) nil [230 252])
+            ("PERFLOG_RECORDS_PER_FLUSH" variable (:constant-flag t) nil [262 287])
+            ("" type
+               (:members 
+                  ( ("EXECUTION_GROUP_STARTUP_TIMEOUT" variable
+                       (:constant-flag t
+                        :default-value (337 340)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [303 340])
+                    ("EXECUTION_GROUP_SHUTDOWN_TIMEOUT" variable
+                       (:constant-flag t
+                        :default-value (381 384)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [346 384]))                  
+                :type "enum")
+                nil [292 387]))          
+      :file "fpControlConstants.h"
+      :pointmax 422
+      :fsize 421
+      :lastmodtime '(20893 15414 559622 465000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FPCONTROL_CONTSTANTS_H")
+          ("PERFLOG_RECORDS_PER_FLUSH" . ((number "50" 288 . 290)))
+          )
+)
+    (semanticdb-table "fpControlDataReturnConfig.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("FPCONTROLDATARETURNCONFIG_H" variable (:constant-flag t) nil [273 300])
+            ("fp" type
+               (:members 
+                  ( ("control" type
+                       (:members 
+                          ( ("DataReturnConfig" type
+                               (:members 
+                                  ( ("getInMemoryQueueSize" function
+                                       (:pure-virtual-flag t
+                                        :prototype-flag t
+                                        :typemodifiers ("virtual")
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [370 415])
+                                    ("getSpoolCapacityMB" function
+                                       (:pure-virtual-flag t
+                                        :prototype-flag t
+                                        :typemodifiers ("virtual")
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [420 463]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [340 467]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [319 470]))                  
+                :type "namespace")
+                nil [303 471]))          
+      :file "fpControlDataReturnConfig.h"
+      :pointmax 515
+      :fsize 514
+      :lastmodtime '(20893 15414 558599 349000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FPCONTROLDATARETURNCONFIG_H")
+          )
+))
+  :file "!home!workspaces!dbarrett!int-marlin-1!main!src!nde!fp!control!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

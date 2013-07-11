@@ -1,0 +1,984 @@
+;; Object algorithm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "algorithm/"
+  :tables
+  (list
+    (semanticdb-table "fpAlgorithmHashJoin.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("FP_ALGORITHM_HASHJOIN_H" variable (:constant-flag t) nil [41 64])
+            ("fpAlgorithmHashTable.h" include nil nil [66 99])
+            ("fp" type
+               (:members 
+                  ( ("algorithm" type
+                       (:members 
+                          ( ("JoinBucketHeader" type
+                               (:template 
+                                  ( ("IT" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("next" variable
+                                       (:pointer 1
+                                        :type ("JoinBucketHeader" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [875 898])
+                                    ("capacity" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [903 919])
+                                    ("fullness" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [924 940])
+                                    ("hash" variable (:type ("IT" type (:type "class") nil nil)) (reparse-symbol classsubparts) [945 953])
+                                    ("content" variable
+                                       (:dereference 1
+                                        :type "char")
+                                        (reparse-symbol classsubparts) [958 974]))                                  )
+                                (reparse-symbol namespacesubparts) [825 1077])
+                            ("MarkLooker" type
+                               (:members 
+                                  ( ("MarkLooker" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("pointers" variable
+                                               (:pointer 2
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [1114 1136])
+                                            ("numberOfNonOrphans_p" variable
+                                               (:pointer 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [1137 1163])
+                                            ("innerTableItem" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [1164 1191]))                                          
+                                        :type ("MarkLooker" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [1103 1321])
+                                    ("()" function
+                                       (:operator-flag t
+                                        :arguments 
+                                          ( ("length" variable (:type ("int32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1344 1357]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1327 1513])
+                                    ("m_pointers" variable
+                                       (:pointer 2
+                                        :type "char")
+                                        (reparse-symbol classsubparts) [1519 1543])
+                                    ("m_numberOfNonOrphans_p" variable
+                                       (:pointer 1
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [1548 1584])
+                                    ("m_innerTableItem" variable
+                                       (:pointer 1
+                                        :type "char")
+                                        (reparse-symbol classsubparts) [1589 1619]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [1079 1622])
+                            ("hashTableSection" type
+                               (:members 
+                                  ( ("recordsChunk" variable (:type ("codec::ChunkRecord::Pointer" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1933 1974])
+                                    ("hashesChunk" variable (:type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2069 2110])
+                                    ("recordsChunkCount" variable (:type "int") (reparse-symbol classsubparts) [2115 2137]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [1903 2218])
+                            ("hashTableObjectBase" type
+                               (:members 
+                                  ( ("hashTableObjectBase" function
+                                       (:constructor-flag t
+                                        :type ("hashTableObjectBase" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [2273 2450])
+                                    ("fillTable" function
+                                       (:pure-virtual-flag t
+                                        :prototype-flag t
+                                        :typemodifiers ("virtual")
+                                        :arguments 
+                                          ( ("hashCount" variable (:type "int") (reparse-symbol arg-sub-list) [2479 2493])
+                                            ("numSections" variable (:type "int") (reparse-symbol arg-sub-list) [2494 2510]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [2456 2515])
+                                    ("doJoinWithDisable" function
+                                       (:pure-virtual-flag t
+                                        :prototype-flag t
+                                        :typemodifiers ("virtual")
+                                        :arguments 
+                                          ( ("countsData" variable
+                                               (:pointer 1
+                                                :type ("int32" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [2551 2569])
+                                            ("tempHashPointers" variable
+                                               (:reference 1
+                                                :type ("std::vector" type
+                                                     (:template-specifier 
+                                                        ( ("uint64" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [2570 2609])
+                                            ("streamingDataSize" variable (:type "int") (reparse-symbol arg-sub-list) [2644 2666])
+                                            ("streamingHashesChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [2667 2719])
+                                            ("disableChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [2754 2798]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [2521 2803])
+                                    ("doJoinWithoutDisable" function
+                                       (:pure-virtual-flag t
+                                        :prototype-flag t
+                                        :typemodifiers ("virtual")
+                                        :arguments 
+                                          ( ("countsData" variable
+                                               (:pointer 1
+                                                :type ("int32" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [2842 2860])
+                                            ("tempHashPointers" variable
+                                               (:reference 1
+                                                :type ("std::vector" type
+                                                     (:template-specifier 
+                                                        ( ("uint64" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [2861 2900])
+                                            ("streamingDataSize" variable (:type "int") (reparse-symbol arg-sub-list) [2938 2960])
+                                            ("streamingHashesChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [2961 3013]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [2809 3018])
+                                    ("getNonOrphans" function
+                                       (:pure-virtual-flag t
+                                        :prototype-flag t
+                                        :typemodifiers ("virtual")
+                                        :arguments 
+                                          ( ("thisSection" variable
+                                               (:pointer 1
+                                                :type ("algorithm::hashTableSection" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [3050 3091])
+                                            ("pointers" variable
+                                               (:pointer 2
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3092 3114]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [3024 3119])
+                                    ("checkEndOfOrphanScan" function
+                                       (:pure-virtual-flag t
+                                        :prototype-flag t
+                                        :typemodifiers ("virtual")
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [3125 3165])
+                                    ("dumpStats" function
+                                       (:pure-virtual-flag t
+                                        :prototype-flag t
+                                        :typemodifiers ("virtual")
+                                        :arguments 
+                                          ( ("label" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("std::string" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [3194 3219]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [3171 3224])
+                                    ("table" variable (:type ("algorithm::hashTable" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3230 3257])
+                                    ("m_hashScanner" variable (:type ("algorithm::hashTable::scanner" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3262 3306])
+                                    ("m_longestRow" variable (:type "int") (reparse-symbol classsubparts) [3311 3328])
+                                    ("m_bytesInDigest" variable (:type "int") (reparse-symbol classsubparts) [3333 3353])
+                                    ("m_dataListCount" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3388 3411])
+                                    ("m_dataListConversionCount" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3416 3449])
+                                    ("m_dataListRebuildCount" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3454 3484])
+                                    ("m_longestList" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3489 3510])
+                                    ("m_ptrToTheSections" variable
+                                       (:pointer 1
+                                        :type ("std::vector" type
+                                             (:template-specifier 
+                                                ( ("hashTableSection" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol classsubparts) [3515 3566]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [2220 3569])
+                            ("hashTableObjectImmediate" type
+                               (:superclasses 
+                                  ( ("hashTableObjectBase" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  
+                                :members 
+                                  ( ("hashTableObjectImmediate" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("biggestHashBits" variable (:type "int") (reparse-symbol arg-sub-list) [3683 3703]))                                          
+                                        :type ("hashTableObjectImmediate" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [3658 3743])
+                                    ("createTheTable" function
+                                       (:template 
+                                          ( ("IT" type (:type "class") nil nil))                                          
+                                        :type "void"
+                                        :arguments 
+                                          ( ("hashCount" variable (:type "int") (reparse-symbol arg-sub-list) [3793 3807])
+                                            ("numSections" variable (:type "int") (reparse-symbol arg-sub-list) [3808 3824]))                                          
+                                        :prototype-flag t)
+                                        (reparse-symbol classsubparts) [3749 3825])
+                                    ("joinTheTableImmWithDisable" function
+                                       (:template 
+                                          ( ("IT" type (:type "class") nil nil)
+                                            ("ST" type (:type "class") nil nil))                                          
+                                        :type "int"
+                                        :arguments 
+                                          ( ("countsData" variable
+                                               (:pointer 1
+                                                :type ("int32" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [3896 3914])
+                                            ("tempHashPointers" variable
+                                               (:reference 1
+                                                :type ("std::vector" type
+                                                     (:template-specifier 
+                                                        ( ("uint64" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [3915 3954])
+                                            ("streamingDataSize" variable (:type "int") (reparse-symbol arg-sub-list) [3990 4012])
+                                            ("streamingHashesChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [4013 4065])
+                                            ("disableChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [4101 4145]))                                          
+                                        :prototype-flag t)
+                                        (reparse-symbol classsubparts) [3831 4146])
+                                    ("joinTheTableImmWithoutDisable" function
+                                       (:template 
+                                          ( ("IT" type (:type "class") nil nil)
+                                            ("ST" type (:type "class") nil nil))                                          
+                                        :type "int"
+                                        :arguments 
+                                          ( ("countsData" variable
+                                               (:pointer 1
+                                                :type ("int32" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [4220 4238])
+                                            ("tempHashPointers" variable
+                                               (:reference 1
+                                                :type ("std::vector" type
+                                                     (:template-specifier 
+                                                        ( ("uint64" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [4239 4278])
+                                            ("streamingDataSize" variable (:type "int") (reparse-symbol arg-sub-list) [4317 4339])
+                                            ("streamingHashesChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [4340 4392]))                                          
+                                        :prototype-flag t)
+                                        (reparse-symbol classsubparts) [4152 4393])
+                                    ("getNonOrphansImm" function
+                                       (:template 
+                                          ( ("IT" type (:type "class") nil nil))                                          
+                                        :type "int"
+                                        :arguments 
+                                          ( ("thisSection" variable
+                                               (:pointer 1
+                                                :type ("algorithm::hashTableSection" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [4444 4485])
+                                            ("pointers" variable
+                                               (:pointer 2
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [4486 4508]))                                          
+                                        :prototype-flag t)
+                                        (reparse-symbol classsubparts) [4399 4509])
+                                    ("fillTable" function
+                                       (:arguments 
+                                          ( ("hashCount" variable (:type "int") (reparse-symbol arg-sub-list) [4530 4544])
+                                            ("numSections" variable (:type "int") (reparse-symbol arg-sub-list) [4545 4561]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [4515 4948])
+                                    ("doJoinWithDisable" function
+                                       (:arguments 
+                                          ( ("countsData" variable
+                                               (:pointer 1
+                                                :type ("int32" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [4976 4994])
+                                            ("tempHashPointers" variable
+                                               (:reference 1
+                                                :type ("std::vector" type
+                                                     (:template-specifier 
+                                                        ( ("uint64" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [4995 5034])
+                                            ("streamingDataSize" variable (:type "int") (reparse-symbol arg-sub-list) [5061 5083])
+                                            ("streamingHashesChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [5084 5136])
+                                            ("disableChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [5163 5207]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [4954 6227])
+                                    ("doJoinWithoutDisable" function
+                                       (:arguments 
+                                          ( ("countsData" variable
+                                               (:pointer 1
+                                                :type ("int32" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [6258 6276])
+                                            ("tempHashPointers" variable
+                                               (:reference 1
+                                                :type ("std::vector" type
+                                                     (:template-specifier 
+                                                        ( ("uint64" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [6277 6316])
+                                            ("streamingDataSize" variable (:type "int") (reparse-symbol arg-sub-list) [6346 6368])
+                                            ("streamingHashesChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [6369 6421]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [6233 7397])
+                                    ("getNonOrphans" function
+                                       (:arguments 
+                                          ( ("thisSection" variable
+                                               (:pointer 1
+                                                :type ("algorithm::hashTableSection" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [7421 7462])
+                                            ("pointers" variable
+                                               (:pointer 2
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [7463 7485]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [7403 7743])
+                                    ("checkEndOfOrphanScan" function (:type "void") (reparse-symbol classsubparts) [7749 7942])
+                                    ("dumpStats" function
+                                       (:arguments 
+                                          ( ("label" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("std::string" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [7963 7988]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [7948 8695])
+                                    ("m_biggestHashBits" variable (:type "int") (reparse-symbol classsubparts) [8701 8723]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [3571 8726])
+                            ("hashTableObjectNonImmediate" type
+                               (:superclasses 
+                                  ( ("hashTableObjectBase" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  
+                                :members 
+                                  ( ("hashTableObjectNonImmediate" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("biggestHashBits" variable (:type "int") (reparse-symbol arg-sub-list) [8846 8866]))                                          
+                                        :type ("hashTableObjectNonImmediate" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [8818 8906])
+                                    ("createTheTable" function
+                                       (:template 
+                                          ( ("IT" type (:type "class") nil nil))                                          
+                                        :type "void"
+                                        :arguments 
+                                          ( ("hashCount" variable (:type "int") (reparse-symbol arg-sub-list) [8956 8970])
+                                            ("numSections" variable (:type "int") (reparse-symbol arg-sub-list) [8971 8987]))                                          
+                                        :prototype-flag t)
+                                        (reparse-symbol classsubparts) [8912 8988])
+                                    ("joinTheTableNonImmWithDisable" function
+                                       (:template 
+                                          ( ("IT" type (:type "class") nil nil)
+                                            ("ST" type (:type "class") nil nil))                                          
+                                        :type "int"
+                                        :arguments 
+                                          ( ("countsData" variable
+                                               (:pointer 1
+                                                :type ("int32" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [9062 9080])
+                                            ("tempHashPointers" variable
+                                               (:reference 1
+                                                :type ("std::vector" type
+                                                     (:template-specifier 
+                                                        ( ("uint64" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [9081 9120])
+                                            ("streamingDataSize" variable (:type "int") (reparse-symbol arg-sub-list) [9159 9181])
+                                            ("streamingHashesChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [9182 9234])
+                                            ("disableChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [9273 9317]))                                          
+                                        :prototype-flag t)
+                                        (reparse-symbol classsubparts) [8994 9318])
+                                    ("joinTheTableNonImmWithoutDisable" function
+                                       (:template 
+                                          ( ("IT" type (:type "class") nil nil)
+                                            ("ST" type (:type "class") nil nil))                                          
+                                        :type "int"
+                                        :arguments 
+                                          ( ("countsData" variable
+                                               (:pointer 1
+                                                :type ("int32" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [9395 9413])
+                                            ("tempHashPointers" variable
+                                               (:reference 1
+                                                :type ("std::vector" type
+                                                     (:template-specifier 
+                                                        ( ("uint64" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [9414 9453])
+                                            ("streamingDataSize" variable (:type "int") (reparse-symbol arg-sub-list) [9495 9517])
+                                            ("streamingHashesChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [9518 9570]))                                          
+                                        :prototype-flag t)
+                                        (reparse-symbol classsubparts) [9324 9571])
+                                    ("fillTable" function
+                                       (:arguments 
+                                          ( ("hashCount" variable (:type "int") (reparse-symbol arg-sub-list) [9592 9606])
+                                            ("numSections" variable (:type "int") (reparse-symbol arg-sub-list) [9607 9623]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [9577 10010])
+                                    ("doJoinWithDisable" function
+                                       (:arguments 
+                                          ( ("countsData" variable
+                                               (:pointer 1
+                                                :type ("int32" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [10038 10056])
+                                            ("tempHashPointers" variable
+                                               (:reference 1
+                                                :type ("std::vector" type
+                                                     (:template-specifier 
+                                                        ( ("uint64" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [10057 10096])
+                                            ("streamingDataSize" variable (:type "int") (reparse-symbol arg-sub-list) [10123 10145])
+                                            ("streamingHashesChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [10146 10198])
+                                            ("disableChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [10225 10269]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [10016 11305])
+                                    ("doJoinWithoutDisable" function
+                                       (:arguments 
+                                          ( ("countsData" variable
+                                               (:pointer 1
+                                                :type ("int32" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [11336 11354])
+                                            ("tempHashPointers" variable
+                                               (:reference 1
+                                                :type ("std::vector" type
+                                                     (:template-specifier 
+                                                        ( ("uint64" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [11355 11394])
+                                            ("streamingDataSize" variable (:type "int") (reparse-symbol arg-sub-list) [11424 11446])
+                                            ("streamingHashesChunk" variable
+                                               (:reference 1
+                                                :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [11447 11499]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [11311 12487])
+                                    ("getNonOrphans" function
+                                       (:arguments 
+                                          ( ("thisSection" variable
+                                               (:pointer 1
+                                                :type ("algorithm::hashTableSection" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [12511 12552])
+                                            ("pointers" variable
+                                               (:pointer 2
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [12553 12575]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [12493 13695])
+                                    ("checkEndOfOrphanScan" function (:type "void") (reparse-symbol classsubparts) [13701 13789])
+                                    ("dumpStats" function
+                                       (:arguments 
+                                          ( ("label" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("std::string" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [13810 13835]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [13795 14012])
+                                    ("m_biggestHashBits" variable (:type "int") (reparse-symbol classsubparts) [14018 14040]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [8728 14043])
+                            ("HashFillerStructImmediate" type
+                               (:template 
+                                  ( ("IT" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("HashFillerStructImmediate" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("tab" variable
+                                               (:reference 1
+                                                :type ("hashTableObjectImmediate" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [14131 14162])
+                                            ("rowlength" variable (:type ("int32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14163 14179])
+                                            ("startOfTable" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [14180 14205]))                                          
+                                        :type ("HashFillerStructImmediate" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [14105 14305])
+                                    ("()" function
+                                       (:operator-flag t
+                                        :arguments 
+                                          ( ("digest" variable (:type ("IT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14328 14338]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [14311 20987])
+                                    ("m_tab" variable (:type ("hashTableObjectImmediate" type (:type "class") nil nil)) (reparse-symbol classsubparts) [20993 21025])
+                                    ("m_rowlength" variable (:type ("int32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [21030 21048])
+                                    ("m_innerTableItem" variable
+                                       (:pointer 1
+                                        :type "char")
+                                        (reparse-symbol classsubparts) [21053 21082]))                                  )
+                                (reparse-symbol namespacesubparts) [14046 21085])
+                            ("HashFillerStructNonImmediate" type
+                               (:template 
+                                  ( ("IT" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("HashFillerStructNonImmediate" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("tab" variable
+                                               (:reference 1
+                                                :type ("hashTableObjectNonImmediate" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [21178 21212])
+                                            ("rowlength" variable (:type ("int32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21213 21229])
+                                            ("startOfTable" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [21230 21255]))                                          
+                                        :type ("HashFillerStructNonImmediate" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [21149 21355])
+                                    ("()" function
+                                       (:operator-flag t
+                                        :arguments 
+                                          ( ("digest" variable (:type ("IT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21378 21388]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [21361 27529])
+                                    ("m_tab" variable (:type ("hashTableObjectNonImmediate" type (:type "class") nil nil)) (reparse-symbol classsubparts) [27535 27571])
+                                    ("m_rowlength" variable (:type ("int32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [27576 27594])
+                                    ("m_innerTableItem" variable
+                                       (:pointer 1
+                                        :type "char")
+                                        (reparse-symbol classsubparts) [27599 27628]))                                  )
+                                (reparse-symbol namespacesubparts) [21087 27631])
+                            ("createTheTable" function
+                               (:template 
+                                  ( ("IT" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("hashCount" variable (:type "int") (reparse-symbol arg-sub-list) [27699 27713])
+                                    ("numSections" variable (:type "int") (reparse-symbol arg-sub-list) [27714 27730]))                                  
+                                :parent "hashTableObjectImmediate")
+                                (reparse-symbol namespacesubparts) [27633 30824])
+                            ("createTheTable" function
+                               (:template 
+                                  ( ("IT" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("hashCount" variable (:type "int") (reparse-symbol arg-sub-list) [30895 30909])
+                                    ("numSections" variable (:type "int") (reparse-symbol arg-sub-list) [30910 30926]))                                  
+                                :parent "hashTableObjectNonImmediate")
+                                (reparse-symbol namespacesubparts) [30826 33807])
+                            ("HashSearcherImmOn" type
+                               (:template 
+                                  ( ("IT" type (:type "class") nil nil)
+                                    ("ST" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("HashSearcherImmOn" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("hashTable" variable
+                                               (:reference 1
+                                                :type ("hashTableObjectImmediate" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [33889 33926])
+                                            ("countsArray" variable
+                                               (:pointer 1
+                                                :type ("int32" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [33927 33946])
+                                            ("tempHashPointers" variable
+                                               (:reference 1
+                                                :type ("std::vector" type
+                                                     (:template-specifier 
+                                                        ( ("uint64" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [33947 33985]))                                          
+                                        :type ("HashSearcherImmOn" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [33871 34130])
+                                    ("()" function
+                                       (:operator-flag t
+                                        :arguments 
+                                          ( ("digest" variable (:type ("ST" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34351 34361]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [34334 37377])
+                                    ("doTheJoinWithDisables" function
+                                       (:arguments 
+                                          ( ("disableChunk" variable (:type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37410 37452])
+                                            ("streamingHashesChunk" variable (:type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37453 37503]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [37383 38573])
+                                    ("getHighCount" function (:type "int") (reparse-symbol classsubparts) [38579 38624])
+                                    ("m_hashTable" variable (:type ("hashTableObjectImmediate" type (:type "class") nil nil)) (reparse-symbol classsubparts) [38630 38668])
+                                    ("m_highestCount" variable (:type "int") (reparse-symbol classsubparts) [38673 38692])
+                                    ("m_writeCursor" variable
+                                       (:pointer 1
+                                        :type ("int32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [38697 38718])
+                                    ("m_tempHashPointers" variable (:type ("std::vector" type
+                                         (:template-specifier 
+                                            ( ("uint64" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol classsubparts) [38723 38763]))                                  )
+                                (reparse-symbol namespacesubparts) [33810 38766])
+                            ("HashSearcherImmOff" type
+                               (:template 
+                                  ( ("IT" type (:type "class") nil nil)
+                                    ("ST" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("HashSearcherImmOff" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("hashTable" variable
+                                               (:reference 1
+                                                :type ("hashTableObjectNonImmediate" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [38851 38891])
+                                            ("countsArray" variable
+                                               (:pointer 1
+                                                :type ("int32" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [38892 38911])
+                                            ("tempHashPointers" variable
+                                               (:reference 1
+                                                :type ("std::vector" type
+                                                     (:template-specifier 
+                                                        ( ("uint64" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [38912 38950]))                                          
+                                        :type ("HashSearcherImmOff" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [38832 39095])
+                                    ("()" function
+                                       (:operator-flag t
+                                        :arguments 
+                                          ( ("digest" variable (:type ("ST" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39316 39326]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [39299 42303])
+                                    ("doTheJoinWithDisables" function
+                                       (:arguments 
+                                          ( ("disableChunk" variable (:type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42336 42378])
+                                            ("streamingHashesChunk" variable (:type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42379 42429]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [42309 43499])
+                                    ("getHighCount" function (:type "int") (reparse-symbol classsubparts) [43505 43550])
+                                    ("m_hashTable" variable (:type ("hashTableObjectNonImmediate" type (:type "class") nil nil)) (reparse-symbol classsubparts) [43556 43598])
+                                    ("m_highestCount" variable (:type "int") (reparse-symbol classsubparts) [43603 43622])
+                                    ("m_writeCursor" variable
+                                       (:pointer 1
+                                        :type ("int32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [43627 43648])
+                                    ("m_tempHashPointers" variable (:type ("std::vector" type
+                                         (:template-specifier 
+                                            ( ("uint64" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol classsubparts) [43653 43693]))                                  )
+                                (reparse-symbol namespacesubparts) [38770 43696])
+                            ("joinTheTableNonImmWithoutDisable" function
+                               (:template 
+                                  ( ("IT" type (:type "class") nil nil)
+                                    ("ST" type (:type "class") nil nil))                                  
+                                :type "int"
+                                :arguments 
+                                  ( ("countsData" variable
+                                       (:pointer 1
+                                        :type ("int32" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [43796 43814])
+                                    ("tempHashPointers" variable
+                                       (:reference 1
+                                        :type ("std::vector" type
+                                             (:template-specifier 
+                                                ( ("uint64" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [43815 43854])
+                                    ("streamingDataSize" variable (:type "int") (reparse-symbol arg-sub-list) [43921 43943])
+                                    ("streamingHashesChunk" variable
+                                       (:reference 1
+                                        :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [43944 43996]))                                  
+                                :parent "hashTableObjectNonImmediate")
+                                (reparse-symbol namespacesubparts) [43700 44184])
+                            ("joinTheTableNonImmWithDisable" function
+                               (:template 
+                                  ( ("IT" type (:type "class") nil nil)
+                                    ("ST" type (:type "class") nil nil))                                  
+                                :type "int"
+                                :arguments 
+                                  ( ("countsData" variable
+                                       (:pointer 1
+                                        :type ("int32" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [44280 44298])
+                                    ("tempHashPointers" variable
+                                       (:reference 1
+                                        :type ("std::vector" type
+                                             (:template-specifier 
+                                                ( ("uint64" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [44299 44338])
+                                    ("streamingDataSize" variable (:type "int") (reparse-symbol arg-sub-list) [44402 44424])
+                                    ("streamingHashesChunk" variable
+                                       (:reference 1
+                                        :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [44425 44477])
+                                    ("disableChunk" variable
+                                       (:reference 1
+                                        :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [44541 44585]))                                  
+                                :parent "hashTableObjectNonImmediate")
+                                (reparse-symbol namespacesubparts) [44187 44796])
+                            ("joinTheTableImmWithDisable" function
+                               (:template 
+                                  ( ("IT" type (:type "class") nil nil)
+                                    ("ST" type (:type "class") nil nil))                                  
+                                :type "int"
+                                :arguments 
+                                  ( ("countsData" variable
+                                       (:pointer 1
+                                        :type ("int32" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [44886 44904])
+                                    ("tempHashPointers" variable
+                                       (:reference 1
+                                        :type ("std::vector" type
+                                             (:template-specifier 
+                                                ( ("uint64" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [44905 44944])
+                                    ("streamingDataSize" variable (:type "int") (reparse-symbol arg-sub-list) [45005 45027])
+                                    ("streamingHashesChunk" variable
+                                       (:reference 1
+                                        :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [45028 45080])
+                                    ("disableChunk" variable
+                                       (:reference 1
+                                        :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [45141 45185]))                                  
+                                :parent "hashTableObjectImmediate")
+                                (reparse-symbol namespacesubparts) [44799 45395])
+                            ("joinTheTableImmWithoutDisable" function
+                               (:template 
+                                  ( ("IT" type (:type "class") nil nil)
+                                    ("ST" type (:type "class") nil nil))                                  
+                                :type "int"
+                                :arguments 
+                                  ( ("countsData" variable
+                                       (:pointer 1
+                                        :type ("int32" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [45488 45506])
+                                    ("tempHashPointers" variable
+                                       (:reference 1
+                                        :type ("std::vector" type
+                                             (:template-specifier 
+                                                ( ("uint64" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [45507 45546])
+                                    ("streamingDataSize" variable (:type "int") (reparse-symbol arg-sub-list) [45607 45629])
+                                    ("streamingHashesChunk" variable
+                                       (:reference 1
+                                        :type ("codec::ChunkInteger::Pointer" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [45630 45682]))                                  
+                                :parent "hashTableObjectImmediate")
+                                (reparse-symbol namespacesubparts) [45398 45869])
+                            ("getNonOrphansImm" function
+                               (:template 
+                                  ( ("IT" type (:type "class") nil nil))                                  
+                                :type "int"
+                                :arguments 
+                                  ( ("thisSection" variable
+                                       (:pointer 1
+                                        :type ("algorithm::hashTableSection" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [45939 45980])
+                                    ("pointers" variable
+                                       (:pointer 2
+                                        :constant-flag t
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [45981 46003]))                                  
+                                :parent "hashTableObjectImmediate")
+                                (reparse-symbol namespacesubparts) [45872 49256]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [116 49260]))                  
+                :type "namespace")
+                nil [101 49285]))          
+      :file "fpAlgorithmHashJoin.h"
+      :pointmax 49337
+      :fsize 49336
+      :lastmodtime '(20893 15414 590712 361000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FP_ALGORITHM_HASHJOIN_H")
+          )
+)
+    (semanticdb-table "fpAlgorithmHashTable.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("FP_ALGORITHM_HASHTABLE_H" variable (:constant-flag t) nil [42 66])
+            ("primes.h" include nil nil [68 87])
+            ("MODULUS_FREE_PROBE_CALCULATION" variable (:constant-flag t) nil [899 929])
+            ("fp" type
+               (:members 
+                  ( ("algorithm" type
+                       (:members 
+                          ( ("hashTable" type
+                               (:members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [987 994])
+                                    ("scanner" type
+                                       (:members 
+                                          ( ("public" label nil (reparse-symbol classsubparts) [1020 1027])
+                                            ("initialize" function
+                                               (:arguments 
+                                                  ( ("table" variable
+                                                       (:pointer 1
+                                                        :type ("hashTable" type (:type "class") nil nil))
+                                                        (reparse-symbol arg-sub-list) [1053 1070]))                                                  
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [1037 1161])
+                                            ("getNext" function
+                                               (:arguments 
+                                                  ( ("" variable
+                                                       (:pointer 1
+                                                        :constant-flag t
+                                                        :type "char")
+                                                        (reparse-symbol arg-sub-list) [1184 1197])
+                                                    ("" variable (:type ("tableresultPointer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1197 1216]))                                                  
+                                                :type "bool")
+                                                (reparse-symbol classsubparts) [1171 1922])
+                                            ("private" label nil (reparse-symbol classsubparts) [1928 1936])
+                                            ("m_table" variable
+                                               (:pointer 1
+                                                :type ("hashTable" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [1945 1965])
+                                            ("m_pointer" variable
+                                               (:pointer 1
+                                                :type "char")
+                                                (reparse-symbol classsubparts) [1974 1996]))                                          
+                                        :type "class")
+                                        (reparse-symbol classsubparts) [1000 2003])
+                                    ("hashTable" function
+                                       (:constructor-flag t
+                                        :type ("hashTable" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2029 2229])
+                                    ("hashTable" function
+                                       (:destructor-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [2254 2321])
+                                    ("basicDumpStats" function
+                                       (:arguments 
+                                          ( ("label" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("std::string" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [2347 2372]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [2327 3122])
+                                    ("initialize" function
+                                       (:arguments 
+                                          ( ("hashCount" variable (:type "int") (reparse-symbol arg-sub-list) [4334 4348])
+                                            ("totalEntryWidthInBytes" variable (:type "int") (reparse-symbol arg-sub-list) [4349 4376]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [4318 5057])
+                                    ("search" function
+                                       (:template 
+                                          ( ("T" type (:type "class") nil nil))                                          
+                                        :type "char"
+                                        :arguments 
+                                          ( ("op" variable
+                                               (:reference 1
+                                                :type ("T" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [5100 5106])
+                                            ("probeIndex" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5107 5124]))                                          
+                                        :pointer 1)
+                                        (reparse-symbol classsubparts) [5064 7765])
+                                    ("trivialSearch" function
+                                       (:pointer 1
+                                        :arguments 
+                                          ( ("probeIndex" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8113 8130]))                                          
+                                        :type "char")
+                                        (reparse-symbol classsubparts) [8093 8722])
+                                    ("dump" function
+                                       (:arguments 
+                                          ( ("os" variable
+                                               (:reference 1
+                                                :type ("std::ostream" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [8739 8756]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [8729 8983])
+                                    ("public" label nil (reparse-symbol classsubparts) [8989 8996])
+                                    ("s_SIZE_MULTIPLIER" variable
+                                       (:typemodifiers ("static")
+                                        :constant-flag t
+                                        :type "double")
+                                        (reparse-symbol classsubparts) [9387 9431])
+                                    ("m_totalEntryWidthInBytes" variable (:type "int") (reparse-symbol classsubparts) [9502 9531])
+                                    ("m_actualTableSize" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9536 9561])
+                                    ("m_actualHashTable" variable
+                                       (:pointer 1
+                                        :type "char")
+                                        (reparse-symbol classsubparts) [9566 9590])
+                                    ("m_savedOldHashTable" variable
+                                       (:pointer 1
+                                        :type ("hashTable" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [9757 9788])
+                                    ("m_searchCount" variable
+                                       (:typemodifiers ("mutable")
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [9794 9825])
+                                    ("m_probeCount" variable
+                                       (:typemodifiers ("mutable")
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [9830 9860]))                                  
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [969 9863]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [946 9867]))                  
+                :type "namespace")
+                nil [931 9892]))          
+      :file "fpAlgorithmHashTable.h"
+      :pointmax 9945
+      :fsize 9944
+      :lastmodtime '(20893 15414 585463 245000)
+      :unmatched-syntax '((punctuation 1196 . 1197) (punctuation 1196 . 1197))
+      :lexical-table 
+        '(("FP_ALGORITHM_HASHTABLE_H")
+          ("MODULUS_FREE_PROBE_CALCULATION")
+          )
+))
+  :file "!home!workspaces!dbarrett!int-marlin-1!main!src!nde!fp!algorithm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

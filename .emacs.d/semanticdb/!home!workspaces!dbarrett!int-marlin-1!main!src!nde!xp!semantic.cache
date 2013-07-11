@@ -1,0 +1,1882 @@
+;; Object xp/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "xp/"
+  :tables
+  (list
+    (semanticdb-table "xpdownload.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("BUST_PROTECTION" variable (:constant-flag t) nil [9 24])
+            ("plan.h" include nil nil [28 45])
+            ("nzglobals.h" include nil nil [46 68])
+            ("table.h" include nil nil [69 87])
+            ("dictionary.h" include nil nil [88 111])
+            ("recordstore.h" include nil nil [112 136])
+            ("xpdownload.h" include nil nil [137 160])
+            ("distrows.h" include nil nil [174 196])
+            ("distKey.h" include nil nil [204 224])
+            ("marshall.h" include nil nil [225 246])
+            ("nzconfig.h" include nil nil [247 268])
+            ("memPool.h" include nil nil [269 289])
+            ("memAutoAlloc.h" include nil nil [290 315])
+            ("nzhwdefs.h" include nil nil [316 337])
+            ("utils.h" include nil nil [338 356])
+            ("jobintr.h" include nil nil [357 377])
+            ("rcOs.h" include nil nil [621 638])
+            ("nzsched_events.h" include nil nil [639 666])
+            ("packet.h" include nil nil [667 686])
+            ("rcStateChange.h" include nil nil [729 756])
+            ("rcFault.h" include nil nil [764 785])
+            ("nzmutex.h" include nil nil [787 807])
+            ("spuinteraction.h" include nil nil [808 835])
+            ("fcomm.h" include nil nil [836 854])
+            ("fcommshared.h" include nil nil [855 879])
+            ("availpool.h" include nil nil [880 902])
+            ("fcommsockapi.h" include nil nil [933 958])
+            ("nzconfig.h" include nil nil [959 980])
+            ("simplehasherinline.h" include nil nil [1148 1179])
+            ("FAULT_DELAY_RELEASE_PKTS" variable (:constant-flag t) nil [3017 3041])
+            ("FAULT_SPUDIST_DSI_ALLOC" variable (:constant-flag t) nil [3053 3076])
+            ("USABLE_BUFFER_SPACE" variable (:constant-flag t) nil [3171 3190])
+            ("TDownloadTableNode" function
+               (:constructor-flag t
+                :parent "TDownloadTableNode"
+                :type ("TDownloadTableNode" type (:type "class") nil nil))
+                nil [3746 3790])
+            ("TDownloadTableNode" function
+               (:destructor-flag t
+                :parent "TDownloadTableNode"
+                :type "void")
+                nil [3792 3837])
+            ("_init_dist_block_size" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("node" variable
+                       (:pointer 1
+                        :type ("TDownloadTableNode" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [86277 86302]))                  
+                :type "void")
+                nil [86243 87384])
+            ("pagesNeeded" function
+               (:parent "TDownloadTableNode"
+                :type ("uint" type (:type "class") nil nil))
+                nil [87572 88097])
+            ("computeCommMemory" function
+               (:parent "TDownloadTableNode"
+                :arguments 
+                  ( ("distBufSize" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [95584 95603])
+                    ("chType" variable (:type ("EChannelType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [95608 95628])
+                    ("numSndPktBuffers" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [95650 95677])
+                    ("reAssemblyBufSize" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [95682 95708])
+                    ("numReassemblyBufs" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [95713 95742]))                  
+                :type "void")
+                nil [95535 96242]))          
+      :file "xpdownload.cpp"
+      :pointmax 106782
+      :fsize 106781
+      :lastmodtime '(20893 15403 834775 76000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FAULT_SPUDIST_DSI_ALLOC" (spp-arg-list ("in_subchannel") 3076 . 3091))
+          ("USABLE_BUFFER_SPACE" . ((semantic-list "(NZ_PAGE_SIZE - sizeof(TMemblockInfo))" 3191 . 3229)))
+          ("BUST_PROTECTION" . ((number "1" 25 . 26)))
+          ("FAULT_DELAY_RELEASE_PKTS" (spp-arg-list nil 3041 . 3043))
+          )
+)
+    (semanticdb-table "xpdownload.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("XPDOWNLOAD_INCLUDED" variable (:constant-flag t) nil [37 56])
+            ("nodecommon.h" include nil nil [58 81])
+            ("fcommchannel.h" include nil nil [82 107])
+            ("nztimestamp.h" include nil nil [108 132])
+            ("COSInteraction" type
+               (:prototype t
+                :type "class")
+                nil [134 155])
+            ("TCreateTempTableNode" type
+               (:prototype t
+                :type "class")
+                nil [156 183])
+            ("ZLib" type
+               (:prototype t
+                :type "class")
+                nil [184 195])
+            ("DSliceInteraction" type
+               (:prototype t
+                :type "class")
+                nil [196 220])
+            ("TExttabHeader" type
+               (:prototype t
+                :type "struct")
+                nil [221 242])
+            ("dbos_open_close_channel_t" type
+               (:prototype t
+                :type "struct")
+                nil [243 276])
+            ("TStreamInfo" type
+               (:prototype t
+                :type "class")
+                nil [277 295])
+            ("CloseChnlCallbackInfo" type
+               (:prototype t
+                :type "struct")
+                nil [296 325])
+            ("TMemblockInfo" type
+               (:prototype t
+                :type "struct")
+                nil [326 347])
+            ("mem" type
+               (:members 
+                  ( ("Pool" type
+                       (:prototype t
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [364 375]))                  
+                :type "namespace")
+                nil [348 377])
+            ("EDownloadType" type
+               (:members 
+                  ( ("downloadBroadcast" variable
+                       (:constant-flag t
+                        :default-value (425 426)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [405 426])
+                    ("downloadDistribute" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [432 452]))                  
+                :type "enum")
+                nil [380 453])
+            ("ESegmentType" type
+               (:members 
+                  ( ("NoSegment" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [479 489])
+                    ("DispersionSegment" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [494 513]))                  
+                :type "enum")
+                nil [455 514])
+            ("DlTfNone" variable (:constant-flag t) nil [524 532])
+            ("DlTfChooseRowNum" variable (:constant-flag t) nil [585 601])
+            ("DlTfEnableRowNum" variable (:constant-flag t) nil [667 683])
+            ("DlTfUNUSED2" variable (:constant-flag t) nil [743 754])
+            ("DlTfCaptureWaterMark" variable (:constant-flag t) nil [799 819])
+            ("TDownloadTableCnt" type
+               (:members 
+                  ( ("m_avail" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [900 924])
+                    ("m_numRecords" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [929 958])
+                    ("m_pages" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [963 987]))                  
+                :type "struct")
+                nil [869 990])
+            ("TDownloadTableSpace" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [1020 1027])
+                    ("initCnt" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("distributed" variable (:type "bool") (reparse-symbol arg-sub-list) [1053 1070])
+                            ("pool" variable
+                               (:pointer 1
+                                :type ("mem::Pool" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1071 1087]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1032 1088])
+                    ("updateResultTable" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("pTable" variable
+                               (:pointer 1
+                                :type ("CTable" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1124 1140]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1093 1141])
+                    ("applyBlockCnt" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("pBlock" variable
+                               (:pointer 1
+                                :type ("TMemblockInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1173 1195]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1146 1196])
+                    ("applyBlockCnt" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("dsid" variable (:type "int") (reparse-symbol arg-sub-list) [1228 1237])
+                            ("pBlock" variable
+                               (:pointer 1
+                                :type ("TMemblockInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1238 1260]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1201 1261])
+                    ("getPages" function
+                       (:prototype-flag t
+                        :type ("uint32" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1266 1290])
+                    ("getMaxPages" function
+                       (:prototype-flag t
+                        :type ("uint32" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1295 1322])
+                    ("getPages" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("dsid" variable (:type "int") (reparse-symbol arg-sub-list) [1349 1358]))                          
+                        :type ("uint32" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1327 1359])
+                    ("getRecords" function
+                       (:prototype-flag t
+                        :type ("uint64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1364 1390])
+                    ("getMaxRecords" function
+                       (:prototype-flag t
+                        :type ("uint64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1395 1424])
+                    ("getRecords" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("dsid" variable (:type "int") (reparse-symbol arg-sub-list) [1453 1462]))                          
+                        :type ("uint64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1429 1463])
+                    ("getTransientPayloadSize" function
+                       (:prototype-flag t
+                        :type ("uint64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1468 1507])
+                    ("private" label nil (reparse-symbol classsubparts) [1509 1517])
+                    ("initCnt" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("cnt" variable
+                               (:pointer 1
+                                :type ("TDownloadTableCnt" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1543 1566]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1522 1567])
+                    ("applyBlockCnt" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("pBlock" variable
+                               (:pointer 1
+                                :type ("TMemblockInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1599 1621])
+                            ("cnt" variable
+                               (:pointer 1
+                                :type ("TDownloadTableCnt" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1622 1645]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1572 1646])
+                    ("m_distributed" variable (:type "bool") (reparse-symbol classsubparts) [1651 1685])
+                    ("m_all" variable (:type ("TDownloadTableCnt" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1690 1716])
+                    ("m_slice" variable
+                       (:pointer 1
+                        :type ("TDownloadTableCnt" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1721 1749]))                  
+                :type "class")
+                nil [992 1752])
+            ("TDownloadTableNodeDef" type
+               (:members 
+                  ( ("protected" label nil (reparse-symbol classsubparts) [1784 1794])
+                    ("m_distMode" variable (:type ("EDownloadType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1799 1824])
+                    ("linkId" variable (:type "int") (reparse-symbol classsubparts) [1857 1878])
+                    ("m_numDistKeys" variable (:type "int") (reparse-symbol classsubparts) [1922 1950])
+                    ("distKeys" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol classsubparts) [2005 2028])
+                    ("spuId" variable (:type "int") (reparse-symbol classsubparts) [2060 2080])
+                    ("keepStore" variable (:type "int") (reparse-symbol classsubparts) [2122 2146])
+                    ("segmentType" variable (:type ("ESegmentType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2201 2227])
+                    ("m_haveComputedSpuId" variable (:type "bool") (reparse-symbol classsubparts) [2299 2333])
+                    ("m_bUsedInMultipleJoins" variable (:type "bool") (reparse-symbol classsubparts) [2378 2415])
+                    ("m_isPrebroadcastTbl" variable (:type "bool") (reparse-symbol classsubparts) [2474 2508])
+                    ("m_snipLastDownloadNode" variable (:type "bool") (reparse-symbol classsubparts) [2558 2595])
+                    ("m_bCompressed" variable (:type "bool") (reparse-symbol classsubparts) [2650 2678])
+                    ("m_downloadTableFlags" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2736 2771]))                  
+                :type "class")
+                nil [1754 2824])
+            ("TDownloadTableNodeRuntimeInfo" type
+               (:members 
+                  ( ("protected" label nil (reparse-symbol classsubparts) [2864 2874])
+                    ("insCount" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2879 2904])
+                    ("tableSize" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2951 2977])
+                    ("insCountCkpt" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3022 3051])
+                    ("tableSizeCkpt" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3056 3086])
+                    ("m_distBlocks" variable
+                       (:pointer 2
+                        :type ("TMemblockInfo" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3091 3120])
+                    ("m_tableSpace" variable
+                       (:pointer 1
+                        :type ("TDownloadTableSpace" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3151 3204])
+                    ("m_distBlockSize" variable (:type "int") (reparse-symbol classsubparts) [3209 3229])
+                    ("m_minDistBlockSize" variable (:type "int") (reparse-symbol classsubparts) [3277 3300])
+                    ("m_spuId" variable (:type "int") (reparse-symbol classsubparts) [3348 3360])
+                    ("m_partialBlock" variable (:type "int") (reparse-symbol classsubparts) [3412 3431])
+                    ("m_partialBlockSpu" variable (:type "int") (reparse-symbol classsubparts) [3492 3514])
+                    ("m_downloadDsItcn" variable
+                       (:pointer 1
+                        :type ("DSliceInteraction" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3563 3607])
+                    ("m_downloadInteraction" variable
+                       (:pointer 1
+                        :type ("COSInteraction" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3658 3707])
+                    ("m_closeChnlInteraction" variable
+                       (:pointer 1
+                        :type ("COSInteraction" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3749 3799])
+                    ("m_closeChnlMsgP" variable
+                       (:pointer 1
+                        :type ("dbos_open_close_channel_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3837 3880])
+                    ("m_closeChnlCallBkInfoP" variable
+                       (:pointer 1
+                        :type ("CloseChnlCallbackInfo" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3933 3983])
+                    ("m_haveSyncedChannel" variable (:type "bool") (reparse-symbol classsubparts) [4028 4057])
+                    ("m_interactionId" variable (:type "int") (reparse-symbol classsubparts) [4109 4134])
+                    ("m_syncId" variable (:type "int") (reparse-symbol classsubparts) [4192 4210])
+                    ("m_fcommChannel" variable (:type ("TChannel" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4261 4285])
+                    ("m_numPackets" variable (:type "unsigned int") (reparse-symbol classsubparts) [4338 4360])
+                    ("m_sizeReassembly" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4417 4443])
+                    ("m_numReassembly" variable (:type "unsigned int") (reparse-symbol classsubparts) [4496 4521])
+                    ("m_isDiskTable" variable (:type "bool") (reparse-symbol classsubparts) [4570 4593])
+                    ("m_createNode" variable
+                       (:pointer 1
+                        :type ("TCreateTempTableNode" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4645 4680])
+                    ("m_messagesSent" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4686 4710])
+                    ("m_bytesInMessages" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4742 4769])
+                    ("m_recPayloadSize" variable (:type "int") (reparse-symbol classsubparts) [4801 4827])
+                    ("m_largeDistBlock" variable
+                       (:pointer 1
+                        :type ("TMemblockInfo" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4884 4917])
+                    ("m_toDownloadStreamPtr" variable
+                       (:pointer 1
+                        :type ("TStreamInfo" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4959 4997])
+                    ("m_snSizePrediction" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5046 5081])
+                    ("m_dsIdDist" variable (:type "bool") (reparse-symbol classsubparts) [5131 5158])
+                    ("m_haveProcessedHeader" variable (:type "bool") (reparse-symbol classsubparts) [5245 5283])
+                    ("m_reloadRecBuf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [5336 5367])
+                    ("m_partialBlockBuf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [5420 5454])
+                    ("m_bUncompressOnHost" variable (:type "bool") (reparse-symbol classsubparts) [5491 5527])
+                    ("m_fromLittleEndianSpu" variable (:type "bool") (reparse-symbol classsubparts) [5582 5620])
+                    ("m_ZLib" variable
+                       (:pointer 1
+                        :type ("ZLib" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5678 5701])
+                    ("m_usLoadStartTime" variable (:type ("time64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5731 5765])
+                    ("m_usChunkStartTime" variable (:type ("time64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5770 5805])
+                    ("m_usTotalSleepCredits" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5810 5848])
+                    ("m_maxSleepCreditAccum" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5853 5891])
+                    ("m_targetChecksPerSecond" variable (:type "int") (reparse-symbol classsubparts) [5932 5972])
+                    ("m_downloadBytesSent" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5978 6014])
+                    ("m_actualKBPerSec" variable (:type "int") (reparse-symbol classsubparts) [6019 6052])
+                    ("m_chunkBytesSent" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6057 6090])
+                    ("m_chunkUncompressedBytesSent" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6095 6140])
+                    ("m_chunkCompressedBytesSent" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6145 6188])
+                    ("m_unreportedBytesSpu" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol classsubparts) [6235 6272])
+                    ("m_unreportedBytesHost" variable (:type "int") (reparse-symbol classsubparts) [6277 6315]))                  
+                :type "class")
+                nil [2826 6318])
+            ("TDownloadTableNode" type
+               (:superclasses 
+                  ( ("SnippetNode" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil)
+                    ("TDownloadTableNodeDef" type
+                       (:protection "private"
+                        :type "class")
+                        nil nil)
+                    ("TDownloadTableNodeRuntimeInfo" type
+                       (:protection "private"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [6442 6449])
+                    ("TDownloadTableNode" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :type ("TDownloadTableNode" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6454 6475])
+                    ("TDownloadTableNode" function
+                       (:prototype-flag t
+                        :destructor-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [6480 6510])
+                    ("Init" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :arguments 
+                          ( ("src" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("TableShape" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6544 6567])
+                            ("place" variable (:type ("EPlanNodeLocus" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6568 6589]))                          
+                        :type ("TableShape" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6520 6590])
+                    ("AddrOfDistMode" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("EDownloadType" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6683 6757])
+                    ("AddrOfLinkId" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type "int")
+                        (reparse-symbol classsubparts) [6762 6832])
+                    ("AddrOfTableSize" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("uint64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6837 6910])
+                    ("Compressed" function
+                       (:typemodifiers ("inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [6933 7009])
+                    ("DistBlocks" function
+                       (:pointer 2
+                        :typemodifiers ("inline")
+                        :type ("TMemblockInfo" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7014 7089])
+                    ("DistKeys" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type "int")
+                        (reparse-symbol classsubparts) [7094 7165])
+                    ("DistMode" function
+                       (:typemodifiers ("inline")
+                        :type ("EDownloadType" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7170 7243])
+                    ("DownloadInteraction" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("COSInteraction" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7248 7332])
+                    ("DownloadTableFlags" function
+                       (:typemodifiers ("inline")
+                        :type ("uint32" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7337 7420])
+                    ("DsIdDist" function
+                       (:typemodifiers ("inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [7425 7498])
+                    ("FcommChannel" function
+                       (:typemodifiers ("inline")
+                        :type ("TChannel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7503 7580])
+                    ("HaveComputedSpuId" function
+                       (:typemodifiers ("inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [7585 7667])
+                    ("InsCount" function
+                       (:typemodifiers ("inline")
+                        :type ("int64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7672 7743])
+                    ("InteractionId" function
+                       (:typemodifiers ("inline")
+                        :type "int")
+                        (reparse-symbol classsubparts) [7748 7826])
+                    ("IsBroadcast" function
+                       (:typemodifiers ("inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [7831 7925])
+                    ("IsDistribute" function
+                       (:typemodifiers ("inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [7930 8025])
+                    ("IsDiskTable" function
+                       (:typemodifiers ("inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [8030 8106])
+                    ("IsPrebroadcastTbl" function
+                       (:typemodifiers ("inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [8111 8193])
+                    ("IsSpu2SpuDownload" function
+                       (:typemodifiers ("inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [8198 8277])
+                    ("KeepStore" function
+                       (:typemodifiers ("inline")
+                        :type "int")
+                        (reparse-symbol classsubparts) [8307 8379])
+                    ("LargeDistBlock" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("TMemblockInfo" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8384 8463])
+                    ("LinkId" function
+                       (:typemodifiers ("inline")
+                        :type "int")
+                        (reparse-symbol classsubparts) [8468 8537])
+                    ("NumDistKeys" function
+                       (:typemodifiers ("inline")
+                        :type "int")
+                        (reparse-symbol classsubparts) [8542 8618])
+                    ("NumPackets" function
+                       (:typemodifiers ("inline")
+                        :type "unsigned int")
+                        (reparse-symbol classsubparts) [8623 8698])
+                    ("NumReassembly" function
+                       (:typemodifiers ("inline")
+                        :type "unsigned int")
+                        (reparse-symbol classsubparts) [8703 8781])
+                    ("RecPayloadSize" function
+                       (:typemodifiers ("inline")
+                        :type "int")
+                        (reparse-symbol classsubparts) [8786 8865])
+                    ("SegmentType" function
+                       (:typemodifiers ("inline")
+                        :type ("ESegmentType" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8870 8944])
+                    ("SizeReassembly" function
+                       (:typemodifiers ("inline")
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8949 9028])
+                    ("SpuId" function
+                       (:typemodifiers ("inline")
+                        :type "int")
+                        (reparse-symbol classsubparts) [9033 9101])
+                    ("SyncId" function
+                       (:typemodifiers ("inline")
+                        :type "int")
+                        (reparse-symbol classsubparts) [9106 9177])
+                    ("TableSize" function
+                       (:typemodifiers ("inline")
+                        :type ("uint64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9182 9254])
+                    ("ToDownloadStreamPtr" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("TStreamInfo" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9259 9343])
+                    ("UsedInMultipleJoins" function
+                       (:typemodifiers ("inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [9348 9433])
+                    ("UncompressOnHost" function
+                       (:typemodifiers ("inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [9438 9520])
+                    ("IncInsCount" function
+                       (:typemodifiers ("inline")
+                        :type "void")
+                        (reparse-symbol classsubparts) [9542 9613])
+                    ("IncTableSize" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("val" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9644 9656]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9618 9695])
+                    ("SetCreateNode" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("node" variable
+                               (:pointer 1
+                                :type ("TCreateTempTableNode" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9743 9771]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9716 9796])
+                    ("SetDistBlockSize" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("size" variable (:type "int") (reparse-symbol arg-sub-list) [9831 9841]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9801 9884])
+                    ("SetCompressed" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("val" variable (:type "bool") (reparse-symbol arg-sub-list) [9916 9926]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9889 9969])
+                    ("SetDistKeys" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("keys" variable
+                               (:pointer 1
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [9999 10010]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9974 10050])
+                    ("SetDistMode" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("mode" variable (:type ("EDownloadType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10080 10100]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [10055 10133])
+                    ("SetDownloadInteraction" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("itp" variable
+                               (:pointer 1
+                                :type ("COSInteraction" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10174 10195]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [10138 10228])
+                    ("SetDownloadTableFlags" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("flags" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10268 10281]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [10233 10322])
+                    ("SetDsIdDist" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("val" variable (:type "bool") (reparse-symbol arg-sub-list) [10351 10360]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [10327 10404])
+                    ("SetFcommChannel" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("ch" variable (:type ("TChannel" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10438 10451]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [10409 10489])
+                    ("SetHaveComputedSpuId" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("val" variable (:type "int") (reparse-symbol arg-sub-list) [10528 10537]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [10494 10580])
+                    ("SetInteractionId" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("itn" variable (:type "int") (reparse-symbol arg-sub-list) [10615 10624]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [10585 10667])
+                    ("SetIsPrebroadcastTbl" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("val" variable (:type "bool") (reparse-symbol arg-sub-list) [10706 10716]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [10672 10758])
+                    ("SetKeepStore" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("keep" variable (:type "int") (reparse-symbol arg-sub-list) [10789 10799]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [10763 10840])
+                    ("SetLinkId" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("link" variable (:type "int") (reparse-symbol arg-sub-list) [10868 10878]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [10845 10919])
+                    ("SetNumDistKeys" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("num" variable (:type "int") (reparse-symbol arg-sub-list) [10952 10961]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [10924 11004])
+                    ("SetNumPackets" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("num" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [11036 11050]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [11009 11088])
+                    ("SetNumReassembly" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("num" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [11123 11137]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [11093 11175])
+                    ("SetSegmentType" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("type" variable (:type ("ESegmentType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11208 11227]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [11180 11259])
+                    ("SetSizeReassembly" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11295 11308]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [11264 11348])
+                    ("SetSnipLastDownloadNode" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("bb" variable (:type "bool") (reparse-symbol arg-sub-list) [11390 11399]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [11353 11443])
+                    ("SetSnSizePrediction" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("size" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11481 11494]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [11448 11536])
+                    ("SetSpuId" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("spu" variable (:type "int") (reparse-symbol arg-sub-list) [11563 11572]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [11541 11613])
+                    ("SetSyncId" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [11641 11650]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [11618 11693])
+                    ("SetToDownloadStreamPtr" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("val" variable
+                               (:pointer 1
+                                :type ("TStreamInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [11734 11752]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [11698 11786])
+                    ("SetUsedInMultipleJoins" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("val" variable (:type "bool") (reparse-symbol arg-sub-list) [11827 11837]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [11791 11880])
+                    ("createTheTempTable" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :arguments 
+                          ( ("plan" variable
+                               (:pointer 1
+                                :type ("CPlan" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [11940 11952]))                          
+                        :type ("COSInteraction" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11905 11953])
+                    ("NeedsPrep" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :type ("TDownloadTableNode" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11958 11990])
+                    ("pagesNeeded" function
+                       (:prototype-flag t
+                        :type ("uint" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11996 12021])
+                    ("getDistBuffer" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("ch" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("TChannel" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12091 12110])
+                            ("dsId" variable (:type "int") (reparse-symbol arg-sub-list) [12111 12120]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [12072 12121])
+                    ("doneDistBuffer" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("dsId" variable (:type "int") (reparse-symbol arg-sub-list) [12146 12155]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [12126 12156])
+                    ("freeDistBuffer" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("dsId" variable (:type "int") (reparse-symbol arg-sub-list) [12181 12190]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [12161 12191])
+                    ("cleanupDistBlocks" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :type ("DSliceInteraction" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [12197 12236])
+                    ("verifyBuffers" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [12241 12262])
+                    ("spuSendBlock" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("spuId" variable (:type "int") (reparse-symbol arg-sub-list) [12424 12434]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [12360 12435])
+                    ("cleanupDownloadInteraction" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("notifySched" variable (:type "bool") (reparse-symbol arg-sub-list) [12504 12521]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [12472 12522])
+                    ("cleanupDownloadZLib" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [12552 12557]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [12527 12558])
+                    ("cleanupDownloadLargeDistBlock" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [12598 12603]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [12563 12604])
+                    ("broadcastNewBlock" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("lastCall" variable (:type "bool") (reparse-symbol arg-sub-list) [12674 12688]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [12610 12689])
+                    ("writeBlock" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("block" variable
+                               (:pointer 1
+                                :type ("TMemblockInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12749 12770])
+                            ("fence" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [12779 12791]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [12695 12792])
+                    ("hostSendBlock" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("spuId" variable (:type "int") (reparse-symbol arg-sub-list) [12912 12922]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [12851 12923])
+                    ("hostSendLargeBlock" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("spuId" variable (:type "int") (reparse-symbol arg-sub-list) [13042 13052]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [12959 13053])
+                    ("flushBlocks" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("spuId" variable (:type "int") (reparse-symbol arg-sub-list) [13132 13142]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [13059 13143])
+                    ("broadcastWrapup" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [13179 13202])
+                    ("hostDistWrapup" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [13241 13263])
+                    ("spuDistWrapup" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [13302 13323])
+                    ("bcastThisBlock" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("dst" variable
+                               (:pointer 1
+                                :type ("CTable" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [13426 13438])
+                            ("msgFlags" variable (:type ("uint8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13439 13454]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [13363 13455])
+                    ("computeCommMemory" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("maxRecordSize" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13578 13599])
+                            ("chType" variable (:type ("EChannelType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13608 13628])
+                            ("numPkts" variable
+                               (:pointer 1
+                                :type "unsigned int")
+                                (reparse-symbol arg-sub-list) [13637 13655])
+                            ("sizeReassembly" variable
+                               (:pointer 1
+                                :type ("size_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [13664 13687])
+                            ("numReassembly" variable
+                               (:pointer 1
+                                :type "unsigned int")
+                                (reparse-symbol arg-sub-list) [13696 13720]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [13506 13721])
+                    ("checkpoint" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [13727 13745])
+                    ("rollback" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [13750 13766])
+                    ("StopDownload" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [13771 13792])
+                    ("RestartDownload" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [13797 13821])
+                    ("FlushPartialBlocks" function
+                       (:prototype-flag t
+                        :type "bool")
+                        (reparse-symbol classsubparts) [13826 13853])
+                    ("AllocateResources" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [13859 13884])
+                    ("private" label nil (reparse-symbol classsubparts) [13887 13895])
+                    ("hostSendHelper" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("m" variable
+                               (:pointer 1
+                                :type ("TMemblockInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [13957 13974])
+                            ("spuId" variable (:type "int") (reparse-symbol arg-sub-list) [14013 14023])
+                            ("isSmall" variable (:type "bool") (reparse-symbol arg-sub-list) [14076 14089])
+                            ("msgFlags" variable (:type ("uint8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14138 14153]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [13900 14154])
+                    ("updateRateInfo" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("chunkEndTime" variable (:type ("time64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14241 14263]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [14220 14264])
+                    ("updateResourceUsage" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("spuId" variable (:type "int") (reparse-symbol arg-sub-list) [14294 14304])
+                            ("newBytesDownloaded" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14305 14331])
+                            ("newBytesWrittenToSPU" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14332 14360]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [14269 14361])
+                    ("setupInteractionAndChannel" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [14369 14404])
+                    ("processExttabHeader" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("block" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("TMemblockInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [14516 14551]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [14410 14552])
+                    ("verifyExternalTable" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("etheader" variable
+                               (:reference 1
+                                :type ("TExttabHeader" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [14663 14688]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [14557 14689])
+                    ("readExternalTableHeader" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("srcetheader" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("TExttabHeader" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [14796 14836])
+                            ("dstetheader" variable
+                               (:pointer 1
+                                :type ("TExttabHeader" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [14869 14904]))                          
+                        :type ("uint" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [14694 14905])
+                    ("sendCompressedToSPUs" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("block" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("TMemblockInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15014 15048])
+                            ("fence" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [15081 15107]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [14910 15108])
+                    ("uncompressAndDistribute" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("block" variable
+                               (:pointer 1
+                                :type ("TMemblockInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15217 15245])
+                            ("fence" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [15278 15304]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [15113 15305])
+                    ("failReloadValidityCheck" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("checkdisabled" variable (:type "bool") (reparse-symbol arg-sub-list) [15340 15359])
+                            ("failure" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [15360 15380])
+                            ("tblname" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [15415 15435])
+                            ("colno" variable (:type "int") (reparse-symbol arg-sub-list) [15436 15447]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [15310 15448])
+                    ("verifyBlockHeader" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("block" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("TMemblockInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15542 15577]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [15453 15584])
+                    ("addRec" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("pRec" variable
+                               (:pointer 1
+                                :type ("record_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15652 15667])
+                            ("size" variable (:type "int") (reparse-symbol arg-sub-list) [15668 15677])
+                            ("spuId" variable (:type "int") (reparse-symbol arg-sub-list) [15678 15688]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [15640 15689])
+                    ("redistributeRecords" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("pTable" variable
+                               (:pointer 1
+                                :type ("CTable" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15721 15736])
+                            ("pBuf" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [15737 15748])
+                            ("totalSize" variable (:type "int") (reparse-symbol arg-sub-list) [15749 15763])
+                            ("fromBigEndianSpu" variable (:type "bool") (reparse-symbol arg-sub-list) [15785 15808]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [15694 15809])
+                    ("spuSendHelper" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("m" variable
+                               (:pointer 1
+                                :type ("TMemblockInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15871 15888])
+                            ("spuId" variable (:type "int") (reparse-symbol arg-sub-list) [15927 15937])
+                            ("isSmall" variable (:type "bool") (reparse-symbol arg-sub-list) [15990 16003])
+                            ("msgFlags" variable (:type ("uint8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16052 16067]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [15815 16068])
+                    ("initPacketBuffers" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [16134 16159]))                  
+                :type "class")
+                nil [6320 16194]))          
+      :file "xpdownload.h"
+      :pointmax 16228
+      :fsize 16227
+      :lastmodtime '(20893 15403 756462 524000)
+      :unmatched-syntax '((punctuation 377 . 378))
+      :lexical-table 
+        '(("DlTfCaptureWaterMark" . ((semantic-list "(1<<3)" 820 . 826)))
+          ("XPDOWNLOAD_INCLUDED")
+          ("DlTfUNUSED2" . ((semantic-list "(1<<2)" 762 . 768)))
+          ("DlTfChooseRowNum" . ((semantic-list "(1<<0)" 604 . 610)))
+          ("DlTfNone" . ((semantic-list "(0)" 543 . 546)))
+          ("DlTfEnableRowNum" . ((semantic-list "(1<<1)" 690 . 696)))
+          )
+)
+    (semanticdb-table "nodecommon.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("NODECOMMON_INCLUDED" variable (:constant-flag t) nil [37 56])
+            ("nztypes.h" include nil nil [58 78])
+            ("xptimer.h" include nil nil [79 99])
+            ("xpplannerflags.h" include nil nil [100 127])
+            ("CPlan" type
+               (:prototype t
+                :type "class")
+                nil [129 141])
+            ("TableShape" type
+               (:prototype t
+                :type "class")
+                nil [142 159])
+            ("CTable" type
+               (:prototype t
+                :type "class")
+                nil [160 173])
+            ("CRecordStore" type
+               (:prototype t
+                :type "class")
+                nil [174 193])
+            ("CCommBuf" type
+               (:prototype t
+                :type "class")
+                nil [194 209])
+            ("EPlanNodeLocus" type
+               (:members 
+                  ( ("invalidLocus" variable
+                       (:constant-flag t
+                        :default-value (252 254)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [237 254])
+                    ("inSPU" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [260 266])
+                    ("inDBOS" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [271 279]))                  
+                :type "enum")
+                nil [211 280])
+            ("EPlanNodeTableType" type
+               (:members 
+                  ( ("tableAtSPU" variable
+                       (:constant-flag t
+                        :default-value (325 326)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [312 326])
+                    ("externalTable" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [332 346])
+                    ("systemTable" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [351 363])
+                    ("virtualTable" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [368 382]))                  
+                :type "enum")
+                nil [282 383])
+            ("ENodeTypes" type
+               (:members 
+                  ( ("InvalidNode" variable
+                       (:constant-flag t
+                        :default-value (421 423)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [407 423])
+                    ("RootNode" variable
+                       (:constant-flag t
+                        :default-value (440 441)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [429 441])
+                    ("ScanNode" variable
+                       (:constant-flag t
+                        :default-value (528 529)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [517 529])
+                    ("RestrictNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [535 548])
+                    ("ProjectNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [553 565])
+                    ("SortNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [570 579])
+                    ("MaterializeNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [584 600])
+                    ("JoinNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [605 614])
+                    ("ReturnNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [619 630])
+                    ("SaveTempNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [635 648])
+                    ("UniqueNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [653 664])
+                    ("AggregateNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [669 683])
+                    ("SortedAggregateNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [688 708])
+                    ("InsertNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [713 724])
+                    ("DeleteNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [729 740])
+                    ("DeleteScanListNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [745 764])
+                    ("DeleteMergeNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [769 785])
+                    ("UpdateNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [790 801])
+                    ("DoneNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [806 815])
+                    ("DownloadTableNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [820 838])
+                    ("DropTableNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [843 857])
+                    ("ExistsJoinNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [862 877])
+                    ("HashNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [882 891])
+                    ("CrossProductNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [896 913])
+                    ("LimitNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [918 928])
+                    ("HashJoinNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [933 946])
+                    ("MergeJoinNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [951 965])
+                    ("ExprJoinNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [970 983])
+                    ("BindIndexNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [988 1002])
+                    ("BitVectorNodeObs" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1007 1024])
+                    ("MergeNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1042 1052])
+                    ("TableSizeNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1057 1071])
+                    ("ParserNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1076 1087])
+                    ("UnloadNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1092 1103])
+                    ("InsertStatsNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1108 1124])
+                    ("HashPartNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1129 1142])
+                    ("WindowAggrNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1147 1162])
+                    ("ScanPrepNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1167 1180])
+                    ("CreateTempTableNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1185 1205])
+                    ("ScanBlockCountNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1210 1229])
+                    ("UngroupNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1234 1246])
+                    ("GroupingSetNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1251 1267])
+                    ("FuncJoinNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1272 1285])
+                    ("StreamAppendNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1290 1307])
+                    ("ReorgPrepNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1312 1326])
+                    ("ReorgStatsNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1331 1346])
+                    ("ReorgMergeNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1351 1366])
+                    ("ReclaimNode" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1371 1383])
+                    ("Next07Node" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1496 1507])
+                    ("Next08Node" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1512 1523])
+                    ("Next09Node" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1528 1539])
+                    ("LastNodeMarker" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1544 1587]))                  
+                :type "enum")
+                nil [385 1588])
+            ("ESerializeMode" type
+               (:members 
+                  ( ("SerModeAll" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1616 1627])
+                    ("SerModeDefOnly" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1654 1669])
+                    ("SerModeFingerprint" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1712 1773]))                  
+                :type "enum")
+                nil [1590 1774])
+            ("pcTTzInt" type
+               (:members 
+                  ( ("p64" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1798 1808])
+                    ("p32" variable (:type ("int32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1813 1823]))                  
+                :type "struct")
+                nil [1776 1826])
+            ("SnippetNodeDef" type
+               (:members 
+                  ( ("protected" label nil (reparse-symbol classsubparts) [1851 1861])
+                    ("m_type" variable (:type ("ENodeTypes" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1866 1884])
+                    ("m_place" variable (:type ("EPlanNodeLocus" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1889 1912])
+                    ("m_flags" variable (:type "int") (reparse-symbol classsubparts) [1931 1943]))                  
+                :type "class")
+                nil [1828 1990])
+            ("SnippetNodeRuntimeInfo" type
+               (:members 
+                  ( ("protected" label nil (reparse-symbol classsubparts) [2023 2033])
+                    ("m_numRecs" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2099 2115])
+                    ("m_byteCount" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2164 2182])
+                    ("m_cpuTime" variable (:type ("CTimer64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2241 2260])
+                    ("m_statsTag" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2577 2594])
+                    ("m_detailStats" variable (:type "bool") (reparse-symbol classsubparts) [2642 2661])
+                    ("m_result" variable
+                       (:pointer 1
+                        :type ("TableShape" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2723 2744])
+                    ("m_resultTable" variable
+                       (:pointer 1
+                        :type ("CTable" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2808 2830])
+                    ("m_plan" variable
+                       (:pointer 1
+                        :type ("CPlan" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2892 2906])
+                    ("m_pRS" variable
+                       (:pointer 1
+                        :type ("CRecordStore" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2945 2965])
+                    ("m_srcHack" variable
+                       (:pointer 1
+                        :type ("TableShape" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3207 3229])
+                    ("m_srcHackTable" variable
+                       (:pointer 1
+                        :type ("CTable" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3263 3286])
+                    ("m_tblShape" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("TableShape" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3369 3398])
+                    ("m_comment" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [3404 3420])
+                    ("m_numRecsEst" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3477 3502])
+                    ("m_plannerFlags" variable (:type "unsigned int") (reparse-symbol classsubparts) [3507 3534]))                  
+                :type "class")
+                nil [1992 3538])
+            ("SnippetNode" type
+               (:superclasses 
+                  ( ("SnippetNodeDef" type
+                       (:protection "private"
+                        :type "class")
+                        nil nil)
+                    ("SnippetNodeRuntimeInfo" type
+                       (:protection "private"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [3681 3688])
+                    ("m_next" variable
+                       (:pointer 1
+                        :type ("SnippetNode" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3693 3713])
+                    ("m_prev" variable
+                       (:pointer 1
+                        :type ("SnippetNode" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3718 3738])
+                    ("SnippetNode" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :type ("SnippetNode" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3785 3799])
+                    ("SnippetNode" function
+                       (:prototype-flag t
+                        :destructor-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [3804 3827])
+                    ("Init" function
+                       (:pure-virtual-flag t
+                        :prototype-flag t
+                        :pointer 1
+                        :typemodifiers ("virtual")
+                        :constant-flag t
+                        :arguments 
+                          ( ("src" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("TableShape" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [3943 3966])
+                            ("place" variable (:type ("EPlanNodeLocus" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3967 3989]))                          
+                        :type ("TableShape" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3911 3994])
+                    ("Serialize" function
+                       (:typemodifiers ("virtual")
+                        :arguments 
+                          ( ("cbuf" variable
+                               (:pointer 1
+                                :type ("CCommBuf" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4145 4161])
+                            ("mode" variable (:type ("ESerializeMode" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4162 4183]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [4120 4207])
+                    ("SerializeBase" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("cbuf" variable
+                               (:pointer 1
+                                :type ("CCommBuf" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4240 4255])
+                            ("mode" variable (:type ("ESerializeMode" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4256 4277]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [4212 4284])
+                    ("Deserialize" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("cbuf" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("CCommBuf" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4315 4337])
+                            ("mode" variable (:type ("ESerializeMode" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4338 4359]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [4289 4360])
+                    ("AddrOfByteCount" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("int64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4453 4515])
+                    ("AddrOfCpuTime" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("CTimer64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4655 4715])
+                    ("AddrOfNumRecs" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("int64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4720 4780])
+                    ("AddrOfStatsTag" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("int64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4785 4846])
+                    ("ByteCount" function
+                       (:typemodifiers ("inline")
+                        :type ("int64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4869 4938])
+                    ("Comment" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type "char")
+                        (reparse-symbol classsubparts) [4943 5010])
+                    ("DetailStats" function
+                       (:typemodifiers ("inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [5015 5086])
+                    ("Flags" function
+                       (:typemodifiers ("inline")
+                        :type "int")
+                        (reparse-symbol classsubparts) [5091 5156])
+                    ("NumRecs" function
+                       (:typemodifiers ("inline")
+                        :type ("int64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5161 5228])
+                    ("Place" function
+                       (:typemodifiers ("inline")
+                        :type ("EPlanNodeLocus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5233 5298])
+                    ("Plan" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("CPlan" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5303 5367])
+                    ("RecStore" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("CRecordStore" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5372 5435])
+                    ("Result" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("TableShape" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5440 5506])
+                    ("ResultTable" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("CTable" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5511 5582])
+                    ("SrcHack" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("TableShape" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5587 5654])
+                    ("SrcHackTable" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :type ("CTable" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5659 5731])
+                    ("StatsTag" function
+                       (:typemodifiers ("inline")
+                        :type ("int64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5736 5804])
+                    ("TblShape" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :constant-flag t
+                        :type ("TableShape" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5809 5877])
+                    ("Type" function
+                       (:typemodifiers ("inline")
+                        :type ("ENodeTypes" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5882 5946])
+                    ("NumRecsEst" function
+                       (:typemodifiers ("inline")
+                        :type ("int64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5951 6021])
+                    ("PlannerFlags" function
+                       (:typemodifiers ("inline")
+                        :type "int")
+                        (reparse-symbol classsubparts) [6026 6098])
+                    ("PlannerRestrictedSlice" function
+                       (:typemodifiers ("inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [6103 6208])
+                    ("IsExprStyle" function
+                       (:typemodifiers ("virtual" "inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [6229 6292])
+                    ("IsJoinType" function
+                       (:typemodifiers ("virtual" "inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [6297 6360])
+                    ("IsSpu2SpuDownload" function
+                       (:typemodifiers ("virtual" "inline")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [6365 6428])
+                    ("AddFlag" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("flag" variable (:type "int") (reparse-symbol arg-sub-list) [6471 6481]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [6450 6522])
+                    ("IncrByteCount" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("val" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6554 6565]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [6527 6602])
+                    ("SetResult" function
+                       (:pointer 1
+                        :typemodifiers ("inline")
+                        :arguments 
+                          ( ("pTable" variable
+                               (:pointer 1
+                                :type ("TableShape" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6662 6682]))                          
+                        :type ("TableShape" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6632 6723])
+                    ("SetDetailStats" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("bb" variable (:type "bool") (reparse-symbol arg-sub-list) [6772 6780]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [6744 6819])
+                    ("SetFlags" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [6846 6857]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [6824 6896])
+                    ("SetNumRecs" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("num" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6925 6936]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [6901 6973])
+                    ("SetPlace" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("place" variable (:type ("EPlanNodeLocus" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7000 7022]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [6978 7050])
+                    ("SetPlan" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("plan" variable
+                               (:pointer 1
+                                :type ("CPlan" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7076 7088]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [7055 7125])
+                    ("SetResultTable" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("pTable" variable
+                               (:pointer 1
+                                :type ("CTable" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7158 7174]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [7130 7209])
+                    ("SetRecStore" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("pRecStore" variable
+                               (:pointer 1
+                                :type ("CRecordStore" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7239 7264]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [7214 7288])
+                    ("SetTblShape" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("shape" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("TableShape" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7318 7343]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [7293 7368])
+                    ("SetSrcHack" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("hack" variable
+                               (:pointer 1
+                                :type ("TableShape" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7397 7415]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [7373 7446])
+                    ("SetSrcHackTable" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("hack" variable
+                               (:pointer 1
+                                :type ("CTable" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7480 7494]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [7451 7529])
+                    ("SetStatsTag" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("tag" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7559 7570]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [7534 7607])
+                    ("SetType" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("type" variable (:type ("ENodeTypes" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7633 7650]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [7612 7683])
+                    ("SetNumRecsEst" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("num" variable (:type ("int64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7715 7726]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [7688 7763])
+                    ("SetPlannerFlags" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [7797 7808]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [7768 7847])
+                    ("setComment" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("cmt" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [7889 7906]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [7872 7907])
+                    ("SetComment" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("cmt" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [7929 7940]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [7912 7941]))                  
+                :type "class")
+                nil [3603 7944])
+            ("NodeFlags" type
+               (:members 
+                  ( ("NfNone" variable
+                       (:constant-flag t
+                        :default-value (8037 8038)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [8028 8038])
+                    ("NfJoinSequence" variable
+                       (:constant-flag t
+                        :default-value (8070 8076)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [8044 8076]))                  
+                :type "enum")
+                nil [8007 8079]))          
+      :file "nodecommon.h"
+      :pointmax 8111
+      :fsize 8110
+      :lastmodtime '(20893 15403 762462 373000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("NODECOMMON_INCLUDED")
+          )
+)
+    (semanticdb-table "xptimer.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("XPTIMER_INCLUDED" variable (:constant-flag t) nil [34 50])
+            ("i386_tsc.h" include nil nil [52 73])
+            ("XpGetTimebase" function
+               (:typemodifiers ("inline")
+                :type ("uint64" type (:type "class") nil nil))
+                nil [384 468])
+            ("CTimer64" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [488 495])
+                    ("CTimer64" function
+                       (:constructor-flag t
+                        :type ("CTimer64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [521 572])
+                    ("m_time" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [578 592])
+                    ("Start" function (:type "void") (reparse-symbol classsubparts) [742 801])
+                    ("Finish" function (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1196 1329])
+                    ("private" label nil (reparse-symbol classsubparts) [1332 1340])
+                    ("m_start" variable (:type ("uint64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1346 1361]))                  
+                :type "class")
+                nil [470 1391]))          
+      :file "xptimer.h"
+      :pointmax 1420
+      :fsize 1419
+      :lastmodtime '(20893 15403 813509 976000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("XPTIMER_INCLUDED")
+          )
+)
+    (semanticdb-table "xpplannerflags.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("XPSCAN_PLANNER_FLAGS_INCLUDED" variable (:constant-flag t) nil [47 76])
+            ("PfNone" variable (:constant-flag t) nil [117 123])
+            ("PfRestrictSlices" variable (:constant-flag t) nil [175 191]))          
+      :file "xpplannerflags.h"
+      :pointmax 273
+      :fsize 272
+      :lastmodtime '(20893 15403 836462 595000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("XPSCAN_PLANNER_FLAGS_INCLUDED")
+          ("PfRestrictSlices" . ((semantic-list "(1<<0)" 199 . 205)))
+          ("PfNone" . ((semantic-list "(0)" 141 . 144)))
+          )
+))
+  :file "!home!workspaces!dbarrett!int-marlin-1!main!src!nde!xp!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

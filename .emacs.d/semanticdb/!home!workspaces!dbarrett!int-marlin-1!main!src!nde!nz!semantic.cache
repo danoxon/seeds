@@ -1,0 +1,174 @@
+;; Object nz/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "nz/"
+  :tables
+  (list
+    (semanticdb-table "autolock.h"
+      :major-mode 'c-mode
+      :tags nil
+      :file "autolock.h"
+      :pointmax 1274
+      :fsize 1273
+      :lastmodtime '(20893 15402 902500 997000)
+      :unmatched-syntax nil)
+    (semanticdb-table "nzconfig.h"
+      :major-mode 'c-mode
+      :tags nil
+      :file "nzconfig.h"
+      :pointmax 4001
+      :fsize 4000
+      :lastmodtime '(20893 15402 885633 676000)
+      :unmatched-syntax nil)
+    (semanticdb-table "nzglobals.h"
+      :major-mode 'c-mode
+      :tags nil
+      :file "nzglobals.h"
+      :pointmax 10165
+      :fsize 10164
+      :lastmodtime '(20893 15402 914775 284000)
+      :unmatched-syntax nil)
+    (semanticdb-table "nzpgexecplan.h"
+      :major-mode 'c-mode
+      :tags nil
+      :file "nzpgexecplan.h"
+      :pointmax 761
+      :fsize 760
+      :lastmodtime '(20893 15402 898575 265000)
+      :unmatched-syntax nil)
+    (semanticdb-table "pgvarblock.h"
+      :major-mode 'c-mode
+      :tags nil
+      :file "pgvarblock.h"
+      :pointmax 669
+      :fsize 668
+      :lastmodtime '(20893 15402 916525 41000)
+      :unmatched-syntax nil)
+    (semanticdb-table "nzcomm.h"
+      :major-mode 'c-mode
+      :tags nil
+      :file "nzcomm.h"
+      :pointmax 6290
+      :fsize 6289
+      :lastmodtime '(20893 15402 922525 162000)
+      :unmatched-syntax nil)
+    (semanticdb-table "nzsched_events.h"
+      :major-mode 'c-mode
+      :tags nil
+      :file "nzsched_events.h"
+      :pointmax 8697
+      :fsize 8696
+      :lastmodtime '(20893 15402 910520 959000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("NZSCHED_EVENTS_INCLUDED")
+          )
+)
+    (semanticdb-table "nzstd.h"
+      :major-mode 'c-mode
+      :tags nil
+      :file "nzstd.h"
+      :pointmax 7602
+      :fsize 7601
+      :lastmodtime '(20893 15402 919525 187000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("STREQNC" (spp-arg-list ("a" "b") 2147 . 2152) . ((semantic-list "(!strcasecmp(a,b))" 2156 . 2174)))
+          ("BIT4" . ((number "0x0010" 4645 . 4651)))
+          ("BIT10" . ((number "0x0400" 4783 . 4789)))
+          ("BIT37" . ((symbol "INT64_C" 5575 . 5582) (semantic-list "(0x0000002000000000)" 5582 . 5602)))
+          ("__STDC_LIMIT_MACROS")
+          ("__STDC_FORMAT_MACROS")
+          ("MAX" (spp-arg-list ("a" "b") 1807 . 1812) . ((semantic-list "(((a)>(b))?(a):(b))" 1815 . 1834)))
+          ("BIT5" . ((number "0x0020" 4668 . 4674)))
+          ("BIT11" . ((number "0x0800" 4806 . 4812)))
+          ("BIT38" . ((symbol "INT64_C" 5619 . 5626) (semantic-list "(0x0000004000000000)" 5626 . 5646)))
+          ("PRIVATE" . ((PRIVATE "private" 7505 . 7512)))
+          ("TRUE" . ((number "1" 1404 . 1405)))
+          ("MIN" (spp-arg-list ("a" "b") 1748 . 1753) . ((semantic-list "(((a)<(b))?(a):(b))" 1756 . 1775)))
+          ("CEND" . ((close-paren "}" 2473 . 2474)))
+          ("STRING_SPLICE_HELPER" (spp-arg-list ("a") 3270 . 3273) . ((punctuation "#" 3274 . 3275) (symbol "a" 3276 . 3277)))
+          ("BIT6" . ((number "0x0040" 4691 . 4697)))
+          ("BIT12" . ((number "0x1000" 4829 . 4835)))
+          ("BIT39" . ((symbol "INT64_C" 5663 . 5670) (semantic-list "(0x0000008000000000)" 5670 . 5690)))
+          ("ALIGN_INT32" (spp-arg-list ("i") 6873 . 6876) . ((semantic-list "((((i)+3)   >> 2) << 2)" 6880 . 6903)))
+          ("FALSE" . ((number "0" 1422 . 1423)))
+          ("NULL" . ((number "0" 1590 . 1591)))
+          ("brkcase" . 
+              ((BREAK "break" 2363 . 2368) (punctuation ";" 2368 . 2369) (CASE "case" 2370 . 2374)))
+          ("BIT7" . ((number "0x0080" 4714 . 4720)))
+          ("BIT13" . ((number "0x2000" 4852 . 4858)))
+          ("BIT20" . ((number "0x00100000" 5030 . 5040)))
+          ("NZSTD_INCLUDED")
+          ("BIT8" . ((number "0x0100" 4737 . 4743)))
+          ("BIT14" . ((number "0x4000" 4875 . 4881)))
+          ("BIT21" . ((number "0x00200000" 5057 . 5067)))
+          ("ALIGN_RECORDS" . ((symbol "ALIGN_VAL64" 6351 . 6362)))
+          ("ALIGN_SHORT" (spp-arg-list ("s") 6823 . 6826) . ((semantic-list "((((s)+1)   >> 1) << 1)" 6830 . 6853)))
+          ("EOS" . ((string "'\\0'" 1628 . 1632)))
+          ("streq" (spp-arg-list ("a" "b") 2284 . 2289) . ((semantic-list "(!strcmp(a,b))" 2291 . 2305)))
+          ("CEXTERN" . ((EXTERN "extern" 2418 . 2424) (string "\"C\"" 2425 . 2428)))
+          ("BIT9" . ((number "0x0200" 4760 . 4766)))
+          ("BIT15" . ((number "0x8000" 4898 . 4904)))
+          ("BIT22" . ((number "0x00400000" 5084 . 5094)))
+          ("ALIGN_INT128" (spp-arg-list ("x") 7174 . 7177) . ((semantic-list "((((x)+3)   >> 2) << 2)" 7179 . 7202)))
+          ("__STDC_CONSTANT_MACROS")
+          ("PTRS_SAME_SIZE_AS_INTS" . ((symbol "TRUE" 1463 . 1467)))
+          ("BIT16" . ((number "0x00010000" 4922 . 4932)))
+          ("BIT23" . ((number "0x00800000" 5111 . 5121)))
+          ("BIT30" . ((number "0x40000000" 5300 . 5310)))
+          ("NZ_LIKELY" (spp-arg-list ("cond") 5992 . 5998) . ((symbol "__builtin_expect" 6005 . 6021) (semantic-list "(!!(cond),1)" 6021 . 6033)))
+          ("ALIGN_VAL64" (spp-arg-list ("l") 7123 . 7126) . ((semantic-list "((((l)+3)   >> 2) << 2)" 7129 . 7152)))
+          ("STREQ" (spp-arg-list ("a" "b") 1871 . 1876) . ((semantic-list "(!strcmp(a,b))" 1877 . 1891)))
+          ("BIT17" . ((number "0x00020000" 4949 . 4959)))
+          ("BIT24" . ((number "0x01000000" 5138 . 5148)))
+          ("BIT31" . ((number "0x80000000" 5327 . 5337)))
+          ("BIT18" . ((number "0x00040000" 4976 . 4986)))
+          ("BIT25" . ((number "0x02000000" 5165 . 5175)))
+          ("BIT32" . ((symbol "INT64_C" 5355 . 5362) (semantic-list "(0x0000000100000000)" 5362 . 5382)))
+          ("INTS_ARE_FOUR_BYTES" . ((symbol "TRUE" 1517 . 1521)))
+          ("BIT0" . ((number "0x0001" 4553 . 4559)))
+          ("BIT19" . ((number "0x00080000" 5003 . 5013)))
+          ("BIT26" . ((number "0x04000000" 5192 . 5202)))
+          ("BIT33" . ((symbol "INT64_C" 5399 . 5406) (semantic-list "(0x0000000200000000)" 5406 . 5426)))
+          ("BIT40" . ((symbol "INT64_C" 5707 . 5714) (semantic-list "(0x0000010000000000)" 5714 . 5734)))
+          ("NZ_UNLIKELY" (spp-arg-list ("cond") 6055 . 6061) . ((symbol "__builtin_expect" 6066 . 6082) (semantic-list "(!!(cond),0)" 6082 . 6094)))
+          ("BRKCASE" . 
+              ((BREAK "break" 2258 . 2263) (punctuation ";" 2263 . 2264) (CASE "case" 2265 . 2269)))
+          ("BIT1" . ((number "0x0002" 4576 . 4582)))
+          ("BIT27" . ((number "0x08000000" 5219 . 5229)))
+          ("BIT34" . ((symbol "INT64_C" 5443 . 5450) (semantic-list "(0x0000000400000000)" 5450 . 5470)))
+          ("BIT41" . ((symbol "INT64_C" 5751 . 5758) (semantic-list "(0x0000020000000000)" 5758 . 5778)))
+          ("NL" . ((string "\"\\n\"" 1703 . 1707)))
+          ("STRING_SPLICE" (spp-arg-list ("a") 3299 . 3302) . ((symbol "STRING_SPLICE_HELPER" 3303 . 3323) (semantic-list "(a)" 3323 . 3326)))
+          ("BIT2" . ((number "0x0004" 4599 . 4605)))
+          ("BIT28" . ((number "0x10000000" 5246 . 5256)))
+          ("BIT35" . ((symbol "INT64_C" 5487 . 5494) (semantic-list "(0x0000000800000000)" 5494 . 5514)))
+          ("BIT42" . ((symbol "INT64_C" 5795 . 5802) (semantic-list "(0x0000040000000000)" 5802 . 5822)))
+          ("STRNEQNC" (spp-arg-list ("a" "b" "n") 2192 . 2199) . ((semantic-list "(!strncasecmp(a,b,n))" 2200 . 2221)))
+          ("CBEGIN" . ((symbol "CEXTERN" 2446 . 2453) (semantic-list "{" 2454 . 2455)))
+          ("BIT3" . ((number "0x0008" 4622 . 4628)))
+          ("BIT29" . ((number "0x20000000" 5273 . 5283)))
+          ("BIT36" . ((symbol "INT64_C" 5531 . 5538) (semantic-list "(0x0000001000000000)" 5538 . 5558)))
+          ("PROTECTED" . ((PROTECTED "protected" 7432 . 7441)))
+          )
+)
+    (semanticdb-table "nzasm.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("NZASM_H_" variable (:constant-flag t) nil [48 56])
+            ("NZ_WORDSIZEINMEMORY" variable (:constant-flag t) nil [380 399])
+            ("LQ" variable (:constant-flag t) nil [507 509]))          
+      :file "nzasm.h"
+      :pointmax 544
+      :fsize 543
+      :lastmodtime '(20893 15402 884615 791000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("NZ_WORDSIZEINMEMORY" . ((number "64" 400 . 402)))
+          ("NZASM_H_")
+          ("LQ" . ((string "\"q\"" 510 . 513)))
+          )
+))
+  :file "!home!workspaces!dbarrett!int-marlin-1!main!src!nde!nz!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

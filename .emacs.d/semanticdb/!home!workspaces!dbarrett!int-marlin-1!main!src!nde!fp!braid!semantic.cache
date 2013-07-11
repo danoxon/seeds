@@ -1,0 +1,1919 @@
+;; Object braid/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "braid/"
+  :tables
+  (list
+    (semanticdb-table "fpBraidMain.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("BinStream.h" include nil nil [1 23])
+            ("fpBraidOptions.h" include nil nil [24 51])
+            ("fpBraidProfile.h" include nil nil [52 79])
+            ("fpCodecChunkCharacter.h" include nil nil [80 114])
+            ("fpCodecChunkFactory.h" include nil nil [115 147])
+            ("fpCodecChunkInteger.h" include nil nil [148 180])
+            ("fpCodecIntegerAccumulator.h" include nil nil [181 219])
+            ("fpEngineCompile.h" include nil nil [220 248])
+            ("fpEngineConfigurableLog.h" include nil nil [249 285])
+            ("fpEngineMain.h" include nil nil [286 311])
+            ("fpEngineMockControl.h" include nil nil [312 344])
+            ("fpEngineMockDataReturn.h" include nil nil [345 380])
+            ("fpEngineMockNetwork.h" include nil nil [381 413])
+            ("fpEngineMockScanEngine.h" include nil nil [414 449])
+            ("fpEngineMockLookup.h" include nil nil [450 481])
+            ("fpEngineOperatorException.h" include nil nil [482 520])
+            ("fpEngineVocabulary.h" include nil nil [521 552])
+            ("fpXgBraidDumper.h" include nil nil [553 581])
+            ("fpXgDotDumper.h" include nil nil [582 608])
+            ("fpXgGraph.h" include nil nil [609 631])
+            ("fpXgBraidReader.h" include nil nil [632 660])
+            ("fpXgEnvironment.h" include nil nil [661 689])
+            ("fpXgLoweringMap.h" include nil nil [690 718])
+            ("fpXgOperatorIterator.h" include nil nil [719 752])
+            ("fpBraidLoader.h" include nil nil [753 779])
+            ("autolock.h" include nil nil [780 801])
+            ("perflog_reader.h" include nil nil [802 829])
+            ("fstream" include (:system-flag t) nil [831 849])
+            ("iostream" include (:system-flag t) nil [850 869])
+            ("sstream" include (:system-flag t) nil [870 888])
+            ("string" include (:system-flag t) nil [889 906])
+            ("dirent.h" include (:system-flag t) nil [907 926])
+            ("sys/types.h" include (:system-flag t) nil [927 949])
+            ("fp::codec::Accumulator" using (:type ("fp::codec::Accumulator" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [951 980])
+            ("fp::codec::ChunkFactory" using (:type ("fp::codec::ChunkFactory" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [981 1011])
+            ("unnamed" type
+               (:members 
+                  ( ("s_options" variable
+                       (:pointer 1
+                        :type ("fp::braid::Options" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1029 1069]))                  
+                :type "namespace")
+                nil [1013 1071])
+            ("fp" type
+               (:members 
+                  ( ("braid" type
+                       (:members 
+                          ( ("loadMempTable" function
+                               (:arguments 
+                                  ( ("chunkFactory" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type ("ChunkFactory" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1266 1299])
+                                    ("scan" variable
+                                       (:pointer 1
+                                        :type ("engine::MockScanEngine" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1300 1329])
+                                    ("tableID" variable (:type ("int32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1330 1344])
+                                    ("sliceID" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1345 1360])
+                                    ("sliceCount" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1361 1379]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [1247 8454])
+                            ("loadFile" function
+                               (:arguments 
+                                  ( ("is" variable
+                                       (:reference 1
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [8470 8487])
+                                    ("basePath" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [8488 8516])
+                                    ("chunkFactory" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type ("ChunkFactory" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [8517 8550])
+                                    ("scan" variable
+                                       (:pointer 1
+                                        :type ("engine::MockScanEngine" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [8551 8580])
+                                    ("sliceID" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8581 8596])
+                                    ("sliceCount" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8597 8615])
+                                    ("lookup" variable
+                                       (:reference 1
+                                        :type ("engine::MockLookup" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [8616 8643])
+                                    ("maxZoneSize" variable (:type "int") (reparse-symbol arg-sub-list) [8644 8660]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [8456 9091])
+                            ("loadAllOtherData" function
+                               (:arguments 
+                                  ( ("loadDataPath" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9115 9135])
+                                    ("chunkFactory" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type ("ChunkFactory" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [9136 9169])
+                                    ("scan" variable
+                                       (:pointer 1
+                                        :type ("engine::MockScanEngine" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [9170 9199])
+                                    ("sliceID" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9200 9215])
+                                    ("sliceCount" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9216 9234])
+                                    ("lookup" variable
+                                       (:reference 1
+                                        :type ("engine::MockLookup" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [9235 9262])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [9263 9286]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [9093 10598])
+                            ("configureLog" function
+                               (:arguments 
+                                  ( ("log" variable
+                                       (:reference 1
+                                        :type ("engine::ConfigurableLog" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [10618 10647])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [10648 10671]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [10600 11990])
+                            ("configureDumper" function
+                               (:arguments 
+                                  ( ("dumper" variable
+                                       (:reference 1
+                                        :type ("xg::BraidDumper" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [12013 12037])
+                                    ("lowerings" variable
+                                       (:reference 1
+                                        :type ("xg::LoweringMap" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [12038 12065])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [12066 12089]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [11992 12337])
+                            ("configureDotDumper" function
+                               (:arguments 
+                                  ( ("dumper" variable
+                                       (:reference 1
+                                        :type ("xg::DotDumper" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [12363 12385])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [12386 12409])
+                                    ("graph" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("xg::Graph" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [12410 12433]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [12339 13107])
+                            ("readProfile" function
+                               (:arguments 
+                                  ( ("profile" variable
+                                       (:reference 1
+                                        :type ("Profile" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [13126 13143])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [13144 13167]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [13109 13399])
+                            ("writeProfile" function
+                               (:arguments 
+                                  ( ("profile" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Profile" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [13419 13442])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [13443 13466]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [13401 13832])
+                            ("reportStandaloneProfile" function
+                               (:arguments 
+                                  ( ("log" variable
+                                       (:reference 1
+                                        :type ("engine::ConfigurableLog" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [13862 13891])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [13892 13915]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [13833 14469])
+                            ("reportNPSProfile" function
+                               (:arguments 
+                                  ( ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [14493 14516]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [14471 15523])
+                            ("validateProfile" function
+                               (:arguments 
+                                  ( ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [15546 15569]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [15525 15665])
+                            ("reportError" function
+                               (:arguments 
+                                  ( ("path" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [15684 15701])
+                                    ("e" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("engine::CompileException" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [15702 15736]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [15667 16903])
+                            ("reportError" function
+                               (:arguments 
+                                  ( ("path" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [16922 16939])
+                                    ("e" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("xg::ReaderException" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [16940 16969]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [16905 17057])
+                            ("reportError" function
+                               (:arguments 
+                                  ( ("path" variable
+                                       (:pointer 1
+                                        :constant-flag t
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [17076 17093])
+                                    ("e" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("engine::OperatorException" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [17094 17129]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [17059 17208])
+                            ("reportError" function (:type "void") (reparse-symbol namespacesubparts) [17210 17885])
+                            ("reportDataReturn" function
+                               (:arguments 
+                                  ( ("data" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("engine::MockDataReturn" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [17909 17944]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [17887 19107])
+                            ("doCheck" function
+                               (:arguments 
+                                  ( ("is" variable
+                                       (:reference 1
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [19122 19139]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [19109 19295])
+                            ("output" function
+                               (:arguments 
+                                  ( ("os" variable
+                                       (:reference 1
+                                        :type ("std::ostream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [19309 19326])
+                                    ("graph" variable
+                                       (:reference 1
+                                        :type ("xg::Graph" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [19327 19344])
+                                    ("lowerings" variable
+                                       (:reference 1
+                                        :type ("xg::LoweringMap" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [19345 19372])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [19373 19396]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [19297 19877])
+                            ("doFormat" function
+                               (:arguments 
+                                  ( ("is" variable
+                                       (:reference 1
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [19893 19910])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [19911 19934]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [19879 20346])
+                            ("doPlot" function
+                               (:arguments 
+                                  ( ("is" variable
+                                       (:reference 1
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [20360 20377])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [20378 20401]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [20348 20790])
+                            ("doCompile" function
+                               (:arguments 
+                                  ( ("is" variable
+                                       (:reference 1
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [20807 20824]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [20792 21098])
+                            ("doDecompile" function
+                               (:arguments 
+                                  ( ("is" variable
+                                       (:reference 1
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [21117 21134])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [21135 21158]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [21100 21496])
+                            ("doLower" function
+                               (:arguments 
+                                  ( ("is" variable
+                                       (:reference 1
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [21511 21528])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [21529 21552]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [21498 21963])
+                            ("doOnlyHost" function
+                               (:arguments 
+                                  ( ("is" variable
+                                       (:reference 1
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [21981 21998])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [21999 22022]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [21965 22367])
+                            ("doOnlySpu" function
+                               (:arguments 
+                                  ( ("is" variable
+                                       (:reference 1
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [22384 22401])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [22402 22425]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [22369 22767])
+                            ("doExpandHost" function
+                               (:arguments 
+                                  ( ("is" variable
+                                       (:reference 1
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [22787 22804])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [22805 22828]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [22769 23409])
+                            ("doExpandSpu" function
+                               (:arguments 
+                                  ( ("is" variable
+                                       (:reference 1
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [23428 23445])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [23446 23469]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [23411 24050])
+                            ("unnamed" type
+                               (:members 
+                                  ( ("MockHost" type
+                                       (:members 
+                                          ( ("public" label nil (reparse-symbol classsubparts) [24169 24176])
+                                            ("MockHost" function
+                                               (:constructor-flag t
+                                                :arguments 
+                                                  ( ("network" variable
+                                                       (:pointer 1
+                                                        :type ("fp::engine::Network" type (:type "class") nil nil))
+                                                        (reparse-symbol arg-sub-list) [24194 24223]))                                                  
+                                                :type ("MockHost" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [24185 24515])
+                                            ("MockHost" function
+                                               (:destructor-flag t
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [24525 24654])
+                                            ("setSpuCount" function
+                                               (:arguments 
+                                                  ( ("spuCount" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24681 24697]))                                                  
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [24664 24754])
+                                            ("setSliceCount" function
+                                               (:arguments 
+                                                  ( ("sliceCount" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24783 24801]))                                                  
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [24764 24890])
+                                            ("start" function
+                                               (:arguments 
+                                                  ( ("log" variable
+                                                       (:pointer 1
+                                                        :type ("engine::Log" type (:type "class") nil nil))
+                                                        (reparse-symbol arg-sub-list) [24919 24936]))                                                  
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [24908 25031])
+                                            ("addSpu" function
+                                               (:arguments 
+                                                  ( ("control" variable
+                                                       (:pointer 1
+                                                        :type ("engine::MockControl" type (:type "class") nil nil))
+                                                        (reparse-symbol arg-sub-list) [25053 25082]))                                                  
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [25041 25208])
+                                            ("runPlan" function
+                                               (:arguments 
+                                                  ( ("plan" variable
+                                                       (:pointer 1
+                                                        :type "char")
+                                                        (reparse-symbol arg-sub-list) [25231 25242])
+                                                    ("planByteCount" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25243 25264]))                                                  
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [25218 25941])
+                                            ("getDataReturn" function (:type ("engine::MockDataReturn" type (:type "class") nil nil)) (reparse-symbol classsubparts) [25951 26035])
+                                            ("private" label nil (reparse-symbol classsubparts) [26041 26049])
+                                            ("m_engine" variable (:type ("engine::Main" type (:type "class") nil nil)) (reparse-symbol classsubparts) [26058 26091])
+                                            ("m_control" variable (:type ("engine::MockControl" type (:type "class") nil nil)) (reparse-symbol classsubparts) [26100 26134])
+                                            ("m_dataReturn" variable (:type ("engine::MockDataReturn" type (:type "class") nil nil)) (reparse-symbol classsubparts) [26143 26180])
+                                            ("doneCondition" variable (:type ("pthread_cond_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [26190 26220])
+                                            ("doneMutex" variable (:type ("pthread_mutex_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [26229 26255]))                                          
+                                        :type "class")
+                                        (reparse-symbol namespacesubparts) [24148 26262])
+                                    ("MockSpu" type
+                                       (:members 
+                                          ( ("public" label nil (reparse-symbol classsubparts) [26363 26370])
+                                            ("TABLE_ID_MEMP" variable
+                                               (:typemodifiers ("static")
+                                                :constant-flag t
+                                                :type "int")
+                                                (reparse-symbol classsubparts) [26379 26422])
+                                            ("MockSpu" function
+                                               (:constructor-flag t
+                                                :arguments 
+                                                  ( ("network" variable
+                                                       (:pointer 1
+                                                        :type ("fp::engine::Network" type (:type "class") nil nil))
+                                                        (reparse-symbol arg-sub-list) [26448 26477])
+                                                    ("compressionMask" variable (:type ("fp::codec::CompressionMask" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26478 26521]))                                                  
+                                                :type ("MockSpu" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [26440 26738])
+                                            ("getControl" function
+                                               (:pointer 1
+                                                :type ("engine::MockControl" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [26748 26824])
+                                            ("setSpuCount" function
+                                               (:arguments 
+                                                  ( ("spuCount" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26851 26867]))                                                  
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [26834 26924])
+                                            ("setSliceCount" function
+                                               (:arguments 
+                                                  ( ("sliceCount" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26953 26971]))                                                  
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [26934 27060])
+                                            ("setSpuID" function
+                                               (:arguments 
+                                                  ( ("spuID" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27084 27097]))                                                  
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [27070 27148])
+                                            ("loadData" function
+                                               (:arguments 
+                                                  ( ("loadFile" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27172 27193])
+                                                    ("lookup" variable
+                                                       (:reference 1
+                                                        :type ("engine::MockLookup" type (:type "class") nil nil))
+                                                        (reparse-symbol arg-sub-list) [27194 27221])
+                                                    ("options" variable
+                                                       (:reference 1
+                                                        :constant-flag t
+                                                        :type ("Options" type (:type "class") nil nil))
+                                                        (reparse-symbol arg-sub-list) [27222 27245]))                                                  
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [27158 27821])
+                                            ("start" function
+                                               (:arguments 
+                                                  ( ("log" variable
+                                                       (:pointer 1
+                                                        :type ("engine::Log" type (:type "class") nil nil))
+                                                        (reparse-symbol arg-sub-list) [27850 27867]))                                                  
+                                                :type "void")
+                                                (reparse-symbol classsubparts) [27839 27962])
+                                            ("getEngine" function
+                                               (:pointer 1
+                                                :type ("engine::Main" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [27972 28039])
+                                            ("private" label nil (reparse-symbol classsubparts) [28045 28053])
+                                            ("m_scan" variable (:type ("engine::MockScanEngineFactory" type (:type "class") nil nil)) (reparse-symbol classsubparts) [28062 28099])
+                                            ("m_control" variable (:type ("engine::MockControl" type (:type "class") nil nil)) (reparse-symbol classsubparts) [28108 28148])
+                                            ("m_engine" variable (:type ("engine::Main" type (:type "class") nil nil)) (reparse-symbol classsubparts) [28157 28196])
+                                            ("m_network" variable
+                                               (:pointer 1
+                                                :type ("engine::Network" type (:type "class") nil nil))
+                                                (reparse-symbol classsubparts) [28205 28245]))                                          
+                                        :type "class")
+                                        (reparse-symbol namespacesubparts) [26343 28252])
+                                    ("addMempNames" function
+                                       (:arguments 
+                                          ( ("lookup" variable
+                                               (:reference 1
+                                                :type ("engine::MockLookup" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [28280 28307]))                                          
+                                        :type "void")
+                                        (reparse-symbol namespacesubparts) [28262 28867])
+                                    ("addParams" function
+                                       (:arguments 
+                                          ( ("lookup" variable
+                                               (:reference 1
+                                                :type ("engine::MockLookup" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [28888 28915])
+                                            ("params" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("std::map" type
+                                                     (:template-specifier 
+                                                        ( ("std::string" type nil nil nil)
+                                                          ("std::string" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [28916 28965]))                                          
+                                        :type "void")
+                                        (reparse-symbol namespacesubparts) [28873 29184]))                                  
+                                :type "namespace")
+                                (reparse-symbol namespacesubparts) [24052 29186])
+                            ("LabelSet" type
+                               (:typedef ("std::set" type
+                                     (:template-specifier 
+                                        ( ("std::string" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :superclasses "std::set"
+                                :type "typedef")
+                                (reparse-symbol namespacesubparts) [29189 29241])
+                            ("ParamsMap" type
+                               (:typedef ("std::map" type
+                                     (:template-specifier 
+                                        ( ("std::string" type nil nil nil)
+                                          ("std::string" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :superclasses "std::map"
+                                :type "typedef")
+                                (reparse-symbol namespacesubparts) [29242 29295])
+                            ("doRun" function
+                               (:arguments 
+                                  ( ("is" variable
+                                       (:reference 1
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [29308 29325])
+                                    ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [29326 29349]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [29297 31290]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [1088 31293]))                  
+                :type "namespace")
+                nil [1073 31314])
+            ("fp::braid" using (:type ("fp::braid" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [31332 31358])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [31369 31378])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [31379 31391]))                  
+                :type "int")
+                nil [31360 33395]))          
+      :file "fpBraidMain.cpp"
+      :pointmax 33396
+      :fsize 33395
+      :lastmodtime '(20893 15414 520462 574000)
+      :unmatched-syntax nil)
+    (semanticdb-table "fpBraidOptions.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("FP_BRAID_OPTIONS_H" variable (:constant-flag t) nil [36 54])
+            ("fpCodecChunkStats.h" include nil nil [56 86])
+            ("fpBraidSelector.h" include nil nil [111 139])
+            ("set" include (:system-flag t) nil [141 155])
+            ("map" include (:system-flag t) nil [156 170])
+            ("string" include (:system-flag t) nil [171 188])
+            ("fp" type
+               (:members 
+                  ( ("braid" type
+                       (:members 
+                          ( ("Options" type
+                               (:members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [240 247])
+                                    ("Options" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [269 278])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [279 291]))                                          
+                                        :type ("Options" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [260 292])
+                                    ("usage" function
+                                       (:prototype-flag t
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [297 316])
+                                    ("shbang" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("line" variable
+                                               (:pointer 1
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [369 380]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [352 381])
+                                    ("finish" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [386 405])
+                                    ("Mode" type
+                                       (:members 
+                                          ( ("modeRun" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [431 446])
+                                            ("modeCheck" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [455 470])
+                                            ("modeFormat" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [479 494])
+                                            ("modePlot" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [503 518])
+                                            ("modeCompile" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [527 542])
+                                            ("modeDecompile" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [551 566])
+                                            ("modeLower" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [575 590])
+                                            ("modeOnlyHost" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [599 614])
+                                            ("modeOnlySpu" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [623 638])
+                                            ("modeExpandHost" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [647 662])
+                                            ("modeExpandSpu" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [671 691]))                                          
+                                        :type "enum")
+                                        (reparse-symbol classsubparts) [411 692])
+                                    ("m_programName" variable
+                                       (:pointer 1
+                                        :type "char")
+                                        (reparse-symbol classsubparts) [698 736])
+                                    ("m_fileName" variable
+                                       (:pointer 1
+                                        :type "char")
+                                        (reparse-symbol classsubparts) [741 776])
+                                    ("m_loweringName" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [786 825])
+                                    ("m_mode" variable (:type ("Mode" type (:type "class") nil nil)) (reparse-symbol classsubparts) [835 866])
+                                    ("m_logLabels" variable (:type ("std::set" type
+                                         (:template-specifier 
+                                            ( ("std::string" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol classsubparts) [871 907])
+                                    ("m_logAll" variable (:type "bool") (reparse-symbol classsubparts) [912 945])
+                                    ("m_logSelector" variable (:type ("Selector" type (:type "class") nil nil)) (reparse-symbol classsubparts) [950 988])
+                                    ("m_logEnter" variable (:type "bool") (reparse-symbol classsubparts) [998 1033])
+                                    ("m_logExit" variable (:type "bool") (reparse-symbol classsubparts) [1038 1072])
+                                    ("m_logGet" variable (:type "bool") (reparse-symbol classsubparts) [1077 1110])
+                                    ("m_logPut" variable (:type "bool") (reparse-symbol classsubparts) [1115 1148])
+                                    ("m_logCanGet" variable (:type "bool") (reparse-symbol classsubparts) [1153 1189])
+                                    ("m_logCanPut" variable (:type "bool") (reparse-symbol classsubparts) [1194 1230])
+                                    ("m_logInputChanged" variable (:type "bool") (reparse-symbol classsubparts) [1235 1277])
+                                    ("m_logOutputChanged" variable (:type "bool") (reparse-symbol classsubparts) [1282 1325])
+                                    ("m_logNetwork" variable (:type "bool") (reparse-symbol classsubparts) [1330 1367])
+                                    ("m_logOther" variable (:type "bool") (reparse-symbol classsubparts) [1372 1407])
+                                    ("m_logData" variable (:type "bool") (reparse-symbol classsubparts) [1412 1446])
+                                    ("m_logOnlyEOS" variable (:type "bool") (reparse-symbol classsubparts) [1451 1488])
+                                    ("m_readProfile" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1494 1532])
+                                    ("m_writeProfile" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1537 1576])
+                                    ("m_plotSelector" variable (:type ("Selector" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1586 1625])
+                                    ("m_plotNoLabels" variable (:type "bool") (reparse-symbol classsubparts) [1630 1669])
+                                    ("m_plotNoInputs" variable (:type "bool") (reparse-symbol classsubparts) [1674 1713])
+                                    ("m_plotNoOutputs" variable (:type "bool") (reparse-symbol classsubparts) [1718 1758])
+                                    ("m_plotNoLocus" variable (:type "bool") (reparse-symbol classsubparts) [1763 1801])
+                                    ("m_plotNoArrows" variable (:type "bool") (reparse-symbol classsubparts) [1806 1845])
+                                    ("m_plotOperatorHits" variable (:type "bool") (reparse-symbol classsubparts) [1850 1893])
+                                    ("m_plotOperatorTime" variable (:type "bool") (reparse-symbol classsubparts) [1898 1941])
+                                    ("m_plotEdgeHits" variable (:type "bool") (reparse-symbol classsubparts) [1946 1985])
+                                    ("m_plotEdgeValues" variable (:type "bool") (reparse-symbol classsubparts) [1990 2031])
+                                    ("m_plotEdgeBytes" variable (:type "bool") (reparse-symbol classsubparts) [2036 2076])
+                                    ("m_plotLiteralLimit" variable (:type "unsigned int") (reparse-symbol classsubparts) [2081 2124])
+                                    ("m_plotSpaceX" variable (:type "double") (reparse-symbol classsubparts) [2129 2166])
+                                    ("m_plotSpaceY" variable (:type "double") (reparse-symbol classsubparts) [2171 2208])
+                                    ("m_loadFile" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2218 2253])
+                                    ("m_loadNoCache" variable (:type "bool") (reparse-symbol classsubparts) [2258 2296])
+                                    ("m_compressionMask" variable (:type ("fp::codec::CompressionMask" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2301 2346])
+                                    ("m_maxZoneSize" variable (:type "unsigned int") (reparse-symbol classsubparts) [2351 2389])
+                                    ("m_showIndex" variable (:type "bool") (reparse-symbol classsubparts) [2395 2431])
+                                    ("m_showBinding" variable (:type "bool") (reparse-symbol classsubparts) [2436 2474])
+                                    ("m_renumber" variable (:type "bool") (reparse-symbol classsubparts) [2479 2514])
+                                    ("m_sortable" variable (:type "bool") (reparse-symbol classsubparts) [2519 2554])
+                                    ("m_keepComments" variable (:type "bool") (reparse-symbol classsubparts) [2559 2598])
+                                    ("m_profile" variable (:type "bool") (reparse-symbol classsubparts) [2603 2637])
+                                    ("m_plot" variable (:type "bool") (reparse-symbol classsubparts) [2642 2673])
+                                    ("m_core" variable (:type "bool") (reparse-symbol classsubparts) [2678 2709])
+                                    ("m_spuCount" variable (:type "unsigned int") (reparse-symbol classsubparts) [2719 2754])
+                                    ("m_sliceCount" variable (:type "unsigned int") (reparse-symbol classsubparts) [2759 2796])
+                                    ("m_params" variable (:type ("std::map" type
+                                         (:template-specifier 
+                                            ( ("std::string" type nil nil nil)
+                                              ("std::string" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol classsubparts) [2802 2846])
+                                    ("private" label nil (reparse-symbol classsubparts) [2848 2856])
+                                    ("finishSpuSlice" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [2861 2888])
+                                    ("finishLog" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [2893 2920])
+                                    ("finishPlot" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [2925 2952])
+                                    ("parseOption" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [2987 2996])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [2997 3009])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [3010 3017]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [2962 3018])
+                                    ("parseFlag" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3048 3057])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3058 3070])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [3071 3078]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [3023 3079])
+                                    ("parseParam" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3109 3118])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3119 3131])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [3132 3139]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [3084 3140])
+                                    ("parseFile" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3170 3179])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3180 3192])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [3193 3200]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [3145 3201])
+                                    ("parseMode" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3232 3241])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3242 3254])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [3255 3262])
+                                            ("modeName" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3263 3284])
+                                            ("mode" variable (:type ("Mode" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3285 3295]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [3207 3296])
+                                    ("parseBoolean" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3326 3335])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3336 3348])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [3349 3356])
+                                            ("optionName" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3357 3380])
+                                            ("result" variable
+                                               (:reference 1
+                                                :type "bool")
+                                                (reparse-symbol arg-sub-list) [3381 3394]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [3301 3395])
+                                    ("parseUnsigned" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3425 3434])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3435 3447])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [3448 3455])
+                                            ("optionName" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3456 3479])
+                                            ("result" variable
+                                               (:reference 1
+                                                :type "unsigned int")
+                                                (reparse-symbol arg-sub-list) [3480 3497]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [3400 3498])
+                                    ("parseString" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3528 3537])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3538 3550])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [3551 3558])
+                                            ("optionName" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3559 3582])
+                                            ("result" variable
+                                               (:reference 1
+                                                :type ("std::string" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [3583 3603]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [3503 3604])
+                                    ("parseDouble" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3634 3643])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3644 3656])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [3657 3664])
+                                            ("optionName" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3665 3688])
+                                            ("result" variable
+                                               (:reference 1
+                                                :type "double")
+                                                (reparse-symbol arg-sub-list) [3689 3704]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [3609 3705])
+                                    ("parseHelp" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3740 3749])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3750 3762])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [3763 3770]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [3715 3771])
+                                    ("parseLogOne" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3801 3810])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3811 3823])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [3824 3831]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [3776 3832])
+                                    ("parseLoadFile" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3862 3871])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3872 3884])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [3885 3892]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [3837 3893])
+                                    ("parseEndOptions" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3923 3932])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3933 3945])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [3946 3953]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [3898 3954])
+                                    ("parseSelectorOne" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3988 3997])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [3998 4010])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [4011 4018])
+                                            ("optionName" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [4019 4042])
+                                            ("sel" variable
+                                               (:reference 1
+                                                :type ("fp::braid::Selector" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [4043 4068]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [3960 4069])
+                                    ("parseSelectorAbove" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [4102 4111])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [4112 4124])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [4125 4132])
+                                            ("optionName" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [4133 4156])
+                                            ("sel" variable
+                                               (:reference 1
+                                                :type ("fp::braid::Selector" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [4157 4182]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [4074 4183])
+                                    ("parseSelectorBelow" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [4216 4225])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [4226 4238])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [4239 4246])
+                                            ("optionName" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [4247 4270])
+                                            ("sel" variable
+                                               (:reference 1
+                                                :type ("fp::braid::Selector" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [4271 4296]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [4188 4297])
+                                    ("parseSelectorAround" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [4330 4339])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [4340 4352])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [4353 4360])
+                                            ("optionName" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [4361 4384])
+                                            ("sel" variable
+                                               (:reference 1
+                                                :type ("fp::braid::Selector" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [4385 4410]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [4302 4411])
+                                    ("parseSelectorLines" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [4444 4453])
+                                            ("argv" variable
+                                               (:pointer 2
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [4454 4466])
+                                            ("i" variable
+                                               (:reference 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [4467 4474])
+                                            ("optionName" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type "char")
+                                                (reparse-symbol arg-sub-list) [4475 4498])
+                                            ("sel" variable
+                                               (:reference 1
+                                                :type ("fp::braid::Selector" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [4499 4524]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [4416 4525])
+                                    ("m_modeName" variable
+                                       (:pointer 1
+                                        :type "char")
+                                        (reparse-symbol classsubparts) [4535 4570])
+                                    ("m_optionsDone" variable (:type "bool") (reparse-symbol classsubparts) [4575 4613]))                                  
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [224 4616]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [205 4623]))                  
+                :type "namespace")
+                nil [190 4644]))          
+      :file "fpBraidOptions.h"
+      :pointmax 4691
+      :fsize 4690
+      :lastmodtime '(20893 15414 523463 374000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FP_BRAID_OPTIONS_H")
+          )
+)
+    (semanticdb-table "fpBraidSelector.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("FP_BRAID_SELECTOR_H" variable (:constant-flag t) nil [37 56])
+            ("iostream" include (:system-flag t) nil [58 77])
+            ("string" include (:system-flag t) nil [78 95])
+            ("set" include (:system-flag t) nil [96 110])
+            ("fp" type
+               (:members 
+                  ( ("xg" type
+                       (:members 
+                          ( ("Graph" type
+                               (:prototype t
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [142 154]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [127 156]))                  
+                :type "namespace")
+                nil [112 157])
+            ("fp" type
+               (:members 
+                  ( ("xg" type
+                       (:members 
+                          ( ("Operator" type
+                               (:prototype t
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [188 203]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [173 205]))                  
+                :type "namespace")
+                nil [158 206])
+            ("fp" type
+               (:members 
+                  ( ("braid" type
+                       (:members 
+                          ( ("Selector" type
+                               (:members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [258 265])
+                                    ("Selector" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :type ("Selector" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [270 281])
+                                    ("addOne" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("one" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [299 315]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [287 316])
+                                    ("addSelectAbove" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("above" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [341 359]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [321 360])
+                                    ("addSelectBelow" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("below" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [385 403]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [365 404])
+                                    ("selectLines" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("start" variable (:type "int") (reparse-symbol arg-sub-list) [426 436])
+                                            ("end" variable (:type "int") (reparse-symbol arg-sub-list) [437 445]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [409 446])
+                                    ("selectAround" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("opName" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [469 488])
+                                            ("range" variable (:type "int") (reparse-symbol arg-sub-list) [489 499]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [451 500])
+                                    ("hasSelectorCriteria" function
+                                       (:prototype-flag t
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [506 539])
+                                    ("numSelectedOperators" function
+                                       (:prototype-flag t
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [544 577])
+                                    ("selectingRange" function
+                                       (:prototype-flag t
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [582 610])
+                                    ("selectingAbove" function
+                                       (:prototype-flag t
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [615 643])
+                                    ("selectingBelow" function
+                                       (:prototype-flag t
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [648 676])
+                                    ("selectingAround" function
+                                       (:prototype-flag t
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [681 710])
+                                    ("selectedLines" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("graph" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("fp::xg::Graph" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [744 771]))                                          
+                                        :type ("std::set" type
+                                             (:template-specifier 
+                                                ( ("int" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol classsubparts) [716 778])
+                                    ("dump" function (:type "void") (reparse-symbol classsubparts) [784 1012])
+                                    ("private" label nil (reparse-symbol classsubparts) [1014 1022])
+                                    ("m_selectOne" variable (:type ("std::set" type
+                                         (:template-specifier 
+                                            ( ("std::string" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol classsubparts) [1027 1063])
+                                    ("m_selectAbove" variable (:type ("std::set" type
+                                         (:template-specifier 
+                                            ( ("std::string" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol classsubparts) [1068 1106])
+                                    ("m_selectBelow" variable (:type ("std::set" type
+                                         (:template-specifier 
+                                            ( ("std::string" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol classsubparts) [1111 1149])
+                                    ("m_selectAround" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1154 1193])
+                                    ("m_selectAroundRange" variable (:type "int") (reparse-symbol classsubparts) [1198 1242])
+                                    ("m_start" variable (:type "int") (reparse-symbol classsubparts) [1247 1279])
+                                    ("m_end" variable (:type "int") (reparse-symbol classsubparts) [1284 1314])
+                                    ("isSelected" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("graph" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("fp::xg::Graph" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [1336 1363])
+                                            ("number" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1364 1380]))                                          
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [1320 1387])
+                                    ("processAboveBelow" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("graph" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("fp::xg::Graph" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [1424 1451]))                                          
+                                        :type ("std::set" type
+                                             (:template-specifier 
+                                                ( ("int" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol classsubparts) [1392 1458])
+                                    ("followEdges" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("graph" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("fp::xg::Graph" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [1480 1507])
+                                            ("op" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type ("fp::xg::Operator" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [1508 1535])
+                                            ("s" variable
+                                               (:reference 1
+                                                :type ("std::set" type
+                                                     (:template-specifier 
+                                                        ( ("int" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [1536 1553])
+                                            ("up" variable (:type "bool") (reparse-symbol arg-sub-list) [1554 1562]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1463 1569])
+                                    ("selectAround" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("resultSet" variable
+                                               (:reference 1
+                                                :type ("std::set" type
+                                                     (:template-specifier 
+                                                        ( ("int" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [1592 1617])
+                                            ("graph" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("fp::xg::Graph" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [1618 1645]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1574 1652])
+                                    ("selectAround" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("resultSet" variable
+                                               (:reference 1
+                                                :type ("std::set" type
+                                                     (:template-specifier 
+                                                        ( ("int" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [1675 1700])
+                                            ("graph" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("fp::xg::Graph" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [1701 1728])
+                                            ("opIn" variable
+                                               (:pointer 1
+                                                :constant-flag t
+                                                :type ("fp::xg::Operator" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [1729 1758])
+                                            ("range" variable (:type "int") (reparse-symbol arg-sub-list) [1759 1769]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1657 1776]))                                  
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [241 1779]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [222 1782]))                  
+                :type "namespace")
+                nil [207 1803]))          
+      :file "fpBraidSelector.h"
+      :pointmax 1852
+      :fsize 1851
+      :lastmodtime '(20893 15414 524525 560000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FP_BRAID_SELECTOR_H")
+          )
+)
+    (semanticdb-table "fpBraidProfile.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("FP_BRAID_PROFILE_H" variable (:constant-flag t) nil [36 54])
+            ("perflog_reader.h" include nil nil [480 507])
+            ("iostream" include (:system-flag t) nil [508 527])
+            ("map" include (:system-flag t) nil [528 542])
+            ("fp" type
+               (:members 
+                  ( ("xg" type
+                       (:members 
+                          ( ("DotDumper" type
+                               (:prototype t
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [574 590]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [559 592]))                  
+                :type "namespace")
+                nil [544 593])
+            ("fp" type
+               (:members 
+                  ( ("braid" type
+                       (:members 
+                          ( ("Options" type
+                               (:prototype t
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [629 643])
+                            ("Profile" type
+                               (:members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [665 672])
+                                    ("accumulateFile" function
+                                       (:prototype-flag t
+                                        :arguments (((("path" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [702 726]))
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [677 727])
+                                    ("applyToDotDumper" function
+                                       (:prototype-flag t
+                                        :arguments (((("dumper" 0 nil nil)) variable (:reference 1 :type ("fp::xg::DotDumper" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [757 783]) ((("options" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("Options" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [784 807]))
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [732 814])
+                                    ("writeReport" function
+                                       (:prototype-flag t
+                                        :arguments (((("os" 0 nil nil)) variable (:reference 1 :type ("std::ostream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [849 866]))
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [824 873])
+                                    ("readReport" function
+                                       (:prototype-flag t
+                                        :arguments (((("is" 0 nil nil)) variable (:reference 1 :type ("std::istream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [903 920]))
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [878 921])
+                                    ("OperatorDetailKey" type
+                                       (:prototype t
+                                        :type "struct")
+                                        (reparse-symbol classsubparts) [927 952])
+                                    ("OperatorKey" type
+                                       (:prototype t
+                                        :type "struct")
+                                        (reparse-symbol classsubparts) [957 976])
+                                    ("OperatorSum" type
+                                       (:prototype t
+                                        :type "struct")
+                                        (reparse-symbol classsubparts) [981 1000])
+                                    ("EdgeDetailKey" type
+                                       (:prototype t
+                                        :type "struct")
+                                        (reparse-symbol classsubparts) [1006 1027])
+                                    ("EdgeKey" type
+                                       (:prototype t
+                                        :type "struct")
+                                        (reparse-symbol classsubparts) [1032 1047])
+                                    ("EdgeSum" type
+                                       (:prototype t
+                                        :type "struct")
+                                        (reparse-symbol classsubparts) [1052 1067])
+                                    ("private" label nil (reparse-symbol classsubparts) [1073 1081])
+                                    ("maxTxid" function
+                                       (:prototype-flag t
+                                        :type ("uint64_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1086 1111])
+                                    ((("m_operator" 0 nil nil)) variable (:type ("std::map" type (:template-specifier (("OperatorKey" type nil nil nil) ("OperatorSum" type nil nil nil)) :type "class") nil nil)) (reparse-symbol classsubparts) [1284 1330])
+                                    ((("m_edge" 0 nil nil)) variable (:type ("std::map" type (:template-specifier (("EdgeKey" type nil nil nil) ("EdgeSum" type nil nil nil)) :type "class") nil nil)) (reparse-symbol classsubparts) [1335 1377])
+                                    ((("m_operatorDetail" 0 nil nil)) variable (:type ("std::map" type (:template-specifier (("OperatorDetailKey" type nil nil nil) ("OperatorSum" type nil nil nil)) :type "class") nil nil)) (reparse-symbol classsubparts) [1446 1504])
+                                    ((("m_edgeDetail" 0 nil nil)) variable (:type ("std::map" type (:template-specifier (("EdgeDetailKey" type nil nil nil) ("EdgeSum" type nil nil nil)) :type "class") nil nil)) (reparse-symbol classsubparts) [1509 1563])
+                                    ((("m_ready" 0 nil nil)) variable (:type ("std::map" type (:template-specifier (("uint64_t" type nil nil nil) ("OperatorSum" type nil nil nil)) :type "class") nil nil)) (reparse-symbol classsubparts) [1637 1677])
+                                    ((("m_total" 0 nil nil)) variable (:type ("std::map" type (:template-specifier (("uint64_t" type nil nil nil) ("OperatorSum" type nil nil nil)) :type "class") nil nil)) (reparse-symbol classsubparts) [1682 1722]))                                  
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [649 1725])
+                            ("OperatorDetailKey" type
+                               (:parent "Profile"
+                                :members 
+                                  ( ("OperatorDetailKey" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :type ("OperatorDetailKey" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [1767 1787])
+                                    ("OperatorDetailKey" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :arguments (((("param" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("std::vector" type (:template-specifier (("PerflogParam" type nil nil nil)) :type "class") nil nil)) (reparse-symbol arg-sub-list) [1810 1849]))
+                                        :type ("OperatorDetailKey" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [1792 1850])
+                                    ((("m_txid" 0 nil nil)) variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1856 1883])
+                                    ((("m_spuIndex" 0 nil nil)) variable (:type "int") (reparse-symbol classsubparts) [1888 1919])
+                                    ((("m_operatorIndex" 0 nil nil)) variable (:type "int") (reparse-symbol classsubparts) [1924 1960])
+                                    ("txid" function (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1966 2017])
+                                    ("<" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("a" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("OperatorDetailKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2061 2088]) ((("b" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("OperatorDetailKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2089 2116]))
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [2027 2117])
+                                    ("<<" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("os" 0 nil nil)) variable (:reference 1 :type ("std::ostream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2156 2173]) ((("a" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("OperatorDetailKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2174 2201]))
+                                        :type ("std::ostream" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2122 2202])
+                                    (">>" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("is" 0 nil nil)) variable (:reference 1 :type ("std::istream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2241 2258]) ((("a" 0 nil nil)) variable (:reference 1 :type ("OperatorDetailKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2259 2280]))
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2207 2281]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [1727 2284])
+                            ("EdgeDetailKey" type
+                               (:parent "Profile"
+                                :members 
+                                  ( ("EdgeDetailKey" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :type ("EdgeDetailKey" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [2322 2338])
+                                    ("EdgeDetailKey" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :arguments (((("param" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("std::vector" type (:template-specifier (("PerflogParam" type nil nil nil)) :type "class") nil nil)) (reparse-symbol arg-sub-list) [2357 2396]))
+                                        :type ("EdgeDetailKey" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [2343 2397])
+                                    ("txid" function (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2403 2465])
+                                    ("<" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("a" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("EdgeDetailKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2509 2532]) ((("b" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("EdgeDetailKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2533 2556]))
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [2475 2557])
+                                    ("<<" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("os" 0 nil nil)) variable (:reference 1 :type ("std::ostream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2596 2613]) ((("a" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("EdgeDetailKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2614 2637]))
+                                        :type ("std::ostream" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2562 2638])
+                                    (">>" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("is" 0 nil nil)) variable (:reference 1 :type ("std::istream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2677 2694]) ((("a" 0 nil nil)) variable (:reference 1 :type ("EdgeDetailKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2695 2712]))
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2643 2713])
+                                    ((("m_operator" 0 nil nil)) variable (:type ("OperatorDetailKey" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2719 2750])
+                                    ((("m_input" 0 nil nil)) variable (:type "int") (reparse-symbol classsubparts) [2755 2783]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [2286 2786])
+                            ("OperatorKey" type
+                               (:parent "Profile"
+                                :members 
+                                  ( ("OperatorKey" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :type ("OperatorKey" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [2822 2836])
+                                    ("OperatorKey" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :arguments (((("param" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("std::vector" type (:template-specifier (("PerflogParam" type nil nil nil)) :type "class") nil nil)) (reparse-symbol arg-sub-list) [2853 2892]))
+                                        :type ("OperatorKey" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [2841 2893])
+                                    ("txid" function (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2899 2950])
+                                    ("<" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("a" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("OperatorKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2994 3015]) ((("b" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("OperatorKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3016 3037]))
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [2960 3038])
+                                    ("<<" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("os" 0 nil nil)) variable (:reference 1 :type ("std::ostream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3077 3094]) ((("a" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("OperatorKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3095 3116]))
+                                        :type ("std::ostream" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3043 3117])
+                                    (">>" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("is" 0 nil nil)) variable (:reference 1 :type ("std::istream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3156 3173]) ((("a" 0 nil nil)) variable (:reference 1 :type ("OperatorKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3174 3189]))
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3122 3190])
+                                    ((("m_txid" 0 nil nil)) variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3196 3223])
+                                    ((("m_line" 0 nil nil)) variable (:type "int") (reparse-symbol classsubparts) [3228 3255])
+                                    ((("m_label" 0 nil nil)) variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3260 3288])
+                                    ((("m_op" 0 nil nil)) variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3293 3318]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [2788 3321])
+                            ("EdgeKey" type
+                               (:parent "Profile"
+                                :members 
+                                  ( ("EdgeKey" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :type ("EdgeKey" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [3353 3363])
+                                    ("EdgeKey" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :arguments (((("param" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("std::vector" type (:template-specifier (("PerflogParam" type nil nil nil)) :type "class") nil nil)) (reparse-symbol arg-sub-list) [3376 3415]))
+                                        :type ("EdgeKey" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [3368 3416])
+                                    ("txid" function (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3422 3484])
+                                    ("<" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("a" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("EdgeKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3528 3545]) ((("b" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("EdgeKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3546 3563]))
+                                        :type "bool")
+                                        (reparse-symbol classsubparts) [3494 3564])
+                                    ("<<" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("os" 0 nil nil)) variable (:reference 1 :type ("std::ostream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3603 3620]) ((("a" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("EdgeKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3621 3638]))
+                                        :type ("std::ostream" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3569 3639])
+                                    (">>" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("is" 0 nil nil)) variable (:reference 1 :type ("std::istream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3678 3695]) ((("a" 0 nil nil)) variable (:reference 1 :type ("EdgeKey" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3696 3707]))
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3644 3708])
+                                    ((("m_operator" 0 nil nil)) variable (:type ("OperatorKey" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3714 3745])
+                                    ((("m_input" 0 nil nil)) variable (:type "int") (reparse-symbol classsubparts) [3750 3778]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [3323 3781])
+                            ("OperatorSum" type
+                               (:parent "Profile"
+                                :members 
+                                  ( ("OperatorSum" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :type ("OperatorSum" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [3817 3831])
+                                    ("+=" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :arguments (((("record" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("rc::perflog::PerflogReaderRecord" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3871 3918]))
+                                        :type ("OperatorSum" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3837 3919])
+                                    ("<<" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("os" 0 nil nil)) variable (:reference 1 :type ("std::ostream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3958 3975]) ((("a" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("OperatorSum" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3976 3997]))
+                                        :type ("std::ostream" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3924 3998])
+                                    (">>" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("os" 0 nil nil)) variable (:reference 1 :type ("std::istream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4037 4054]) ((("a" 0 nil nil)) variable (:reference 1 :type ("OperatorSum" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4055 4070]))
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4003 4071])
+                                    ((("m_hits" 0 nil nil)) variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4077 4104])
+                                    ((("m_ticks" 0 nil nil)) variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4109 4137]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [3783 4140])
+                            ("EdgeSum" type
+                               (:parent "Profile"
+                                :members 
+                                  ( ("EdgeSum" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :type ("EdgeSum" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [4172 4182])
+                                    ("+=" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :arguments (((("record" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("rc::perflog::PerflogReaderRecord" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4210 4257]))
+                                        :type ("EdgeSum" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4188 4258])
+                                    ("<<" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("os" 0 nil nil)) variable (:reference 1 :type ("std::ostream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4297 4314]) ((("a" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("EdgeSum" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4315 4332]))
+                                        :type ("std::ostream" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4263 4333])
+                                    (">>" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("friend")
+                                        :arguments (((("os" 0 nil nil)) variable (:reference 1 :type ("std::istream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4372 4389]) ((("a" 0 nil nil)) variable (:reference 1 :type ("EdgeSum" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4390 4401]))
+                                        :type ("std::istream" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4338 4402])
+                                    ((("m_chunkCount" 0 nil nil)) variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4408 4441])
+                                    ((("m_valueCount" 0 nil nil)) variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4446 4479])
+                                    ((("m_byteCount" 0 nil nil)) variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4484 4516])
+                                    ((("m_EOSCount" 0 nil nil)) variable (:type "unsigned int") (reparse-symbol classsubparts) [4521 4552])
+                                    ((("m_chunkPending" 0 nil nil)) variable (:type ("int64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4558 4593])
+                                    ((("m_valuePending" 0 nil nil)) variable (:type ("int64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4598 4633])
+                                    ((("m_bytePending" 0 nil nil)) variable (:type ("int64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4638 4672])
+                                    ((("m_EOSPending" 0 nil nil)) variable (:type "int") (reparse-symbol classsubparts) [4677 4710]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [4142 4713]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [610 4716]))                  
+                :type "namespace")
+                nil [595 4737]))          
+      :file "fpBraidProfile.h"
+      :pointmax 4782
+      :fsize 4781
+      :lastmodtime '(20893 15414 519462 532000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FP_BRAID_PROFILE_H")
+          )
+)
+    (semanticdb-table "fpBraidLoader.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("FP_BRAID_LOADER_H" variable (:constant-flag t) nil [35 52])
+            ("fstream" include (:system-flag t) nil [54 72])
+            ("iostream" include (:system-flag t) nil [73 92])
+            ("sstream" include (:system-flag t) nil [93 111])
+            ("string" include (:system-flag t) nil [112 129])
+            ("vector" include (:system-flag t) nil [130 147])
+            ("fp" type
+               (:members 
+                  ( ("codec" type
+                       (:members 
+                          ( ("ChunkFactory" type
+                               (:prototype t
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [293 312]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [275 314]))                  
+                :type "namespace")
+                nil [260 315])
+            ("fp" type
+               (:members 
+                  ( ("engine" type
+                       (:members 
+                          ( ("MockScanEngine" type
+                               (:prototype t
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [350 371]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [331 373]))                  
+                :type "namespace")
+                nil [316 374])
+            ("fp" type
+               (:members 
+                  ( ("engine" type
+                       (:members 
+                          ( ("MockLookup" type
+                               (:prototype t
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [409 426]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [390 428]))                  
+                :type "namespace")
+                nil [375 429])
+            ("fp" type
+               (:members 
+                  ( ("braid" type
+                       (:members 
+                          ( ("ColumnType" type
+                               (:members 
+                                  ( ("UNKTYPE" variable
+                                       (:constant-flag t
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [487 495])
+                                    ("INTTYPE" variable
+                                       (:constant-flag t
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [500 508])
+                                    ("STRINGTYPE" variable
+                                       (:constant-flag t
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [513 524])
+                                    ("DATETYPE" variable
+                                       (:constant-flag t
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [529 539]))                                  
+                                :type "enum")
+                                (reparse-symbol namespacesubparts) [465 540])
+                            ("Column" type
+                               (:members (((("m_name" 0 nil nil)) variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [562 581]) ((("m_logicalIndex" 0 nil nil)) variable (:type "int") (reparse-symbol classsubparts) [586 613]) ((("m_physicalIndex" 0 nil nil)) variable (:type "int") (reparse-symbol classsubparts) [618 646]) ((("m_type" 0 nil nil)) variable (:type ("ColumnType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [651 670]) ("<<" function (:operator-flag t :typemodifiers ("friend") :arguments (((("os" 0 nil nil)) variable (:reference 1 :type ("std::ostream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [710 727]) ((("value" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("Column" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [728 748])) :type ("std::ostream" type (:type "class") nil nil)) (reparse-symbol classsubparts) [676 887]))
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [542 890])
+                            ("Loader" type
+                               (:members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [907 914])
+                                    ("Loader" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :type ("Loader" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [919 928])
+                                    ("parseLoadFile" function
+                                       (:prototype-flag t
+                                        :typemodifiers ("static")
+                                        :arguments (((("in" 0 nil nil)) variable (:reference 1 :type ("std::istream" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1104 1121]) ((("basePath" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1122 1150]) ((("out" 0 nil nil)) variable (:reference 1 :type ("std::vector" type (:template-specifier (("Loader" type nil nil nil)) :type "class") nil nil)) (reparse-symbol arg-sub-list) [1151 1176]) ((("lookup" 0 nil nil)) variable (:reference 1 :type ("fp::engine::MockLookup" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1177 1208]))
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1075 1209])
+                                    ("loadSlice" function
+                                       (:prototype-flag t
+                                        :typemodifiers ("static")
+                                        :arguments (((("chunkFactory" 1 nil nil)) variable (:constant-flag t :type ("fp::codec::ChunkFactory" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1243 1287]) ((("scan" 1 nil nil)) variable (:type ("fp::engine::MockScanEngine" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1288 1321]) ((("sliceID" 0 nil nil)) variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1322 1337]) ((("sliceCount" 0 nil nil)) variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1338 1356]) ((("loader" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("std::vector" type (:template-specifier (("Loader" type nil nil nil)) :type "class") nil nil)) (reparse-symbol arg-sub-list) [1357 1391]))
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1214 1392])
+                                    ("getIntDate" function
+                                       (:prototype-flag t
+                                        :typemodifiers ("static")
+                                        :arguments (((("dateString" 1 nil nil)) variable (:constant-flag t :type ("char")) (reparse-symbol arg-sub-list) [1427 1450]))
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [1398 1451])
+                                    ("date2j" function
+                                       (:prototype-flag t
+                                        :typemodifiers ("static")
+                                        :arguments (((("y" 0 nil nil)) variable (:type ("int")) (reparse-symbol arg-sub-list) [1485 1491]) ((("m" 0 nil nil)) variable (:type ("int")) (reparse-symbol arg-sub-list) [1492 1498]) ((("d" 0 nil nil)) variable (:type ("int")) (reparse-symbol arg-sub-list) [1499 1505]))
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [1456 1506])
+                                    ("setFile" function
+                                       (:prototype-flag t
+                                        :arguments (((("fileName" 0 nil nil)) variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1541 1562]))
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1512 1563])
+                                    ("setTableID" function
+                                       (:prototype-flag t
+                                        :arguments (((("id" 0 nil nil)) variable (:type ("int")) (reparse-symbol arg-sub-list) [1597 1604]))
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1568 1605])
+                                    ("setColumnInfo" function
+                                       (:prototype-flag t
+                                        :arguments (((("column" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("std::vector" type (:template-specifier (("Column" type nil nil nil)) :type "class") nil nil)) (reparse-symbol arg-sub-list) [1639 1673]))
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1610 1674])
+                                    ("setMaxZoneSize" function
+                                       (:prototype-flag t
+                                        :arguments (((("size" 0 nil nil)) variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1708 1720]))
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1679 1721])
+                                    ("setDistributeName" function
+                                       (:prototype-flag t
+                                        :arguments (((("columnName" 0 nil nil)) variable (:reference 1 :constant-flag t :type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1756 1786]))
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1726 1787])
+                                    ("setBalloonFactor" function
+                                       (:prototype-flag t
+                                        :arguments (((("balloonFactor" 0 nil nil)) variable (:type ("unsigned int")) (reparse-symbol arg-sub-list) [1821 1844]))
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1792 1845])
+                                    ("logicalToIndex" function
+                                       (:prototype-flag t
+                                        :arguments (((("logical" 0 nil nil)) variable (:type ("int")) (reparse-symbol arg-sub-list) [1880 1892]))
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [1851 1899])
+                                    ("loadSlice" function
+                                       (:prototype-flag t
+                                        :arguments (((("chunkFactory" 1 nil nil)) variable (:constant-flag t :type ("fp::codec::ChunkFactory" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1933 1977]) ((("scan" 1 nil nil)) variable (:type ("fp::engine::MockScanEngine" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1978 2011]) ((("sliceID" 0 nil nil)) variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2012 2027]) ((("sliceCount" 0 nil nil)) variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2028 2046]))
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1904 2053])
+                                    ("private" label nil (reparse-symbol classsubparts) [2055 2063])
+                                    ((("m_file" 0 nil nil)) variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2068 2095])
+                                    ((("m_tableID" 0 nil nil)) variable (:type "int") (reparse-symbol classsubparts) [2100 2130])
+                                    ((("m_column" 0 nil nil)) variable (:type ("std::vector" type (:template-specifier (("Column" type nil nil nil)) :type "class") nil nil)) (reparse-symbol classsubparts) [2135 2164])
+                                    ((("m_distributeIndex" 0 nil nil)) variable (:type "int") (reparse-symbol classsubparts) [2169 2207])
+                                    ((("m_balloonFactor" 0 nil nil)) variable (:type "unsigned int") (reparse-symbol classsubparts) [2212 2248])
+                                    ((("s_maxZoneSize" 0 nil nil)) variable (:typemodifiers ("static") :type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2254 2288]))                                  
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [892 2291]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [446 2294]))                  
+                :type "namespace")
+                nil [431 2315]))          
+      :file "fpBraidLoader.h"
+      :pointmax 2361
+      :fsize 2360
+      :lastmodtime '(20893 15414 525525 531000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FP_BRAID_LOADER_H")
+          )
+))
+  :file "!home!workspaces!dbarrett!int-marlin-1!main!src!nde!fp!braid!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

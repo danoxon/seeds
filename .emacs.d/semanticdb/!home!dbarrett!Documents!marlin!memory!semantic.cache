@@ -1,0 +1,24 @@
+;; Object memory/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "memory/"
+  :tables
+  (list
+    (semanticdb-table "memory_notes.cpp"
+      :major-mode 'c++-mode
+      :tags nil
+      :file "memory_notes.cpp"
+      :pointmax 3813
+      :fsize 3812
+      :lastmodtime '(20948 33315 18361 926000)
+      :unmatched-syntax nil)
+    (semanticdb-table "memory_notes.cpp~"
+      :major-mode 'c++-mode
+      :tags nil
+      :file "memory_notes.cpp~"
+      :pointmax 2219
+      :fsize 3566
+      :lastmodtime '(20948 29981 861000 590000)
+      :unmatched-syntax nil))
+  :file "!home!dbarrett!Documents!marlin!memory!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

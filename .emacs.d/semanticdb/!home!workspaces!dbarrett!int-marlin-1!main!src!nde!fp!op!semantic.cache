@@ -1,0 +1,310 @@
+;; Object op/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "op/"
+  :tables
+  (list
+    (semanticdb-table "fpOpPrepareIntegerSortKey.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("nzstd.h" include nil nil [49 67])
+            ("fpOpPrepareIntegerSortKey.h" include nil nil [68 106])
+            ("fpCodecChunk.h" include nil nil [107 132])
+            ("fpCodecChunkFactory.h" include nil nil [133 165])
+            ("fpCodecChunkInteger.h" include nil nil [166 198])
+            ("fpCodecIntegerAccumulator.h" include nil nil [199 237])
+            ("fp::codec::Accumulator" using (:type ("fp::codec::Accumulator" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [239 268])
+            ("fp::codec::ChunkInteger" using (:type ("fp::codec::ChunkInteger" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [269 299])
+            ("fp" type
+               (:members 
+                  ( ("op" type
+                       (:members 
+                          ( ("checkLiterals" function
+                               (:parent "PrepareIntegerSortKey"
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [332 599])
+                            ("start" function
+                               (:parent "PrepareIntegerSortKey"
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [601 661])
+                            ("execute" function
+                               (:parent "PrepareIntegerSortKey"
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [663 3701]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [316 3704]))                  
+                :type "namespace")
+                nil [301 3722]))          
+      :file "fpOpPrepareIntegerSortKey.cpp"
+      :pointmax 3739
+      :fsize 3738
+      :lastmodtime '(20893 15414 375525 35000)
+      :unmatched-syntax nil)
+    (semanticdb-table "fpOpPrepareIntegerSortKey.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("FP_OP_PREPARE_INTEGER_SORT_KEY_H" variable (:constant-flag t) nil [50 82])
+            ("fpEngineOperator.h" include nil nil [132 161])
+            ("fp" type
+               (:members 
+                  ( ("op" type
+                       (:members 
+                          ( ("PrepareIntegerSortKey" type
+                               (:superclasses 
+                                  ( ("engine::Operator" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  
+                                :members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [250 257])
+                                    ("INPUT_RECORDS" variable
+                                       (:typemodifiers ("static")
+                                        :constant-flag t
+                                        :type ("uint32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [314 355])
+                                    ("INPUT_SIZE" variable
+                                       (:typemodifiers ("static")
+                                        :constant-flag t
+                                        :type ("uint32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [388 429])
+                                    ("INPUT_DISABLE" variable
+                                       (:typemodifiers ("static")
+                                        :constant-flag t
+                                        :type ("uint32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [484 525])
+                                    ("OUTPUT" variable
+                                       (:typemodifiers ("static")
+                                        :constant-flag t
+                                        :type ("uint32" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [531 572])
+                                    ("checkLiterals" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [578 599])
+                                    ("start" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [604 617])
+                                    ("execute" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [622 637])
+                                    ("private" label nil (reparse-symbol classsubparts) [639 647])
+                                    ("m_size" variable (:type ("uint32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [652 666]))                                  
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [194 720]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [178 723]))                  
+                :type "namespace")
+                nil [163 741]))          
+      :file "fpOpPrepareIntegerSortKey.h"
+      :pointmax 802
+      :fsize 801
+      :lastmodtime '(20893 15414 363528 634000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FP_OP_PREPARE_INTEGER_SORT_KEY_H")
+          )
+)
+    (semanticdb-table "fpOpCharacterHashDistribute.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("nzstd.h" include nil nil [66 84])
+            ("nzcrc.h" include nil nil [85 103])
+            ("fpOpCharacterHashDistribute.h" include nil nil [104 144])
+            ("fpCodecChunk.h" include nil nil [145 170])
+            ("fpCodecChunkFactory.h" include nil nil [171 203])
+            ("fpCodecChunkInteger.h" include nil nil [204 236])
+            ("fpCodecChunkCharacter.h" include nil nil [237 271])
+            ("fpOpCreateHashTable.h" include nil nil [272 304])
+            ("fp" type
+               (:members 
+                  ( ("op" type
+                       (:members 
+                          ( ("hashtype" type
+                               (:typedef ("int32" type (:type "class") nil nil)
+                                :superclasses "int32"
+                                :type "typedef")
+                                (reparse-symbol namespacesubparts) [337 360])
+                            ("uhashtype" type
+                               (:typedef ("uint32" type (:type "class") nil nil)
+                                :superclasses "uint32"
+                                :type "typedef")
+                                (reparse-symbol namespacesubparts) [361 386])
+                            ("execute" function
+                               (:parent "CharacterHashDistribute"
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [389 2322]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [321 2325]))                  
+                :type "namespace")
+                nil [306 2343]))          
+      :file "fpOpCharacterHashDistribute.cpp"
+      :pointmax 2360
+      :fsize 2359
+      :lastmodtime '(20893 15414 308525 538000)
+      :unmatched-syntax nil)
+    (semanticdb-table "fpOpCharacterHashDistribute.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("FP_OP_CHARACTER_HASH_DISTRIBUTE_H" variable (:constant-flag t) nil [51 84])
+            ("fpEngineOperator.h" include nil nil [296 325])
+            ("fp" type
+               (:members 
+                  ( ("op" type
+                       (:members 
+                          ( ("CharacterHashDistribute" type
+                               (:superclasses 
+                                  ( ("engine::Operator" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  
+                                :members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [416 423])
+                                    ("" type
+                                       (:members 
+                                          ( ("INPUT_VALUE" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [443 455])
+                                            ("INPUT_CHAIN" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [464 476])
+                                            ("INPUT_DISABLE" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [485 504]))                                          
+                                        :type "enum")
+                                        (reparse-symbol classsubparts) [428 505])
+                                    ("" type
+                                       (:members 
+                                          ( ("OUTPUT" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [526 538]))                                          
+                                        :type "enum")
+                                        (reparse-symbol classsubparts) [511 539])
+                                    ("execute" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [545 560]))                                  
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [358 563]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [342 566]))                  
+                :type "namespace")
+                nil [327 584]))          
+      :file "fpOpCharacterHashDistribute.h"
+      :pointmax 646
+      :fsize 645
+      :lastmodtime '(20893 15414 350525 794000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FP_OP_CHARACTER_HASH_DISTRIBUTE_H")
+          )
+)
+    (semanticdb-table "fpOpCreateHashTable.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("FP_OP_CREATEHASHTABLE_H" variable (:constant-flag t) nil [41 64])
+            ("fpCodecChunkRecord.h" include nil nil [264 295])
+            ("fpEngineOperator.h" include nil nil [296 325])
+            ("fpAlgorithmHashJoin.h" include nil nil [326 358])
+            ("fp" type
+               (:members 
+                  ( ("op" type
+                       (:members 
+                          ( ("CreateHashTable" type
+                               (:superclasses 
+                                  ( ("engine::Operator" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  
+                                :members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [442 449])
+                                    ("" type
+                                       (:members 
+                                          ( ("INPUT_RECORDS" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [469 483])
+                                            ("INPUT_HASHES" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [492 505]))                                          
+                                        :type "enum")
+                                        (reparse-symbol classsubparts) [454 512])
+                                    ("" type
+                                       (:members 
+                                          ( ("OUTPUT" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [533 545]))                                          
+                                        :type "enum")
+                                        (reparse-symbol classsubparts) [518 546])
+                                    ("State" type
+                                       (:members 
+                                          ( ("WAITING_TO_READ_SECTION" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [573 597])
+                                            ("WAITING_TO_WRITE_TABLE" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [606 629])
+                                            ("WAITING_TO_WRITE_END" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [638 659])
+                                            ("CLOSED" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [668 680]))                                          
+                                        :type "enum")
+                                        (reparse-symbol classsubparts) [552 681])
+                                    ("CreateHashTable" function
+                                       (:prototype-flag t
+                                        :constructor-flag t
+                                        :type ("CreateHashTable" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [707 725])
+                                    ("CreateHashTable" function
+                                       (:prototype-flag t
+                                        :destructor-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [749 768])
+                                    ("execute" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [774 789])
+                                    ("stop" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [794 806])
+                                    ("private" label nil (reparse-symbol classsubparts) [808 816])
+                                    ((("m_hashObj" 1 nil nil)) variable (:type ("algorithm::hashTableObjectBase" type (:type "class") nil nil)) (reparse-symbol classsubparts) [821 863])
+                                    ((("m_state" 0 nil nil)) variable (:type ("State" type (:type "class") nil nil)) (reparse-symbol classsubparts) [868 882])
+                                    ((("m_initialSectionList" 0 nil nil)) variable (:type ("std::vector" type (:template-specifier (("algorithm::hashTableSection" type nil nil nil)) :type "class") nil nil)) (reparse-symbol classsubparts) [887 949]))                                  
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [392 952]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [375 955]))                  
+                :type "namespace")
+                nil [360 973]))          
+      :file "fpOpCreateHashTable.h"
+      :pointmax 1025
+      :fsize 1024
+      :lastmodtime '(20893 15414 234525 708000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FP_OP_CREATEHASHTABLE_H")
+          )
+))
+  :file "!home!workspaces!dbarrett!int-marlin-1!main!src!nde!fp!op!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

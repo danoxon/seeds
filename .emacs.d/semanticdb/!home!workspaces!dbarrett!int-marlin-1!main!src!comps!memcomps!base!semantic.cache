@@ -1,0 +1,1084 @@
+;; Object base/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "base/"
+  :tables
+  (list
+    (semanticdb-table "memHeap.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("stdlib.h" include (:system-flag t) nil [317 336])
+            ("memImplDefs.h" include nil nil [371 395])
+            ("memInterface.h" include nil nil [439 464])
+            ("memHeader.h" include nil nil [511 533])
+            ("memHeap.h" include nil nil [570 590])
+            ("mem" using (:type ("mem" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [594 614])
+            ("MEM_UNSUPPORTED" variable (:constant-flag t) nil [624 639])
+            ("configureRegions" function
+               (:parent "Heap"
+                :arguments 
+                  ( ("prefixName" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [962 985])
+                    ("descCount" variable (:type "int") (reparse-symbol arg-sub-list) [1014 1028])
+                    ("config" variable
+                       (:pointer 1
+                        :type ("RegionKindDesc" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1057 1080])
+                    ("mappings" variable
+                       (:pointer 1
+                        :type ("MappingArray" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1109 1132]))                  
+                :type "void")
+                nil [934 1153])
+            ("initProcess" function
+               (:parent "Heap"
+                :arguments 
+                  ( ("prefixName" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1179 1202]))                  
+                :type "bool")
+                nil [1156 1219])
+            ("finiProcess" function
+               (:parent "Heap"
+                :type "void")
+                nil [1222 1250])
+            ("initialized" function
+               (:parent "Heap"
+                :type "bool")
+                nil [1253 1294])
+            ("initThread" function
+               (:parent "Heap"
+                :arguments 
+                  ( ("heapid" variable (:type "long") (reparse-symbol arg-sub-list) [1319 1331]))                  
+                :type "void")
+                nil [1297 1335])
+            ("setThreadIndex" function
+               (:parent "Heap"
+                :arguments 
+                  ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1364 1388])
+                    ("overlayIndex" variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1389 1416]))                  
+                :type "void")
+                nil [1338 1420])
+            ("openRegion" function
+               (:parent "Heap"
+                :arguments 
+                  ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1445 1469])
+                    ("overlayIndex" variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1470 1497]))                  
+                :type "void")
+                nil [1423 1501])
+            ("closeRegion" function
+               (:parent "Heap"
+                :arguments 
+                  ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1527 1551])
+                    ("overlayIndex" variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1552 1579]))                  
+                :type "void")
+                nil [1504 1583])
+            ("validateRegion" function
+               (:parent "Heap"
+                :arguments 
+                  ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1612 1636])
+                    ("overlayIndex" variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1637 1664]))                  
+                :type "bool")
+                nil [1586 1681])
+            ("getRegionSize" function
+               (:parent "Heap"
+                :arguments 
+                  ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1711 1735])
+                    ("overlayIndex" variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1763 1790])
+                    ("availableSize" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1818 1840]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [1684 1901])
+            ("getThreadIndex" function
+               (:parent "Heap"
+                :arguments 
+                  ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1938 1962]))                  
+                :type ("regionIndex_t" type (:type "class") nil nil))
+                nil [1903 1976])
+            ("allocBlock" function
+               (:pointer 1
+                :parent "Heap"
+                :arguments 
+                  ( ("sz" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2126 2136])
+                    ("ctx" variable
+                       (:constant-flag t
+                        :type ("AllocContext" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2137 2160]))                  
+                :type "void")
+                nil [2103 2322])
+            ("allocBlockNothrow" function
+               (:pointer 1
+                :parent "Heap"
+                :arguments 
+                  ( ("sz" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2354 2364])
+                    ("ctx" variable
+                       (:constant-flag t
+                        :type ("AllocContext" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2365 2388]))                  
+                :type "void")
+                nil [2324 2642])
+            ("callocBlock" function
+               (:pointer 1
+                :parent "Heap"
+                :arguments 
+                  ( ("sz" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2669 2679])
+                    ("ctx" variable
+                       (:constant-flag t
+                        :type ("AllocContext" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2680 2703]))                  
+                :type "void")
+                nil [2645 3007])
+            ("reallocBlock" function
+               (:pointer 1
+                :parent "Heap"
+                :arguments 
+                  ( ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3035 3045])
+                    ("sz" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3046 3056])
+                    ("ctx" variable
+                       (:constant-flag t
+                        :type ("AllocContext" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3057 3080]))                  
+                :type "void")
+                nil [3010 4437])
+            ("freeBlock" function
+               (:parent "Heap"
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4461 4469]))                  
+                :type "void")
+                nil [4440 4695])
+            ("getFriendlySize" function
+               (:parent "Heap"
+                :arguments 
+                  ( ("sz" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4727 4737]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [4698 4752])
+            ("setKnownObject" function
+               (:pointer 1
+                :parent "Heap"
+                :arguments 
+                  ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4897 4921])
+                    ("ko" variable (:type ("memKnownObject_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4949 4969])
+                    ("newval" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4997 5010])
+                    ("mustBeEmpty" variable (:type "bool") (reparse-symbol arg-sub-list) [5038 5055]))                  
+                :type "void")
+                nil [4870 5674])
+            ("getKnownObject" function
+               (:pointer 1
+                :parent "Heap"
+                :arguments 
+                  ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5704 5728])
+                    ("ko" variable (:type ("memKnownObject_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5729 5749]))                  
+                :type "void")
+                nil [5677 5888])
+            ("iterateBlocks" function
+               (:parent "Heap"
+                :arguments 
+                  ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5981 6017])
+                    ("filter" variable (:type ("FilterSpec" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6042 6074])
+                    ("cbFn" variable (:type ("iterateBlocksCallback_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6099 6129])
+                    ("fnarg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6154 6185]))                  
+                :type "int")
+                nil [5957 6199])
+            ("validateAllBlocks" function
+               (:parent "Heap"
+                :arguments 
+                  ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6231 6255]))                  
+                :type "void")
+                nil [6202 6276]))          
+      :file "memHeap.cpp"
+      :pointmax 6278
+      :fsize 6277
+      :lastmodtime '(20893 15417 51641 945000)
+      :unmatched-syntax '((thing 6276 . 6277) (thing 6199 . 6200) (thing 5888 . 5889) (thing 5674 . 5675) (thing 4752 . 4753) (thing 4695 . 4696) (thing 4437 . 4438) (thing 3007 . 3008) (thing 2642 . 2643) (thing 1976 . 1977) (thing 1681 . 1682) (thing 1583 . 1584) (thing 1501 . 1502) (thing 1420 . 1421) (thing 1335 . 1336) (thing 1294 . 1295) (thing 1250 . 1251) (thing 1219 . 1220) (thing 1153 . 1154))
+      :lexical-table 
+        '(("MEM_UNSUPPORTED" . ((symbol "throwRuntimeError" 686 . 703) (semantic-list "(\"Region call unsupported by REGION_HEAP\", \\
+    __FILE__, __LINE__, MEM_FN_NAME)" 703 . 784)))
+          )
+)
+    (semanticdb-table "memImplDefs.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MEMIMPLDEFS_INCLUDE" variable (:constant-flag t) nil nil)
+            ("memThrow.h" include nil nil nil)
+            ("MEM_HUGEPAGE_PATH" variable (:constant-flag t) nil nil)
+            ("MEM_FN_NAME" variable (:constant-flag t) nil nil)
+            ("MEM_ASSERT" variable (:constant-flag t) nil nil)
+            ("MEM_VERIFY" variable (:constant-flag t) nil nil)
+            ("MEM_ERROR" variable (:constant-flag t) nil nil)
+            ("MEM_OOM" variable (:constant-flag t) nil nil))          
+      :file "memImplDefs.h"
+      :pointmax 1973
+      :fsize 1972
+      :lastmodtime '(20893 15417 49604 790000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MEM_VERIFY" (spp-arg-list ("expr") 1347 . 1353) . ((semantic-list "((expr)                                                               \\
+   ? static_cast<void>(0)                                               \\
+   : mem::throwFailedVerify(#expr, __FILE__, __LINE__, MEM_FN_NAME))" 1405 . 1619)))
+          ("MEMIMPLDEFS_INCLUDE")
+          ("MEM_ASSERT" (spp-arg-list ("expr") 1314 . 1320))
+          ("MEM_ERROR" (spp-arg-list ("expr" "msg") 1638 . 1649) . ((semantic-list "((expr)                                     \\
+   ? static_cast<void>(0)                                         \\
+   : mem::throwRuntimeError(msg, __FILE__, __LINE__, MEM_FN_NAME))" 1671 . 1851)))
+          ("MEM_HUGEPAGE_PATH" . ((string "\"/var/mnt/hugepages/\"" 784 . 805)))
+          ("MEM_OOM" (spp-arg-list ("sz" "str") 1868 . 1877) . 
+              ((symbol "mem" 1878 . 1881) (punctuation ":" 1881 . 1882) (punctuation ":" 1882 . 1883) (symbol "throwOutOfMemory" 1883 . 1899) (semantic-list "(__FILE__, __LINE__, MEM_FN_NAME, str, sz)" 1899 . 1941)))
+          ("MEM_FN_NAME" . ((symbol "__FUNCTION__" 1208 . 1220)))
+          )
+)
+    (semanticdb-table "memThrow.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MEMTHROW_INCLUDE" variable (:constant-flag t) nil [34 50])
+            ("sys/types.h" include (:system-flag t) nil [1132 1154])
+            ("mem" type
+               (:members 
+                  ( ("throwFailedVerify" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("expr" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [1561 1578])
+                            ("file" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [1579 1596])
+                            ("line" variable (:type "int") (reparse-symbol arg-sub-list) [1597 1606])
+                            ("func" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [1607 1624]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [1538 1625])
+                    ("throwRuntimeError" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("msg" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2015 2031])
+                            ("file" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2032 2049])
+                            ("line" variable (:type "int") (reparse-symbol arg-sub-list) [2050 2059])
+                            ("func" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2060 2077]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [1992 2078])
+                    ("throwOutOfMemory" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("file" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2578 2595])
+                            ("line" variable (:type "int") (reparse-symbol arg-sub-list) [2622 2631])
+                            ("func" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2658 2675])
+                            ("strContext" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2702 2725])
+                            ("requestBytes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2752 2772]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [2556 2773]))                  
+                :type "namespace")
+                nil [1156 2775]))          
+      :file "memThrow.h"
+      :pointmax 2822
+      :fsize 2821
+      :lastmodtime '(20893 15417 58462 586000)
+      :unmatched-syntax '((punctuation 2775 . 2776))
+      :lexical-table 
+        '(("MEMTHROW_INCLUDE")
+          )
+)
+    (semanticdb-table "memInterface.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MEMINTERFACE_INCLUDE" variable (:constant-flag t) nil [38 58])
+            ("memTypeDefs.h" include nil nil [4180 4204])
+            ("memAllocContext.h" include nil nil [4205 4233])
+            ("vector" include (:system-flag t) nil [4234 4251])
+            ("mem" type
+               (:members 
+                  ( ("FaultInterface" type
+                       (:prototype t
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [4273 4294])
+                    ("RegionKindDesc" type
+                       (:members 
+                          ( ("m_regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4465 4494])
+                            ("m_regionSize" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4531 4560])
+                            ("m_minSegmentSize" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4614 4647])
+                            ("m_regionCount" variable (:type "unsigned int") (reparse-symbol classsubparts) [4707 4737])
+                            ("m_concurrency" variable (:type "int") (reparse-symbol classsubparts) [4868 4898])
+                            ("m_numaPolicy" variable (:type ("numaPolicy_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4940 4969])
+                            ("m_hugePages" variable (:type "bool") (reparse-symbol classsubparts) [5025 5053])
+                            ("m_pinned" variable (:type "bool") (reparse-symbol classsubparts) [5097 5122])
+                            ("m_clearOnFree" variable (:type "bool") (reparse-symbol classsubparts) [5180 5210])
+                            ("m_clearChar" variable (:type "char") (reparse-symbol classsubparts) [5245 5273])
+                            ("m_ioalign" variable (:type "unsigned int") (reparse-symbol classsubparts) [5319 5345]))                          
+                        :type "struct")
+                        (reparse-symbol namespacesubparts) [4437 5396])
+                    ("MappingDesc" type
+                       (:members 
+                          ( ("" type
+                               (:members 
+                                  ( ("MAX_MAP_COUNT" variable
+                                       (:constant-flag t
+                                        :default-value (5574 5575)
+                                        :type "int")
+                                        (reparse-symbol enumsubparts) [5558 5575]))                                  
+                                :type "enum")
+                                (reparse-symbol classsubparts) [5551 5578])
+                            ("m_segmentCount" variable (:type "int") (reparse-symbol classsubparts) [5584 5615])
+                            ("m_base" variable
+                               (:pointer 1
+                                :dereference 1
+                                :type "void")
+                                (reparse-symbol classsubparts) [5667 5705])
+                            ("m_length" variable
+                               (:dereference 1
+                                :type ("size_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [5751 5791]))                          
+                        :type "struct")
+                        (reparse-symbol namespacesubparts) [5526 5831])
+                    ("MappingArray" type
+                       (:typedef ("std::vector" type
+                             (:template-specifier 
+                                ( ("MappingDesc" type nil nil nil))                                
+                              :type "class")
+                              nil nil)
+                        :superclasses "std::vector"
+                        :type "typedef")
+                        (reparse-symbol namespacesubparts) [6224 6273])
+                    ("configureRegions" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("prefixName" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [7535 7558])
+                            ("descCount" variable (:type "int") (reparse-symbol arg-sub-list) [7585 7599])
+                            ("config" variable
+                               (:pointer 1
+                                :type ("RegionKindDesc" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7626 7649])
+                            ("mappings" variable
+                               (:pointer 1
+                                :type ("MappingArray" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7676 7699]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [7513 7700])
+                    ("initProcess" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("prefixName" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [8143 8166]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [8126 8167])
+                    ("finiProcess" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [8354 8373])
+                    ("initialized" function
+                       (:prototype-flag t
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [8561 8580])
+                    ("initThread" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("heapid" variable (:type "long") (reparse-symbol arg-sub-list) [9022 9035]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [9006 9039])
+                    ("setThreadIndex" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9625 9649])
+                            ("regionIndex" variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9650 9676]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [9605 9677])
+                    ("openRegion" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10068 10092])
+                            ("regionIndex" variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10093 10119]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [10052 10120])
+                    ("closeRegion" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10762 10786])
+                            ("regionIndex" variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10787 10814]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [10745 10818])
+                    ("validateRegion" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11129 11153])
+                            ("regionIndex" variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11154 11180]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [11109 11181])
+                    ("getRegionSize" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11947 11971])
+                            ("regionIndex" variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11997 12024])
+                            ("availableSize" variable
+                               (:pointer 1
+                                :type ("size_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12053 12076])
+                            ("" variable (:type ("NULL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12077 12082]))                          
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [11926 12083])
+                    ("getThreadIndex" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12583 12607]))                          
+                        :type ("regionIndex_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [12554 12608])
+                    ("setFaultInterface" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("faults" variable
+                               (:pointer 1
+                                :type ("FaultInterface" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [13329 13352]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [13306 13353])
+                    ("isRegionKindActive" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13925 13949]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [13901 13950])
+                    ("allocBlock" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :arguments 
+                          ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14438 14450])
+                            ("ctx" variable
+                               (:constant-flag t
+                                :type ("AllocContext" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [14451 14474]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [14421 14475])
+                    ("allocBlockNothrow" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :arguments 
+                          ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14788 14800])
+                            ("ctx" variable
+                               (:constant-flag t
+                                :type ("AllocContext" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [14801 14824]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [14764 14825])
+                    ("callocBlock" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :arguments 
+                          ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15193 15205])
+                            ("ctx" variable
+                               (:constant-flag t
+                                :type ("AllocContext" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [15206 15229]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [15175 15230])
+                    ("reallocBlock" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :arguments 
+                          ( ("ptr" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [16798 16808])
+                            ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16809 16821])
+                            ("ctx" variable
+                               (:constant-flag t
+                                :type ("AllocContext" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [16822 16845]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [16779 16846])
+                    ("freeBlock" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("ptr" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [17242 17252]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [17227 17253])
+                    ("freeBlock" function
+                       (:typemodifiers ("inline")
+                        :arguments 
+                          ( ("ptr" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [17281 17297]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [17259 17340])
+                    ("validateBlock" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("p" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [17844 17858])
+                            ("mt" variable (:type ("memType_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17859 17872]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [17825 17873])
+                    ("getMemType" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("p" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [18322 18336])
+                            ("mt" variable
+                               (:pointer 1
+                                :type ("memType_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [18337 18351]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [18306 18352])
+                    ("getMemRegion" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("p" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [19731 19745]))                          
+                        :type ("regionKind_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [19705 19746])
+                    ("getFriendlySize" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("sz" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20134 20144]))                          
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [20111 20145])
+                    ("setTrackingId" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("trackType" variable (:type ("memTrack_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20585 20606])
+                            ("trackId" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20607 20624]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [20566 20625])
+                    ("setKnownObject" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :arguments 
+                          ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22386 22410])
+                            ("ko" variable (:type ("memKnownObject_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22436 22456])
+                            ("whatever" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [22482 22497])
+                            ("mustBeEmpty" variable (:type "bool") (reparse-symbol arg-sub-list) [22523 22541])
+                            ("" variable (:type ("false" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22542 22548]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [22365 22549])
+                    ("getKnownObject" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :arguments 
+                          ( ("regionKind" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22880 22904])
+                            ("ko" variable (:type ("memKnownObject_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22905 22925]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [22859 22926]))                  
+                :type "namespace")
+                nil [4253 22929]))          
+      :file "memInterface.h"
+      :pointmax 22980
+      :fsize 22979
+      :lastmodtime '(20893 15417 47541 680000)
+      :unmatched-syntax '((punctuation 22929 . 22930) (punctuation 22540 . 22541) (punctuation 17340 . 17341) (punctuation 12075 . 12076) (number 12025 . 12026) (punctuation 12023 . 12024) (number 10815 . 10816) (punctuation 10813 . 10814) (number 9036 . 9037) (punctuation 9034 . 9035))
+      :lexical-table 
+        '(("MEMINTERFACE_INCLUDE")
+          )
+)
+    (semanticdb-table "memHeader.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MEMHEADER_INCLUDE" variable (:constant-flag t) nil [35 52])
+            ("memInterface.h" include nil nil [605 630])
+            ("mem" type
+               (:members (((((0) "memHeaderFormat_t")) type (:superclasses ("" type (:members (("MEM_HEADER_FORMAT_MEMTYPE" variable (:constant-flag t :default-value (972 973) :type "int") (reparse-symbol enumsubparts) [944 973]) ("MEM_HEADER_FORMAT_BITS" variable (:constant-flag t :default-value (1004 1005) :type "int") (reparse-symbol enumsubparts) [979 1005])) :type "enum") nil nil) :type "typedef") (reparse-symbol namespacesubparts) [925 1026]) ((((0) "memHeaderMagic_t")) type (:superclasses ("" type (:members (("HDR_INIT_MAGIC" variable (:constant-flag t :default-value (1065 1068) :type "int") (reparse-symbol enumsubparts) [1047 1068]) ("HDR_ALLOC_MAGIC" variable (:constant-flag t :default-value (1092 1095) :type "int") (reparse-symbol enumsubparts) [1074 1095]) ("HDR_FREE_MAGIC" variable (:constant-flag t :default-value (1119 1122) :type "int") (reparse-symbol enumsubparts) [1101 1122]) ("HDR_MAGIC_BITS" variable (:constant-flag t :default-value (1147 1148) :type "int") (reparse-symbol enumsubparts) [1129 1148])) :type "enum") nil nil) :type "typedef") (reparse-symbol namespacesubparts) [1028 1168]) ("nzpack_x86_on.h" include (:inside-ns t) (reparse-symbol namespacesubparts) [1273 1299]) ("memHeader" type (:members (((("m_trackId" 0 "32" nil)) variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1323 1360]) ((("m_memType" 0 "16" nil)) variable (:type ("memType_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1365 1402]) ((("REGION_BITS" 0 nil nil)) variable (:type "int") (reparse-symbol classsubparts) [1441 1453]) ((("m_trackType" 0 "2" nil)) variable (:type ("memTrack_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1476 1512]) ((("m_memScope" 0 "2" nil)) variable (:type ("memScope_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1517 1553]) ((("m_ioAlign" 0 "1" nil)) variable (:type ("memAlign_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1558 1594]) ((("m_reported" 0 "1" nil)) variable (:type "bool") (reparse-symbol classsubparts) [1599 1635]) ((("HDR_MAGIC_BITS" 0 nil nil)) variable (:type "int") (reparse-symbol classsubparts) [1674 1689]) ((("MEM_HEADER_FORMAT_BITS" 0 nil nil)) variable (:type "int") (reparse-symbol classsubparts) [1743 1766])) :type "struct") (reparse-symbol namespacesubparts) [1300 1776]) ("nzpack_x86_off.h" include (:inside-ns t) (reparse-symbol namespacesubparts) [1777 1804]) ((((0) "memHeader_t")) type (:superclasses ("memHeader" type (:prototype t :type "struct") nil nil) :type "typedef") (reparse-symbol namespacesubparts) [1806 1843]) ("Header" type (:members (("public" label nil (reparse-symbol classsubparts) [2032 2039]) ("Header" function (:constructor-flag t :type ("Header" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2044 2069]) ("clear" function (:prototype-flag t :type "void") (reparse-symbol classsubparts) [2201 2214]) ("setTrackingId" function (:prototype-flag t :arguments (((("trackType" 0 nil nil)) variable (:type ("memTrack_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2482 2503]) ((("trackId" 0 nil nil)) variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2504 2521])) :type "void") (reparse-symbol classsubparts) [2463 2522]) ("setHeader" function (:prototype-flag t :arguments (((("p" 1 nil nil)) variable (:type ("void")) (reparse-symbol arg-sub-list) [2817 2825]) ((("ctx" 0 nil nil)) variable (:constant-flag t :type ("AllocContext" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2826 2849])) :type "void") (reparse-symbol classsubparts) [2802 2850]) ("markFree" function (:prototype-flag t :typemodifiers ("static") :arguments (((("p" 1 nil nil)) variable (:type ("void")) (reparse-symbol arg-sub-list) [3188 3196])) :type "void") (reparse-symbol classsubparts) [3167 3197]) ("markReported" function (:prototype-flag t :typemodifiers ("static") :arguments (((("p" 1 nil nil)) variable (:type ("void")) (reparse-symbol arg-sub-list) [3425 3433])) :type "void") (reparse-symbol classsubparts) [3400 3434]) ("markAllocated" function (:prototype-flag t :typemodifiers ("static") :arguments (((("p" 1 nil nil)) variable (:type ("void")) (reparse-symbol arg-sub-list) [3665 3673])) :type "void") (reparse-symbol classsubparts) [3639 3674]) ("getMemType" function (:prototype-flag t :typemodifiers ("static") :arguments (((("p" 1 nil nil)) variable (:constant-flag t :type ("void")) (reparse-symbol arg-sub-list) [4130 4144]) ((("mt" 1 nil nil)) variable (:type ("memType_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4145 4159])) :type "bool") (reparse-symbol classsubparts) [4107 4160]) ("getHeader" function (:prototype-flag t :typemodifiers ("static") :arguments (((("p" 1 nil nil)) variable (:constant-flag t :type ("void")) (reparse-symbol arg-sub-list) [4492 4506]) ((("hdr" 1 nil nil)) variable (:type ("memHeader_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4507 4524])) :type "bool") (reparse-symbol classsubparts) [4470 4525]) ("validateHeader" function (:prototype-flag t :typemodifiers ("static") :arguments (((("p" 1 nil nil)) variable (:constant-flag t :type ("void")) (reparse-symbol arg-sub-list) [4841 4855]) ((("mt" 0 nil nil)) variable (:type ("memType_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4856 4869])) :type "bool") (reparse-symbol classsubparts) [4814 4870]) ("getRegion" function (:prototype-flag t :typemodifiers ("static") :arguments (((("p" 1 nil nil)) variable (:constant-flag t :type ("void")) (reparse-symbol arg-sub-list) [5165 5179]) ((("nm" 1 nil nil)) variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5180 5197])) :type "bool") (reparse-symbol classsubparts) [5143 5198]) ("isHeap" function (:typemodifiers ("static") :arguments (((("p" 1 nil nil)) variable (:constant-flag t :type ("void")) (reparse-symbol arg-sub-list) [5488 5502])) :type "bool") (reparse-symbol classsubparts) [5469 5602]) ("private" label nil (reparse-symbol classsubparts) [5605 5613]) ("blockHeader" function (:prototype-flag t :typemodifiers ("static") :arguments (((("p" 1 nil nil)) variable (:constant-flag t :type ("void")) (reparse-symbol arg-sub-list) [6210 6224]) ((("hdr" 2 nil nil)) variable (:type ("memHeader_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6225 6243])) :type "bool") (reparse-symbol classsubparts) [6186 6244]) ("private" label nil (reparse-symbol classsubparts) [6246 6254]) ((("m_trackType" 0 nil nil)) variable (:type ("memTrack_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6259 6291]) ((("m_trackId" 0 nil nil)) variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6348 6378]) ((("m_trackIdArray" 0 nil (1))) variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6429 6479])) :type "class") (reparse-symbol namespacesubparts) [2017 6517]))
+                :type "namespace")
+                nil [654 6536]))          
+      :file "memHeader.h"
+      :pointmax 6584
+      :fsize 6583
+      :lastmodtime '(20893 15417 53649 906000)
+      :unmatched-syntax '((punctuation 6536 . 6537) (punctuation 5602 . 5603) (punctuation 2069 . 2070) (punctuation 1741 . 1742) (symbol 1729 . 1737) (symbol 1709 . 1726) (punctuation 1672 . 1673) (symbol 1660 . 1667) (symbol 1640 . 1656) (punctuation 1439 . 1440) (symbol 1427 . 1435) (symbol 1407 . 1419))
+      :lexical-table 
+        '(("MEMHEADER_INCLUDE")
+          )
+)
+    (semanticdb-table "memHeap.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MEMHEAP_INCLUDE" variable (:constant-flag t) nil nil)
+            ("memInterface.h" include nil nil nil)
+            ("memInterfaceIteration.h" include nil nil nil)
+            ("mem" type
+               (:members 
+                  ( ("Header" type
+                       (:prototype t
+                        :type "class")
+                        (reparse-symbol namespacesubparts) nil)
+                    ("Heap" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) nil)
+                            ("Heap" function
+                               (:constructor-flag t
+                                :arguments (((("hdr" 1 nil nil)) variable (:type ("Header" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1483 1495]) ((("flt" 1 nil nil)) variable (:type ("FaultInterface" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1496 1517]) ((("" 0 nil nil nil)) variable (:type ("NULL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1518 1523]))
+                                :type ("Heap" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) nil)
+                            ("configureRegions" function
+                               (:prototype-flag t
+                                :arguments (((("prefixName" 1 nil nil)) variable (:constant-flag t :type ("char")) (reparse-symbol arg-sub-list) [1760 1783]) ((("descCount" 0 nil nil)) variable (:type ("int")) (reparse-symbol arg-sub-list) [1810 1824]) ((("config" 1 nil nil)) variable (:type ("RegionKindDesc" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1851 1874]) ((("mappings" 1 nil nil)) variable (:type ("MappingArray" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1901 1924]))
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("initProcess" function
+                               (:prototype-flag t
+                                :arguments (((("prefixName" 1 nil nil)) variable (:constant-flag t :type ("char")) (reparse-symbol arg-sub-list) [1947 1970]))
+                                :type "bool")
+                                (reparse-symbol classsubparts) nil)
+                            ("finiProcess" function
+                               (:prototype-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("initialized" function
+                               (:prototype-flag t
+                                :type "bool")
+                                (reparse-symbol classsubparts) nil)
+                            ("initThread" function
+                               (:prototype-flag t
+                                :arguments (((("heapid" 0 nil nil)) variable (:type ("long")) (reparse-symbol arg-sub-list) [2040 2052]))
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("setThreadIndex" function
+                               (:prototype-flag t
+                                :arguments (((("regionKind" 0 nil nil)) variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2078 2102]) ((("overlayIndex" 0 nil nil)) variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2103 2130]))
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("openRegion" function
+                               (:prototype-flag t
+                                :arguments (((("regionKind" 0 nil nil)) variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2152 2176]) ((("overlayIndex" 0 nil nil)) variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2177 2204]))
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("closeRegion" function
+                               (:prototype-flag t
+                                :arguments (((("regionKind" 0 nil nil)) variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2227 2251]) ((("overlayIndex" 0 nil nil)) variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2252 2279]))
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("validateRegion" function
+                               (:prototype-flag t
+                                :arguments (((("regionKind" 0 nil nil)) variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2305 2329]) ((("overlayIndex" 0 nil nil)) variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2330 2357]))
+                                :type "bool")
+                                (reparse-symbol classsubparts) nil)
+                            ("getRegionSize" function
+                               (:prototype-flag t
+                                :arguments (((("regionKind" 0 nil nil)) variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2384 2408]) ((("overlayIndex" 0 nil nil)) variable (:type ("regionIndex_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2434 2461]) ((("availableSize" 1 nil nil)) variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2487 2510]) ((("" 0 nil nil nil)) variable (:type ("NULL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2511 2516]))
+                                :type ("size_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) nil)
+                            ("getThreadIndex" function
+                               (:prototype-flag t
+                                :arguments (((("regionKind" 0 nil nil)) variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2551 2575]))
+                                :type ("regionIndex_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) nil)
+                            ("allocBlock" function
+                               (:prototype-flag t
+                                :pointer 1
+                                :arguments (((("size" 0 nil nil)) variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2657 2669]) ((("ctx" 0 nil nil)) variable (:constant-flag t :type ("AllocContext" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2670 2693]))
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("allocBlockNothrow" function
+                               (:prototype-flag t
+                                :pointer 1
+                                :arguments (((("size" 0 nil nil)) variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2723 2735]) ((("ctx" 0 nil nil)) variable (:constant-flag t :type ("AllocContext" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2736 2759]))
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("callocBlock" function
+                               (:prototype-flag t
+                                :pointer 1
+                                :arguments (((("size" 0 nil nil)) variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2783 2795]) ((("ctx" 0 nil nil)) variable (:constant-flag t :type ("AllocContext" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2796 2819]))
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("reallocBlock" function
+                               (:prototype-flag t
+                                :pointer 1
+                                :arguments (((("ptr" 1 nil nil)) variable (:type ("void")) (reparse-symbol arg-sub-list) [2844 2854]) ((("size" 0 nil nil)) variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2855 2867]) ((("ctx" 0 nil nil)) variable (:constant-flag t :type ("AllocContext" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2868 2891]))
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("freeBlock" function
+                               (:prototype-flag t
+                                :arguments (((("ptr" 1 nil nil)) variable (:type ("void")) (reparse-symbol arg-sub-list) [2912 2922]))
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("getFriendlySize" function
+                               (:prototype-flag t
+                                :arguments (((("sz" 0 nil nil)) variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2951 2961]))
+                                :type ("size_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) nil)
+                            ("setTrackingId" function
+                               (:prototype-flag t
+                                :arguments (((("trackType" 0 nil nil)) variable (:type ("memTrack_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2986 3007]) ((("trackId" 0 nil nil)) variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3008 3025]))
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("setKnownObject" function
+                               (:prototype-flag t
+                                :pointer 1
+                                :arguments (((("regionKind" 0 nil nil)) variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3093 3117]) ((("ko" 0 nil nil)) variable (:type ("memKnownObject_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3143 3163]) ((("whatever" 1 nil nil)) variable (:type ("void")) (reparse-symbol arg-sub-list) [3189 3204]) ((("mustBeEmpty" 0 nil nil)) variable (:type ("bool")) (reparse-symbol arg-sub-list) [3230 3248]) ((("" 0 nil nil nil)) variable (:type ("false" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3249 3255]))
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("getKnownObject" function
+                               (:prototype-flag t
+                                :pointer 1
+                                :arguments (((("regionKind" 0 nil nil)) variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3282 3306]) ((("ko" 0 nil nil)) variable (:type ("memKnownObject_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3307 3327]))
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("iterateBlocks" function
+                               (:prototype-flag t
+                                :arguments (((("regionKind" 0 nil nil)) variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3383 3419]) ((("filter" 0 nil nil)) variable (:type ("FilterSpec" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3442 3474]) ((("cbFn" 0 nil nil)) variable (:type ("iterateBlocksCallback_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3497 3527]) ((("fnarg" 1 nil nil)) variable (:type ("void")) (reparse-symbol arg-sub-list) [3550 3581]))
+                                :type "int")
+                                (reparse-symbol classsubparts) nil)
+                            ("validateAllBlocks" function
+                               (:prototype-flag t
+                                :arguments (((("regionKind" 0 nil nil)) variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3611 3635]))
+                                :type "void")
+                                (reparse-symbol classsubparts) nil)
+                            ("private" label nil (reparse-symbol classsubparts) nil)
+                            ((("m_header" 1 nil nil)) variable (:type ("mem::Header" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3651 3681])
+                            ((("m_faults" 1 nil nil)) variable (:type ("mem::FaultInterface" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3714 3744])
+                            ((("m_knownObjects" 1 nil (1))) variable (:type "void") (reparse-symbol classsubparts) [3786 3830]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) nil))                  
+                :type "namespace")
+                nil nil))          
+      :file "memHeap.h"
+      :pointmax 3896
+      :fsize 3895
+      :lastmodtime '(20893 15417 41642 260000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MEMHEAP_INCLUDE")
+          )
+)
+    (semanticdb-table "memInterfaceIteration.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MEMINTERFACEITERATION_INCLUDE" variable (:constant-flag t) nil [47 76])
+            ("memInterface.h" include nil nil [873 898])
+            ("memHeader.h" include nil nil [899 921])
+            ("mem" type
+               (:members 
+                  ( ("iterateBlocksCallback_t" variable
+                       (:functionpointer-flag t
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [1416 1504])
+                    ("FilterSpec" type
+                       (:members (((("m_setReported" 0 nil nil)) variable (:type "bool") (reparse-symbol classsubparts) [1868 1894]) ((("m_filterMemType" 0 nil nil)) variable (:type "bool") (reparse-symbol classsubparts) [1960 1988]) ((("m_filterNew" 0 nil nil)) variable (:type "bool") (reparse-symbol classsubparts) [2054 2078]) ((("m_memType" 0 nil nil)) variable (:type ("memType_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2148 2170]))
+                        :type "struct")
+                        (reparse-symbol namespacesubparts) [1836 2236])
+                    ("iterateBlocks" function
+                       (:prototype-flag t
+                        :arguments (((("regionKind" 0 nil nil)) variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3375 3412]) ((("filter" 0 nil nil)) variable (:type ("FilterSpec" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3435 3468]) ((("cbFn" 0 nil nil)) variable (:type ("iterateBlocksCallback_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3491 3522]) ((("fnarg" 1 nil nil)) variable (:type ("void")) (reparse-symbol arg-sub-list) [3545 3577]))
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [3357 3578])
+                    ("validateAllBlocks" function
+                       (:prototype-flag t
+                        :arguments (((("regionKind" 0 nil nil)) variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3892 3916]))
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [3869 3917]))                  
+                :type "namespace")
+                nil [980 3920]))          
+      :file "memInterfaceIteration.h"
+      :pointmax 3980
+      :fsize 3979
+      :lastmodtime '(20893 15417 39593 948000)
+      :unmatched-syntax '((punctuation 3920 . 3921) (TYPEDEF 1408 . 1415))
+      :lexical-table 
+        '(("MEMINTERFACEITERATION_INCLUDE")
+          )
+)
+    (semanticdb-table "memTypeDefs.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MEMTYPEDEFS_INCLUDE" variable (:constant-flag t) nil nil)
+            ("stddef.h" include (:system-flag t) nil nil)
+            ("stdint.h" include (:system-flag t) nil nil)
+            ("memTypes.h" include nil nil nil)
+            ("memKnownObjects.h" include nil nil nil)
+            ("memTrackTypes.h" include nil nil nil)
+            ("memScope.h" include nil nil nil)
+            ("memNumaPolicy.h" include nil nil nil)
+            ("mem" type
+               (:members 
+                  ( ("regionKind_t" type
+                       (:typedef ("" type
+                             (:members 
+                                ( ("REGION_HEAP" variable
+                                     (:constant-flag t
+                                      :default-value (983 984)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) nil)
+                                  ("REGION_GLOBAL" variable
+                                     (:constant-flag t
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) nil)
+                                  ("REGION_MIN" variable
+                                     (:constant-flag t
+                                      :default-value (1291 1305)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) nil)
+                                  ("REGION_PM" variable
+                                     (:constant-flag t
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) nil)
+                                  ("REGION_CACHE" variable
+                                     (:constant-flag t
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) nil)
+                                  ("REGION_MAX" variable
+                                     (:constant-flag t
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) nil)
+                                  ("REGION_SLICEREGIONS" variable
+                                     (:constant-flag t
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) nil)
+                                  ("REGION_BITS" variable
+                                     (:constant-flag t
+                                      :default-value (1706 1707)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) nil))                                
+                              :type "enum")
+                              nil nil)
+                        :type "typedef")
+                        (reparse-symbol namespacesubparts) nil)
+                    ("regionIndex_t" type
+                       (:typedef ("uint16_t" type (:type "class") nil nil)
+                        :superclasses "uint16_t"
+                        :type "typedef")
+                        (reparse-symbol namespacesubparts) nil)
+                    ("NO_REGION" variable
+                       (:constant-flag t
+                        :type ("regionIndex_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) nil)
+                    ("ALL_REGIONS" variable
+                       (:constant-flag t
+                        :type ("regionIndex_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) nil)
+                    ("memAlign_t" type
+                       (:typedef ("" type
+                             (:members 
+                                ( ("MEM_NOALIGN" variable
+                                     (:constant-flag t
+                                      :default-value (2060 2061)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) nil)
+                                  ("MEM_ALIGN" variable
+                                     (:constant-flag t
+                                      :default-value (2081 2082)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) nil))                                
+                              :type "enum")
+                              nil nil)
+                        :type "typedef")
+                        (reparse-symbol namespacesubparts) nil))                  
+                :type "namespace")
+                nil nil))          
+      :file "memTypeDefs.h"
+      :pointmax 2149
+      :fsize 2148
+      :lastmodtime '(20893 15417 58462 586000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MEMTYPEDEFS_INCLUDE")
+          )
+)
+    (semanticdb-table "memNumaPolicy.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MEMNUMAPOLICY_INCLUDE" variable (:constant-flag t) nil [39 60])
+            ("mem" type
+               (:members 
+                  ( ("numaPolicy_t" type
+                       (:typedef ("" type
+                             (:members 
+                                ( ("MEM_ONE_HEAP" variable
+                                     (:constant-flag t
+                                      :default-value (1064 1065)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1049 1065])
+                                  ("MEM_MULTI_HEAP_FIXED" variable
+                                     (:constant-flag t
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1107 1128])
+                                  ("MEM_MULTI_HEAP_RANDOM" variable
+                                     (:constant-flag t
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1201 1223])
+                                  ("MEM_NUMA_MAX" variable
+                                     (:constant-flag t
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1300 1313])
+                                  ("MEM_NUMA_MIN" variable
+                                     (:constant-flag t
+                                      :default-value (1333 1346)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1318 1346])
+                                  ("MEM_DEFAULT_POLICY" variable
+                                     (:constant-flag t
+                                      :default-value (1373 1386)
+                                      :type "int")
+                                      (reparse-symbol enumsubparts) [1352 1386]))                                
+                              :type "enum")
+                              nil nil)
+                        :type "typedef")
+                        (reparse-symbol namespacesubparts) [1030 1402]))                  
+                :type "namespace")
+                nil [934 1405]))          
+      :file "memNumaPolicy.h"
+      :pointmax 1457
+      :fsize 1456
+      :lastmodtime '(20893 15417 42650 8000)
+      :unmatched-syntax '((punctuation 1405 . 1406))
+      :lexical-table 
+        '(("MEMNUMAPOLICY_INCLUDE")
+          )
+)
+    (semanticdb-table "memAllocContext.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MEMALLOCCONTEXT_INCLUDE" variable (:constant-flag t) nil [41 64])
+            ("memTypeDefs.h" include nil nil [612 636])
+            ("mem" type
+               (:members 
+                  ( ("nzpack_x86_on.h" include (:inside-ns t) (reparse-symbol namespacesubparts) [655 681])
+                    ("AllocContext" type
+                       (:members 
+                          ( ("private" label nil (reparse-symbol classsubparts) [703 711])
+                            ("m_memType" variable
+                               (:suffix ":16"
+                                :type ("memType_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [716 753])
+                            ("REGION_BITS" variable (:type "int") (reparse-symbol classsubparts) [792 804])
+                            ("m_memScope" variable
+                               (:suffix ":2"
+                                :type ("memScope_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [827 863])
+                            ("m_ioAlign" variable
+                               (:suffix ":1"
+                                :type ("memAlign_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [868 904])
+                            ("m_MBZ" variable
+                               (:suffix ":9"
+                                :type "unsigned int")
+                                (reparse-symbol classsubparts) [909 945])
+                            ("public" label nil (reparse-symbol classsubparts) [947 954])
+                            ("AllocContext" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("memType" variable (:type ("memType_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [972 1005])
+                                    ("" variable (:type ("mt_anonymous" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1006 1019])
+                                    ("name" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1037 1070])
+                                    ("" variable (:type ("REGION_GLOBAL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1071 1085])
+                                    ("ioAlign" variable (:type ("memAlign_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1103 1136])
+                                    ("" variable (:type ("MEM_NOALIGN" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1137 1149])
+                                    ("memScope" variable (:type ("memScope_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1167 1200])
+                                    ("" variable (:type ("MEM_SCOPE_TEMPORARY" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1201 1221]))                                  
+                                :type ("AllocContext" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [959 1357])
+                            ("AllocContext" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :arguments 
+                                  ( ("p" variable
+                                       (:pointer 1
+                                        :type "void")
+                                        (reparse-symbol arg-sub-list) [1583 1591])
+                                    ("mt" variable (:type ("memType_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1592 1606])
+                                    ("" variable (:type ("mt_unused" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1607 1617]))                                  
+                                :type ("AllocContext" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1570 1618])
+                            ("setRegion" function
+                               (:arguments 
+                                  ( ("region" variable (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1662 1682]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [1647 1709])
+                            ("getRegion" function (:type ("regionKind_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1715 1770])
+                            ("getMemType" function (:type ("memType_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1776 1829])
+                            ("getMemScope" function (:type ("memScope_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1835 1892])
+                            ("getIoAlign" function (:type ("memAlign_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1898 1953]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [682 1957])
+                    ("nzpack_x86_off.h" include (:inside-ns t) (reparse-symbol namespacesubparts) [1975 2002])
+                    ("k_anonHeap" function
+                       (:prototype-flag t
+                        :constant-flag t
+                        :arguments 
+                          ( ("" variable (:type ("mt_anonymous" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2272 2285])
+                            ("" variable (:type ("mem::REGION_HEAP" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2286 2303]))                          
+                        :type ("AllocContext" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [2242 2304]))                  
+                :type "namespace")
+                nil [638 2307]))          
+      :file "memAllocContext.h"
+      :pointmax 2361
+      :fsize 2360
+      :lastmodtime '(20893 15417 39593 948000)
+      :unmatched-syntax '((punctuation 2307 . 2308) (punctuation 1605 . 1606) (punctuation 1357 . 1358) (punctuation 1199 . 1200) (punctuation 1135 . 1136) (punctuation 1069 . 1070) (punctuation 1004 . 1005) (punctuation 790 . 791) (symbol 778 . 786) (symbol 758 . 770))
+      :lexical-table 
+        '(("MEMALLOCCONTEXT_INCLUDE")
+          )
+))
+  :file "!home!workspaces!dbarrett!int-marlin-1!main!src!comps!memcomps!base!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
