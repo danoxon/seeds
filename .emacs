@@ -61,7 +61,30 @@
 ;; ======== iedit-mode - simul edit multiple occurences  ============
 (add-to-list 'load-path "~/.emacs.d/iedit")
 
-(load-library "iedit")
+
+(require 'iedit)
+
+;; automatically narrow iedit scope to function
+;; from www.masteringemacs.org
+(defun iedit-dwim (arg)
+  "Starts iedit but uses \\[narrow-to-defun] to limit its scope."
+  (interactive "P")
+  (if arg
+      (iedit-mode)
+    (save-excursion
+      (save-restriction
+        (widen)
+        ;; this function determines the scope of `iedit-start'.
+        (if iedit-mode
+            (iedit-done)
+          ;; `current-word' can of course be replaced by other
+          ;; functions.
+          (narrow-to-defun)
+          (iedit-start (current-word) (point-min) (point-max)))))))
+   
+(global-set-key (kbd "C-;") 'iedit-dwim)
+
+
 
 ;; ======== Paren/Brace matching  ============
 (setq blink-matching-open t)
@@ -236,10 +259,10 @@ the character typed."
 ;; Change emacs window start size
 (if (window-system) (set-frame-size (selected-frame) 90 50))
 
-;; emacs 24
+;; ============ emacs 24 ==========
 ;;  pop-up-frame-parameters - if non nil specifies params for new frames
 ;; inhibit-switch-frame
-
+;; second arg to display-buffer and pop-to-buffer is a named ACTION.
 ;;New display action functions display-buffer-below-selected,
 ;; and display-buffer-in-previous-window.
 
@@ -263,6 +286,16 @@ the character typed."
 ;;         function name completion pops up frame, but minibuffer loses focus.
 
 
+(defun occur-mode-goto-occurrence ()
+   "Go to the occurrence the current line describes.
+ This function redefined by alex!  Instead of using
+ `pop-to-buffer' it now uses `switch-to-buffer'."
+   (interactive)
+   (let ((pos (occur-mode-find-occurrence)))
+     (switch-to-buffer occur-buffer)
+     (goto-char (marker-position pos))))
+
+
 ;; ===== Change new windows to be side-by-side ===
 ;; From LindyDancer:
 ;; The default behaviour of `display-buffer' is to always create a new
@@ -275,21 +308,22 @@ the character typed."
 
 ;; (setq pop-up-windows nil)
 
+;; ==============  custom display-buffer-function ===============
 ;; TODO: dmb - do for occur buffers only....
-(defun my-display-buffer-function (buf not-this-window)
-  (if (and (not pop-up-frames)
-           (one-window-p)
-           (or not-this-window
-               (not (eq (window-buffer (selected-window)) buf)))
-           (> (frame-width) 162))
-      (split-window-horizontally))
-  ;; Note: Some modules sets `pop-up-windows' to t before calling
-  ;; `display-buffer' -- Why, oh, why!
-  (let ((display-buffer-function nil)
-        (pop-up-windows nil))
-    (display-buffer buf not-this-window)))
+;; (defun my-display-buffer-function (buf not-this-window)
+;;   (if (and (not pop-up-frames)
+;;            (one-window-p)
+;;            (or not-this-window
+;;                (not (eq (window-buffer (selected-window)) buf)))
+;;            (> (frame-width) 162))
+;;       (split-window-horizontally))
+;;   ;; Note: Some modules sets `pop-up-windows' to t before calling
+;;   ;; `display-buffer' -- Why, oh, why!
+;;   (let ((display-buffer-function nil)
+;;         (pop-up-windows nil))
+;;     (display-buffer buf not-this-window)))
 
-(setq display-buffer-function 'my-display-buffer-function)
+;; (setq display-buffer-function 'my-display-buffer-function)
 
 
 ;; Set these vars to change behavior of split-window-preferred-function, split-window-sensibly

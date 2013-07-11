@@ -1,4 +1,4 @@
-# .bashrc - dbarrett
+/# .bashrc - dbarrett
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -44,11 +44,11 @@ IGNOREEOF=5
 unset MAILCHECK
 unset TMOUT
 
-# ----  Swap CapsLock for Ctrl, and any other remappings
+# ----  Remappings: Swap CapsLock for Ctrl, etc.
 if [ -f ~/.xmodmap ]; then
     xmodmap ~/.xmodmap
 #else
-   #echo "No .xmodmap found"
+#   echo "No .xmodmap found"
 fi
 
 # --- Configure specific packages
@@ -62,9 +62,9 @@ fi
 export SCMPATH="/jazz/scmtools/eclipse"
 alias pscm=/opt/net/tools/bin/scm
 
-#if [ -f   . ~/rtc_tools/rtc_helpers ]; then
-#  . ~/rtc_tools/rtc_helpers
-#fi
+if [ -f ~/rtc_tools/rtc_helpers ]; then
+  . ~/rtc_tools/rtc_helpers
+fi
 
 
 # AccuRev
