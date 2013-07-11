@@ -40,7 +40,7 @@ sconf()
   git add -u   
   git commit -m "another update"  > /dev/null #Don't want to see Untracked files.
   echo "======= Files to be updated ========"
-  git status -s  | grep -v  '??'
+  git status -s  | grep -v  '??'  # cleared by
   echo "hub sends ~ten updates"
   git push origin master  
 #  git ls-files  # What are tracked files?
