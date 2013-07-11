@@ -279,6 +279,11 @@ the character typed."
 (global-set-key (kbd "M-s") 'other-window) ; was center-line
 (global-set-key (kbd "M-b") 'balance-windows) ; was center-line
 
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+
 ;; ========  New Frame instead of buffer for occur mode and others ==========
 ;; special-display-regexps  '("[ ]?[*][^*]+[*]"))
 ;; FIXME:  if other frame already exists, it'll create the buffer in that frame
