@@ -100,7 +100,7 @@ the character typed."
 
 (global-set-key "%" `goto-match-paren)
 
-
+;; foo
 
 ;; Highlight word under cursor after delay.
 ;; Not tag specific like ecb-highlight-tag-with-point, but simpler config

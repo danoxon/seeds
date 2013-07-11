@@ -38,13 +38,15 @@ sconf()
 {
   # only add (update) tracked files. New files not affected unless pattern supplied
   git add -u   
-  
   git commit -m "another update"
+  echo "File to be updated:"
+  git status -s  | grep -v  '??'
   echo "hub sends ~ten updates"
   git push origin master  
   git ls-files  # What are tracked files?
-  echo "Remaining modified files- broken: "
-  git status | grep modified
+  echo "\nRemaining modified files- broken: "
+  git status -s  | grep -v  '??'
+
 }
 
 chk()
