@@ -58,6 +58,11 @@
 (setq-default indent-tabs-mode t)  ;; setq-default, only for buffers without local value
 (setq-default fill-column 79)
 
+;; ======== iedit-mode - simul edit multiple occurences  ============
+(add-to-list 'load-path "~/.emacs.d/iedit")
+
+(load-library "iedit")
+
 ;; ======== Paren/Brace matching  ============
 (setq blink-matching-open t)
 
@@ -71,6 +76,7 @@ the character typed."
     (t                    (self-insert-command (or arg 1))) ))
 
 (global-set-key "%" `goto-match-paren)
+
 
 
 ;; Highlight word under cursor after delay.
@@ -230,6 +236,20 @@ the character typed."
 ;; Change emacs window start size
 (if (window-system) (set-frame-size (selected-frame) 90 50))
 
+;; emacs 24
+;;  pop-up-frame-parameters - if non nil specifies params for new frames
+;; inhibit-switch-frame
+
+;;New display action functions display-buffer-below-selected,
+;; and display-buffer-in-previous-window.
+
+;; have display-windows open window side-by-side (split horizontal) vs vertically
+;; controls split-window-sensibly . 
+;; changed/added in 23.1
+
+;;     (setq split-height-threshold nil)  ;; Don't split vertically after 2nd window.
+;;      (setq split-width-threqshold 0)   ;;
+
 ;;; WINDOW SPLITING
 (global-set-key (kbd "M-4") 'split-window-vertically) ; was digit-argument
 (global-set-key (kbd "M-3") 'delete-other-windows) ; was digit-argument
@@ -250,6 +270,8 @@ the character typed."
 ;;
 ;; Reuse existing windows, unless there's a single window open on a large display.  
 ;; Then open a new window to the _side_.
+
+;; TODO: use emacs 24 behavior to do more simply....
 
 ;; (setq pop-up-windows nil)
 
