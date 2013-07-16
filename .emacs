@@ -111,10 +111,6 @@ the character typed."
        (idle-highlight-mode t)
  ))
 
-; auto create matching parens, quotes, etc.
-;; (require 'autopair)
-;;(autopair-global-mode) ;; to enable in all buffers
-;; (add-hook 'c-mode-common-hook #'(lambda () (autopair-mode)))
 
 ;; Highlight manually selected symbol under point
 (require 'highlight-symbol)
@@ -283,6 +279,12 @@ the character typed."
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
+
+ ;; Make windmove work in org-mode:
+(add-hook 'org-shiftup-final-hook 'windmove-up)
+(add-hook 'org-shiftleft-final-hook 'windmove-left)
+(add-hook 'org-shiftdown-final-hook 'windmove-down)
+(add-hook 'org-shiftright-final-hook 'windmove-right)
 
 ;; ========  New Frame instead of buffer for occur mode and others ==========
 ;; special-display-regexps  '("[ ]?[*][^*]+[*]"))
